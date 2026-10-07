@@ -1,0 +1,50 @@
+# TAB: Overview  (block starts at row 1, col A)
+
+hidden rows: []
+hidden cols: []
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+C7 | "Sprints" | "Sprints"
+D7 | "Weeks" | "Weeks"
+E7 | "Dates" | "Dates"
+H7 | "Price" | "Price"
+I7 | "Total Hours" | "Total Hours"
+C8 | =round(D8/2) | "3" | FMT=NUMBER:0
+D8 | =(Tasks!AR1-Tasks!AQ1)/7 | "6" | FMT=NUMBER:0
+E8 | =concatenate(text(startDate,"m/d/yy")," - ",text(lastDate,"m/d/yy")) | "1/4/27 - 2/14/27"
+H8 | =totalPrice | "$102,667" | FMT=CURRENCY:"$"#,##0
+I8 | =sum(J12:J27) | "302" | FMT=NUMBER:0
+C11 | "Phase" | "Phase"
+E11 | "Duration" | "Duration"
+F11 | "Price" | "Price"
+H11 | "Role" | "Role"
+I11 | "Who" | "Who"
+J11 | "Hours" | "Hours"
+C12 | =filter(Tasks!A14:A,Tasks!$AG14:AG>0) | "Discovery Team"
+E12 | =filter(Tasks!BX14:BX,Tasks!$AG14:AG>0) | "2 sprints"
+F12 | =filter(Tasks!AP14:AP,Tasks!$AG14:AG>0) | "$57,333" | FMT=CURRENCY:"$"#,##0
+H12 | =filter(Team!C2:C31,Team!B2:B31=TRUE) | "Strategist"
+I12 | =filter(Team!M2:M31,Team!B2:B31=TRUE) | "Ryan"
+J12 | =filter(Team!K2:K31,Team!B2:B31=TRUE) | "40"
+C13 |  | "Validation Team"
+E13 |  | "1 sprint"
+F13 |  | "$45,333"
+H13 |  | "Product Partner"
+J13 |  | "120"
+H14 |  | "Engineering Architect"
+I14 |  | "Ahmad, Bobby"
+J14 |  | "50"
+H15 |  | "AI Engineer"
+I15 |  | "VStorm"
+J15 |  | "80"
+H16 |  | "Full Stack Engineer"
+I16 |  | "XSeed"
+J16 |  | "0"
+H17 |  | "Client Partner"
+I17 |  | "Ryan"
+J17 |  | "0"
+H18 |  | "Executive Client Partner"
+I18 |  | "Lu, Danny, Jordan"
+J18 |  | "12"
+
+## 42 non-empty cells

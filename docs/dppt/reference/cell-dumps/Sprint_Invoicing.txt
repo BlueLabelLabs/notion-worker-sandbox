@@ -1,0 +1,7135 @@
+# TAB: Sprint Invoicing  (block starts at row 1, col A)
+
+hidden rows: [1]
+hidden cols: ['D', 'E', 'F', 'G']
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+A2 | "Due" | "Due"
+B2 | "Amount" | "Amount" | FMT=CURRENCY:"$"#,##0
+C2 | "Notes" | "Notes"
+E2 | "Installment Due" | "Installment Due"
+F2 | "Amount" | "Amount" | FMT=CURRENCY:"$"#,##0
+G2 | "Notes" | "Notes"
+A3 | =SEQUENCE((COUNTIF(Output!$A2:A, "<>")/2)+1,1,Output!B2-14,28) | "12/21/26" | FMT=DATE:m"/"d"/"yy
+B3 | =IF(A3="","",
+SUM(
+    OFFSET(
+      $F3,
+      MATCH( $E3, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) | "#REF!" | FMT=CURRENCY:"$"#,##0
+C3 | =if(AND(B3>0,B3<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A3, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | "#REF!"
+E3 | =if(Output!$B2,Output!$B2-14,) | "12/21/2026" | FMT=DATE:M/d/yyyy
+F3 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G3 | =Output!A2 | "Sprint 1 | Discovery Team"
+A4 |  | "1/18/27"
+B4 | =IF(A4="","",
+SUM(
+    OFFSET(
+      $F4,
+      MATCH( $E4, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) | "#REF!" | FMT=CURRENCY:"$"#,##0
+C4 | =if(AND(B4>0,B4<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A4, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | "#REF!"
+E4 | =if(Output!$B3,Output!$B3-14,) | "1/4/2027" | FMT=DATE:M/d/yyyy
+F4 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G4 | =Output!A3 | "Sprint 2 | Discovery Team"
+B5 | =IF(A5="","",
+SUM(
+    OFFSET(
+      $F5,
+      MATCH( $E5, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C5 | =if(AND(B5>0,B5<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A5, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E5 | =if(Output!$B4,Output!$B4-14,) | "1/18/2027" | FMT=DATE:M/d/yyyy
+F5 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G5 | =Output!A4 | "Sprint 3 | Validation Team"
+B6 | =IF(A6="","",
+SUM(
+    OFFSET(
+      $F6,
+      MATCH( $E6, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C6 | =if(AND(B6>0,B6<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A6, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E6 | =if(Output!$B5,Output!$B5-14,) |  | FMT=DATE:M/d/yyyy
+F6 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G6 | =Output!A5 | 
+B7 | =IF(A7="","",
+SUM(
+    OFFSET(
+      $F7,
+      MATCH( $E7, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C7 | =if(AND(B7>0,B7<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A7, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E7 | =if(Output!$B6,Output!$B6-14,) |  | FMT=DATE:M/d/yyyy
+F7 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G7 | =Output!A6 | 
+B8 | =IF(A8="","",
+SUM(
+    OFFSET(
+      $F8,
+      MATCH( $E8, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C8 | =if(AND(B8>0,B8<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A8, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E8 | =if(Output!$B7,Output!$B7-14,) |  | FMT=DATE:M/d/yyyy
+F8 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G8 | =Output!A7 | 
+B9 | =IF(A9="","",
+SUM(
+    OFFSET(
+      $F9,
+      MATCH( $E9, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C9 | =if(AND(B9>0,B9<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A9, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E9 | =if(Output!$B8,Output!$B8-14,) |  | FMT=DATE:M/d/yyyy
+F9 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G9 | =Output!A8 | 
+B10 | =IF(A10="","",
+SUM(
+    OFFSET(
+      $F10,
+      MATCH( $E10, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C10 | =if(AND(B10>0,B10<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A10, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E10 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F10 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G10 | =#REF! | "#REF!"
+B11 | =IF(A11="","",
+SUM(
+    OFFSET(
+      $F11,
+      MATCH( $E11, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C11 | =if(AND(B11>0,B11<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A11, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E11 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F11 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G11 | =#REF! | "#REF!"
+B12 | =IF(A12="","",
+SUM(
+    OFFSET(
+      $F12,
+      MATCH( $E12, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C12 | =if(AND(B12>0,B12<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A12, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E12 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F12 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G12 | =#REF! | "#REF!"
+B13 | =IF(A13="","",
+SUM(
+    OFFSET(
+      $F13,
+      MATCH( $E13, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C13 | =if(AND(B13>0,B13<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A13, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E13 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F13 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G13 | =#REF! | "#REF!"
+B14 | =IF(A14="","",
+SUM(
+    OFFSET(
+      $F14,
+      MATCH( $E14, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C14 | =if(AND(B14>0,B14<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A14, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E14 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F14 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G14 | =#REF! | "#REF!"
+B15 | =IF(A15="","",
+SUM(
+    OFFSET(
+      $F15,
+      MATCH( $E15, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C15 | =if(AND(B15>0,B15<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A15, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E15 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F15 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G15 | =#REF! | "#REF!"
+B16 | =IF(A16="","",
+SUM(
+    OFFSET(
+      $F16,
+      MATCH( $E16, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C16 | =if(AND(B16>0,B16<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A16, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E16 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F16 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G16 | =#REF! | "#REF!"
+B17 | =IF(A17="","",
+SUM(
+    OFFSET(
+      $F17,
+      MATCH( $E17, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C17 | =if(AND(B17>0,B17<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A17, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E17 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F17 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G17 | =#REF! | "#REF!"
+B18 | =IF(A18="","",
+SUM(
+    OFFSET(
+      $F18,
+      MATCH( $E18, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C18 | =if(AND(B18>0,B18<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A18, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E18 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F18 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G18 | =#REF! | "#REF!"
+B19 | =IF(A19="","",
+SUM(
+    OFFSET(
+      $F19,
+      MATCH( $E19, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C19 | =if(AND(B19>0,B19<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A19, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E19 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F19 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G19 | =#REF! | "#REF!"
+B20 | =IF(A20="","",
+SUM(
+    OFFSET(
+      $F20,
+      MATCH( $E20, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C20 | =if(AND(B20>0,B20<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A20, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E20 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F20 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G20 | =#REF! | "#REF!"
+B21 | =IF(A21="","",
+SUM(
+    OFFSET(
+      $F21,
+      MATCH( $E21, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C21 | =if(AND(B21>0,B21<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A21, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E21 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F21 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G21 | =#REF! | "#REF!"
+B22 | =IF(A22="","",
+SUM(
+    OFFSET(
+      $F22,
+      MATCH( $E22, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C22 | =if(AND(B22>0,B22<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A22, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E22 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F22 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G22 | =#REF! | "#REF!"
+B23 | =IF(A23="","",
+SUM(
+    OFFSET(
+      $F23,
+      MATCH( $E23, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C23 | =if(AND(B23>0,B23<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A23, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E23 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F23 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G23 | =#REF! | "#REF!"
+B24 | =IF(A24="","",
+SUM(
+    OFFSET(
+      $F24,
+      MATCH( $E24, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C24 | =if(AND(B24>0,B24<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A24, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E24 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F24 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G24 | =#REF! | "#REF!"
+B25 | =IF(A25="","",
+SUM(
+    OFFSET(
+      $F25,
+      MATCH( $E25, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C25 | =if(AND(B25>0,B25<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A25, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E25 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F25 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G25 | =#REF! | "#REF!"
+B26 | =IF(A26="","",
+SUM(
+    OFFSET(
+      $F26,
+      MATCH( $E26, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C26 | =if(AND(B26>0,B26<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A26, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E26 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F26 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G26 | =#REF! | "#REF!"
+B27 | =IF(A27="","",
+SUM(
+    OFFSET(
+      $F27,
+      MATCH( $E27, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C27 | =if(AND(B27>0,B27<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A27, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E27 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F27 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G27 | =#REF! | "#REF!"
+B28 | =IF(A28="","",
+SUM(
+    OFFSET(
+      $F28,
+      MATCH( $E28, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C28 | =if(AND(B28>0,B28<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A28, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E28 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F28 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G28 | =#REF! | "#REF!"
+B29 | =IF(A29="","",
+SUM(
+    OFFSET(
+      $F29,
+      MATCH( $E29, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C29 | =if(AND(B29>0,B29<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A29, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E29 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F29 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G29 | =#REF! | "#REF!"
+B30 | =IF(A30="","",
+SUM(
+    OFFSET(
+      $F30,
+      MATCH( $E30, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C30 | =if(AND(B30>0,B30<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A30, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E30 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F30 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G30 | =#REF! | "#REF!"
+B31 | =IF(A31="","",
+SUM(
+    OFFSET(
+      $F31,
+      MATCH( $E31, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C31 | =if(AND(B31>0,B31<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A31, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E31 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F31 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G31 | =#REF! | "#REF!"
+B32 | =IF(A32="","",
+SUM(
+    OFFSET(
+      $F32,
+      MATCH( $E32, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C32 | =if(AND(B32>0,B32<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A32, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E32 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F32 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G32 | =#REF! | "#REF!"
+B33 | =IF(A33="","",
+SUM(
+    OFFSET(
+      $F33,
+      MATCH( $E33, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C33 | =if(AND(B33>0,B33<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A33, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E33 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F33 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G33 | =#REF! | "#REF!"
+B34 | =IF(A34="","",
+SUM(
+    OFFSET(
+      $F34,
+      MATCH( $E34, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C34 | =if(AND(B34>0,B34<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A34, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E34 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F34 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G34 | =#REF! | "#REF!"
+B35 | =IF(A35="","",
+SUM(
+    OFFSET(
+      $F35,
+      MATCH( $E35, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C35 | =if(AND(B35>0,B35<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A35, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E35 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F35 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G35 | =#REF! | "#REF!"
+B36 | =IF(A36="","",
+SUM(
+    OFFSET(
+      $F36,
+      MATCH( $E36, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C36 | =if(AND(B36>0,B36<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A36, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E36 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F36 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G36 | =#REF! | "#REF!"
+B37 | =IF(A37="","",
+SUM(
+    OFFSET(
+      $F37,
+      MATCH( $E37, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C37 | =if(AND(B37>0,B37<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A37, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E37 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F37 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G37 | =#REF! | "#REF!"
+B38 | =IF(A38="","",
+SUM(
+    OFFSET(
+      $F38,
+      MATCH( $E38, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C38 | =if(AND(B38>0,B38<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A38, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E38 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F38 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G38 | =#REF! | "#REF!"
+B39 | =IF(A39="","",
+SUM(
+    OFFSET(
+      $F39,
+      MATCH( $E39, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C39 | =if(AND(B39>0,B39<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A39, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E39 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F39 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G39 | =#REF! | "#REF!"
+B40 | =IF(A40="","",
+SUM(
+    OFFSET(
+      $F40,
+      MATCH( $E40, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C40 | =if(AND(B40>0,B40<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A40, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E40 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F40 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G40 | =#REF! | "#REF!"
+B41 | =IF(A41="","",
+SUM(
+    OFFSET(
+      $F41,
+      MATCH( $E41, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C41 | =if(AND(B41>0,B41<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A41, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E41 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F41 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G41 | =#REF! | "#REF!"
+B42 | =IF(A42="","",
+SUM(
+    OFFSET(
+      $F42,
+      MATCH( $E42, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C42 | =if(AND(B42>0,B42<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A42, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E42 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F42 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G42 | =#REF! | "#REF!"
+B43 | =IF(A43="","",
+SUM(
+    OFFSET(
+      $F43,
+      MATCH( $E43, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C43 | =if(AND(B43>0,B43<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A43, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E43 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F43 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G43 | =#REF! | "#REF!"
+B44 | =IF(A44="","",
+SUM(
+    OFFSET(
+      $F44,
+      MATCH( $E44, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C44 | =if(AND(B44>0,B44<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A44, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E44 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F44 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G44 | =#REF! | "#REF!"
+B45 | =IF(A45="","",
+SUM(
+    OFFSET(
+      $F45,
+      MATCH( $E45, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C45 | =if(AND(B45>0,B45<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A45, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E45 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F45 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G45 | =#REF! | "#REF!"
+B46 | =IF(A46="","",
+SUM(
+    OFFSET(
+      $F46,
+      MATCH( $E46, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C46 | =if(AND(B46>0,B46<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A46, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E46 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F46 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G46 | =#REF! | "#REF!"
+B47 | =IF(A47="","",
+SUM(
+    OFFSET(
+      $F47,
+      MATCH( $E47, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C47 | =if(AND(B47>0,B47<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A47, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E47 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F47 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G47 | =#REF! | "#REF!"
+B48 | =IF(A48="","",
+SUM(
+    OFFSET(
+      $F48,
+      MATCH( $E48, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C48 | =if(AND(B48>0,B48<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A48, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E48 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F48 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G48 | =#REF! | "#REF!"
+B49 | =IF(A49="","",
+SUM(
+    OFFSET(
+      $F49,
+      MATCH( $E49, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C49 | =if(AND(B49>0,B49<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A49, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E49 | =if(#REF!,#REF!-14,) | "#REF!" | FMT=DATE:M/d/yyyy
+F49 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G49 | =#REF! | "#REF!"
+B50 | =IF(A50="","",
+SUM(
+    OFFSET(
+      $F50,
+      MATCH( $E50, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C50 | =if(AND(B50>0,B50<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A50, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E50 | =if(Output!$B12,Output!$B12-14,) |  | FMT=DATE:M/d/yyyy
+F50 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G50 | =Output!A12 | 
+B51 | =IF(A51="","",
+SUM(
+    OFFSET(
+      $F51,
+      MATCH( $E51, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C51 | =if(AND(B51>0,B51<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A51, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E51 | =if(Output!$B13,Output!$B13-14,) |  | FMT=DATE:M/d/yyyy
+F51 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G51 | =Output!A13 | 
+B52 | =IF(A52="","",
+SUM(
+    OFFSET(
+      $F52,
+      MATCH( $E52, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C52 | =if(AND(B52>0,B52<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A52, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E52 | =if(Output!$B14,Output!$B14-14,) |  | FMT=DATE:M/d/yyyy
+F52 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G52 | =Output!A14 | 
+B53 | =IF(A53="","",
+SUM(
+    OFFSET(
+      $F53,
+      MATCH( $E53, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C53 | =if(AND(B53>0,B53<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A53, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E53 | =if(Output!$B15,Output!$B15-14,) |  | FMT=DATE:M/d/yyyy
+F53 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G53 | =Output!A15 | 
+B54 | =IF(A54="","",
+SUM(
+    OFFSET(
+      $F54,
+      MATCH( $E54, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C54 | =if(AND(B54>0,B54<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A54, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E54 | =if(Output!$B16,Output!$B16-14,) |  | FMT=DATE:M/d/yyyy
+F54 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G54 | =Output!A16 | 
+B55 | =IF(A55="","",
+SUM(
+    OFFSET(
+      $F55,
+      MATCH( $E55, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C55 | =if(AND(B55>0,B55<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A55, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E55 | =if(Output!$B17,Output!$B17-14,) |  | FMT=DATE:M/d/yyyy
+F55 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G55 | =Output!A17 | 
+B56 | =IF(A56="","",
+SUM(
+    OFFSET(
+      $F56,
+      MATCH( $E56, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C56 | =if(AND(B56>0,B56<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A56, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E56 | =if(Output!$B18,Output!$B18-14,) |  | FMT=DATE:M/d/yyyy
+F56 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G56 | =Output!A18 | 
+B57 | =IF(A57="","",
+SUM(
+    OFFSET(
+      $F57,
+      MATCH( $E57, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C57 | =if(AND(B57>0,B57<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A57, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E57 | =if(Output!$B19,Output!$B19-14,) |  | FMT=DATE:M/d/yyyy
+F57 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G57 | =Output!A19 | 
+B58 | =IF(A58="","",
+SUM(
+    OFFSET(
+      $F58,
+      MATCH( $E58, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C58 | =if(AND(B58>0,B58<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A58, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E58 | =if(Output!$B20,Output!$B20-14,) |  | FMT=DATE:M/d/yyyy
+F58 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G58 | =Output!A20 | 
+B59 | =IF(A59="","",
+SUM(
+    OFFSET(
+      $F59,
+      MATCH( $E59, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C59 | =if(AND(B59>0,B59<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A59, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+E59 | =if(Output!$B21,Output!$B21-14,) |  | FMT=DATE:M/d/yyyy
+F59 | =if(#REF!,VLOOKUP(#REF!, Tasks!$AM$6:$AR$22, 3, FALSE),) | "#REF!" | FMT=CURRENCY:"$"#,##0
+G59 | =Output!A21 | 
+B60 | =IF(A60="","",
+SUM(
+    OFFSET(
+      $F60,
+      MATCH( $E60, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C60 | =if(AND(B60>0,B60<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A60, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B61 | =IF(A61="","",
+SUM(
+    OFFSET(
+      $F61,
+      MATCH( $E61, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C61 | =if(AND(B61>0,B61<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A61, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B62 | =IF(A62="","",
+SUM(
+    OFFSET(
+      $F62,
+      MATCH( $E62, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C62 | =if(AND(B62>0,B62<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A62, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B63 | =IF(A63="","",
+SUM(
+    OFFSET(
+      $F63,
+      MATCH( $E63, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C63 | =if(AND(B63>0,B63<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A63, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B64 | =IF(A64="","",
+SUM(
+    OFFSET(
+      $F64,
+      MATCH( $E64, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C64 | =if(AND(B64>0,B64<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A64, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B65 | =IF(A65="","",
+SUM(
+    OFFSET(
+      $F65,
+      MATCH( $E65, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C65 | =if(AND(B65>0,B65<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A65, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B66 | =IF(A66="","",
+SUM(
+    OFFSET(
+      $F66,
+      MATCH( $E66, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C66 | =if(AND(B66>0,B66<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A66, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B67 | =IF(A67="","",
+SUM(
+    OFFSET(
+      $F67,
+      MATCH( $E67, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C67 | =if(AND(B67>0,B67<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A67, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B68 | =IF(A68="","",
+SUM(
+    OFFSET(
+      $F68,
+      MATCH( $E68, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C68 | =if(AND(B68>0,B68<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A68, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B69 | =IF(A69="","",
+SUM(
+    OFFSET(
+      $F69,
+      MATCH( $E69, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C69 | =if(AND(B69>0,B69<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A69, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B70 | =IF(A70="","",
+SUM(
+    OFFSET(
+      $F70,
+      MATCH( $E70, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C70 | =if(AND(B70>0,B70<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A70, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B71 | =IF(A71="","",
+SUM(
+    OFFSET(
+      $F71,
+      MATCH( $E71, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C71 | =if(AND(B71>0,B71<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A71, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B72 | =IF(A72="","",
+SUM(
+    OFFSET(
+      $F72,
+      MATCH( $E72, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C72 | =if(AND(B72>0,B72<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A72, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B73 | =IF(A73="","",
+SUM(
+    OFFSET(
+      $F73,
+      MATCH( $E73, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C73 | =if(AND(B73>0,B73<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A73, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B74 | =IF(A74="","",
+SUM(
+    OFFSET(
+      $F74,
+      MATCH( $E74, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C74 | =if(AND(B74>0,B74<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A74, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B75 | =IF(A75="","",
+SUM(
+    OFFSET(
+      $F75,
+      MATCH( $E75, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C75 | =if(AND(B75>0,B75<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A75, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B76 | =IF(A76="","",
+SUM(
+    OFFSET(
+      $F76,
+      MATCH( $E76, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C76 | =if(AND(B76>0,B76<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A76, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B77 | =IF(A77="","",
+SUM(
+    OFFSET(
+      $F77,
+      MATCH( $E77, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C77 | =if(AND(B77>0,B77<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A77, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B78 | =IF(A78="","",
+SUM(
+    OFFSET(
+      $F78,
+      MATCH( $E78, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C78 | =if(AND(B78>0,B78<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A78, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B79 | =IF(A79="","",
+SUM(
+    OFFSET(
+      $F79,
+      MATCH( $E79, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C79 | =if(AND(B79>0,B79<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A79, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B80 | =IF(A80="","",
+SUM(
+    OFFSET(
+      $F80,
+      MATCH( $E80, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C80 | =if(AND(B80>0,B80<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A80, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B81 | =IF(A81="","",
+SUM(
+    OFFSET(
+      $F81,
+      MATCH( $E81, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C81 | =if(AND(B81>0,B81<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A81, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B82 | =IF(A82="","",
+SUM(
+    OFFSET(
+      $F82,
+      MATCH( $E82, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C82 | =if(AND(B82>0,B82<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A82, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B83 | =IF(A83="","",
+SUM(
+    OFFSET(
+      $F83,
+      MATCH( $E83, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C83 | =if(AND(B83>0,B83<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A83, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B84 | =IF(A84="","",
+SUM(
+    OFFSET(
+      $F84,
+      MATCH( $E84, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C84 | =if(AND(B84>0,B84<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A84, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B85 | =IF(A85="","",
+SUM(
+    OFFSET(
+      $F85,
+      MATCH( $E85, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C85 | =if(AND(B85>0,B85<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A85, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B86 | =IF(A86="","",
+SUM(
+    OFFSET(
+      $F86,
+      MATCH( $E86, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C86 | =if(AND(B86>0,B86<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A86, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B87 | =IF(A87="","",
+SUM(
+    OFFSET(
+      $F87,
+      MATCH( $E87, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C87 | =if(AND(B87>0,B87<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A87, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B88 | =IF(A88="","",
+SUM(
+    OFFSET(
+      $F88,
+      MATCH( $E88, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C88 | =if(AND(B88>0,B88<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A88, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B89 | =IF(A89="","",
+SUM(
+    OFFSET(
+      $F89,
+      MATCH( $E89, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C89 | =if(AND(B89>0,B89<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A89, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B90 | =IF(A90="","",
+SUM(
+    OFFSET(
+      $F90,
+      MATCH( $E90, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C90 | =if(AND(B90>0,B90<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A90, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B91 | =IF(A91="","",
+SUM(
+    OFFSET(
+      $F91,
+      MATCH( $E91, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C91 | =if(AND(B91>0,B91<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A91, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B92 | =IF(A92="","",
+SUM(
+    OFFSET(
+      $F92,
+      MATCH( $E92, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C92 | =if(AND(B92>0,B92<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A92, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B93 | =IF(A93="","",
+SUM(
+    OFFSET(
+      $F93,
+      MATCH( $E93, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C93 | =if(AND(B93>0,B93<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A93, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B94 | =IF(A94="","",
+SUM(
+    OFFSET(
+      $F94,
+      MATCH( $E94, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C94 | =if(AND(B94>0,B94<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A94, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B95 | =IF(A95="","",
+SUM(
+    OFFSET(
+      $F95,
+      MATCH( $E95, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C95 | =if(AND(B95>0,B95<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A95, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B96 | =IF(A96="","",
+SUM(
+    OFFSET(
+      $F96,
+      MATCH( $E96, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C96 | =if(AND(B96>0,B96<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A96, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B97 | =IF(A97="","",
+SUM(
+    OFFSET(
+      $F97,
+      MATCH( $E97, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C97 | =if(AND(B97>0,B97<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A97, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B98 | =IF(A98="","",
+SUM(
+    OFFSET(
+      $F98,
+      MATCH( $E98, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C98 | =if(AND(B98>0,B98<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A98, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B99 | =IF(A99="","",
+SUM(
+    OFFSET(
+      $F99,
+      MATCH( $E99, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C99 | =if(AND(B99>0,B99<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A99, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B100 | =IF(A100="","",
+SUM(
+    OFFSET(
+      $F100,
+      MATCH( $E100, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C100 | =if(AND(B100>0,B100<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A100, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B101 | =IF(A101="","",
+SUM(
+    OFFSET(
+      $F101,
+      MATCH( $E101, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C101 | =if(AND(B101>0,B101<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A101, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B102 | =IF(A102="","",
+SUM(
+    OFFSET(
+      $F102,
+      MATCH( $E102, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C102 | =if(AND(B102>0,B102<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A102, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B103 | =IF(A103="","",
+SUM(
+    OFFSET(
+      $F103,
+      MATCH( $E103, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C103 | =if(AND(B103>0,B103<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A103, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B104 | =IF(A104="","",
+SUM(
+    OFFSET(
+      $F104,
+      MATCH( $E104, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C104 | =if(AND(B104>0,B104<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A104, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B105 | =IF(A105="","",
+SUM(
+    OFFSET(
+      $F105,
+      MATCH( $E105, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C105 | =if(AND(B105>0,B105<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A105, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B106 | =IF(A106="","",
+SUM(
+    OFFSET(
+      $F106,
+      MATCH( $E106, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C106 | =if(AND(B106>0,B106<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A106, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B107 | =IF(A107="","",
+SUM(
+    OFFSET(
+      $F107,
+      MATCH( $E107, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C107 | =if(AND(B107>0,B107<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A107, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B108 | =IF(A108="","",
+SUM(
+    OFFSET(
+      $F108,
+      MATCH( $E108, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C108 | =if(AND(B108>0,B108<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A108, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B109 | =IF(A109="","",
+SUM(
+    OFFSET(
+      $F109,
+      MATCH( $E109, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C109 | =if(AND(B109>0,B109<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A109, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B110 | =IF(A110="","",
+SUM(
+    OFFSET(
+      $F110,
+      MATCH( $E110, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C110 | =if(AND(B110>0,B110<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A110, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B111 | =IF(A111="","",
+SUM(
+    OFFSET(
+      $F111,
+      MATCH( $E111, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C111 | =if(AND(B111>0,B111<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A111, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B112 | =IF(A112="","",
+SUM(
+    OFFSET(
+      $F112,
+      MATCH( $E112, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C112 | =if(AND(B112>0,B112<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A112, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B113 | =IF(A113="","",
+SUM(
+    OFFSET(
+      $F113,
+      MATCH( $E113, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C113 | =if(AND(B113>0,B113<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A113, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B114 | =IF(A114="","",
+SUM(
+    OFFSET(
+      $F114,
+      MATCH( $E114, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C114 | =if(AND(B114>0,B114<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A114, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B115 | =IF(A115="","",
+SUM(
+    OFFSET(
+      $F115,
+      MATCH( $E115, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C115 | =if(AND(B115>0,B115<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A115, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B116 | =IF(A116="","",
+SUM(
+    OFFSET(
+      $F116,
+      MATCH( $E116, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C116 | =if(AND(B116>0,B116<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A116, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B117 | =IF(A117="","",
+SUM(
+    OFFSET(
+      $F117,
+      MATCH( $E117, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C117 | =if(AND(B117>0,B117<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A117, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B118 | =IF(A118="","",
+SUM(
+    OFFSET(
+      $F118,
+      MATCH( $E118, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C118 | =if(AND(B118>0,B118<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A118, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B119 | =IF(A119="","",
+SUM(
+    OFFSET(
+      $F119,
+      MATCH( $E119, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C119 | =if(AND(B119>0,B119<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A119, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B120 | =IF(A120="","",
+SUM(
+    OFFSET(
+      $F120,
+      MATCH( $E120, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C120 | =if(AND(B120>0,B120<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A120, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B121 | =IF(A121="","",
+SUM(
+    OFFSET(
+      $F121,
+      MATCH( $E121, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C121 | =if(AND(B121>0,B121<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A121, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B122 | =IF(A122="","",
+SUM(
+    OFFSET(
+      $F122,
+      MATCH( $E122, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C122 | =if(AND(B122>0,B122<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A122, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B123 | =IF(A123="","",
+SUM(
+    OFFSET(
+      $F123,
+      MATCH( $E123, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C123 | =if(AND(B123>0,B123<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A123, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B124 | =IF(A124="","",
+SUM(
+    OFFSET(
+      $F124,
+      MATCH( $E124, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C124 | =if(AND(B124>0,B124<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A124, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B125 | =IF(A125="","",
+SUM(
+    OFFSET(
+      $F125,
+      MATCH( $E125, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C125 | =if(AND(B125>0,B125<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A125, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B126 | =IF(A126="","",
+SUM(
+    OFFSET(
+      $F126,
+      MATCH( $E126, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C126 | =if(AND(B126>0,B126<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A126, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B127 | =IF(A127="","",
+SUM(
+    OFFSET(
+      $F127,
+      MATCH( $E127, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C127 | =if(AND(B127>0,B127<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A127, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B128 | =IF(A128="","",
+SUM(
+    OFFSET(
+      $F128,
+      MATCH( $E128, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C128 | =if(AND(B128>0,B128<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A128, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B129 | =IF(A129="","",
+SUM(
+    OFFSET(
+      $F129,
+      MATCH( $E129, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C129 | =if(AND(B129>0,B129<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A129, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B130 | =IF(A130="","",
+SUM(
+    OFFSET(
+      $F130,
+      MATCH( $E130, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C130 | =if(AND(B130>0,B130<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A130, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B131 | =IF(A131="","",
+SUM(
+    OFFSET(
+      $F131,
+      MATCH( $E131, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C131 | =if(AND(B131>0,B131<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A131, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B132 | =IF(A132="","",
+SUM(
+    OFFSET(
+      $F132,
+      MATCH( $E132, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C132 | =if(AND(B132>0,B132<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A132, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B133 | =IF(A133="","",
+SUM(
+    OFFSET(
+      $F133,
+      MATCH( $E133, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C133 | =if(AND(B133>0,B133<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A133, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B134 | =IF(A134="","",
+SUM(
+    OFFSET(
+      $F134,
+      MATCH( $E134, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C134 | =if(AND(B134>0,B134<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A134, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B135 | =IF(A135="","",
+SUM(
+    OFFSET(
+      $F135,
+      MATCH( $E135, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C135 | =if(AND(B135>0,B135<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A135, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B136 | =IF(A136="","",
+SUM(
+    OFFSET(
+      $F136,
+      MATCH( $E136, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C136 | =if(AND(B136>0,B136<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A136, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B137 | =IF(A137="","",
+SUM(
+    OFFSET(
+      $F137,
+      MATCH( $E137, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C137 | =if(AND(B137>0,B137<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A137, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B138 | =IF(A138="","",
+SUM(
+    OFFSET(
+      $F138,
+      MATCH( $E138, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C138 | =if(AND(B138>0,B138<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A138, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B139 | =IF(A139="","",
+SUM(
+    OFFSET(
+      $F139,
+      MATCH( $E139, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C139 | =if(AND(B139>0,B139<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A139, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B140 | =IF(A140="","",
+SUM(
+    OFFSET(
+      $F140,
+      MATCH( $E140, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C140 | =if(AND(B140>0,B140<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A140, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B141 | =IF(A141="","",
+SUM(
+    OFFSET(
+      $F141,
+      MATCH( $E141, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C141 | =if(AND(B141>0,B141<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A141, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B142 | =IF(A142="","",
+SUM(
+    OFFSET(
+      $F142,
+      MATCH( $E142, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C142 | =if(AND(B142>0,B142<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A142, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B143 | =IF(A143="","",
+SUM(
+    OFFSET(
+      $F143,
+      MATCH( $E143, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C143 | =if(AND(B143>0,B143<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A143, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B144 | =IF(A144="","",
+SUM(
+    OFFSET(
+      $F144,
+      MATCH( $E144, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C144 | =if(AND(B144>0,B144<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A144, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B145 | =IF(A145="","",
+SUM(
+    OFFSET(
+      $F145,
+      MATCH( $E145, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C145 | =if(AND(B145>0,B145<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A145, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B146 | =IF(A146="","",
+SUM(
+    OFFSET(
+      $F146,
+      MATCH( $E146, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C146 | =if(AND(B146>0,B146<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A146, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B147 | =IF(A147="","",
+SUM(
+    OFFSET(
+      $F147,
+      MATCH( $E147, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C147 | =if(AND(B147>0,B147<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A147, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B148 | =IF(A148="","",
+SUM(
+    OFFSET(
+      $F148,
+      MATCH( $E148, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C148 | =if(AND(B148>0,B148<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A148, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B149 | =IF(A149="","",
+SUM(
+    OFFSET(
+      $F149,
+      MATCH( $E149, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C149 | =if(AND(B149>0,B149<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A149, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B150 | =IF(A150="","",
+SUM(
+    OFFSET(
+      $F150,
+      MATCH( $E150, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C150 | =if(AND(B150>0,B150<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A150, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B151 | =IF(A151="","",
+SUM(
+    OFFSET(
+      $F151,
+      MATCH( $E151, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C151 | =if(AND(B151>0,B151<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A151, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B152 | =IF(A152="","",
+SUM(
+    OFFSET(
+      $F152,
+      MATCH( $E152, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C152 | =if(AND(B152>0,B152<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A152, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B153 | =IF(A153="","",
+SUM(
+    OFFSET(
+      $F153,
+      MATCH( $E153, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C153 | =if(AND(B153>0,B153<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A153, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B154 | =IF(A154="","",
+SUM(
+    OFFSET(
+      $F154,
+      MATCH( $E154, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C154 | =if(AND(B154>0,B154<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A154, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B155 | =IF(A155="","",
+SUM(
+    OFFSET(
+      $F155,
+      MATCH( $E155, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C155 | =if(AND(B155>0,B155<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A155, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B156 | =IF(A156="","",
+SUM(
+    OFFSET(
+      $F156,
+      MATCH( $E156, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C156 | =if(AND(B156>0,B156<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A156, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B157 | =IF(A157="","",
+SUM(
+    OFFSET(
+      $F157,
+      MATCH( $E157, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C157 | =if(AND(B157>0,B157<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A157, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B158 | =IF(A158="","",
+SUM(
+    OFFSET(
+      $F158,
+      MATCH( $E158, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C158 | =if(AND(B158>0,B158<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A158, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B159 | =IF(A159="","",
+SUM(
+    OFFSET(
+      $F159,
+      MATCH( $E159, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C159 | =if(AND(B159>0,B159<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A159, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B160 | =IF(A160="","",
+SUM(
+    OFFSET(
+      $F160,
+      MATCH( $E160, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C160 | =if(AND(B160>0,B160<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A160, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B161 | =IF(A161="","",
+SUM(
+    OFFSET(
+      $F161,
+      MATCH( $E161, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C161 | =if(AND(B161>0,B161<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A161, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B162 | =IF(A162="","",
+SUM(
+    OFFSET(
+      $F162,
+      MATCH( $E162, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C162 | =if(AND(B162>0,B162<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A162, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B163 | =IF(A163="","",
+SUM(
+    OFFSET(
+      $F163,
+      MATCH( $E163, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C163 | =if(AND(B163>0,B163<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A163, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B164 | =IF(A164="","",
+SUM(
+    OFFSET(
+      $F164,
+      MATCH( $E164, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C164 | =if(AND(B164>0,B164<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A164, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B165 | =IF(A165="","",
+SUM(
+    OFFSET(
+      $F165,
+      MATCH( $E165, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C165 | =if(AND(B165>0,B165<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A165, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B166 | =IF(A166="","",
+SUM(
+    OFFSET(
+      $F166,
+      MATCH( $E166, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C166 | =if(AND(B166>0,B166<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A166, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B167 | =IF(A167="","",
+SUM(
+    OFFSET(
+      $F167,
+      MATCH( $E167, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C167 | =if(AND(B167>0,B167<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A167, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B168 | =IF(A168="","",
+SUM(
+    OFFSET(
+      $F168,
+      MATCH( $E168, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C168 | =if(AND(B168>0,B168<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A168, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B169 | =IF(A169="","",
+SUM(
+    OFFSET(
+      $F169,
+      MATCH( $E169, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C169 | =if(AND(B169>0,B169<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A169, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B170 | =IF(A170="","",
+SUM(
+    OFFSET(
+      $F170,
+      MATCH( $E170, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C170 | =if(AND(B170>0,B170<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A170, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B171 | =IF(A171="","",
+SUM(
+    OFFSET(
+      $F171,
+      MATCH( $E171, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C171 | =if(AND(B171>0,B171<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A171, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B172 | =IF(A172="","",
+SUM(
+    OFFSET(
+      $F172,
+      MATCH( $E172, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C172 | =if(AND(B172>0,B172<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A172, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B173 | =IF(A173="","",
+SUM(
+    OFFSET(
+      $F173,
+      MATCH( $E173, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C173 | =if(AND(B173>0,B173<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A173, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B174 | =IF(A174="","",
+SUM(
+    OFFSET(
+      $F174,
+      MATCH( $E174, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C174 | =if(AND(B174>0,B174<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A174, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B175 | =IF(A175="","",
+SUM(
+    OFFSET(
+      $F175,
+      MATCH( $E175, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C175 | =if(AND(B175>0,B175<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A175, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B176 | =IF(A176="","",
+SUM(
+    OFFSET(
+      $F176,
+      MATCH( $E176, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C176 | =if(AND(B176>0,B176<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A176, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B177 | =IF(A177="","",
+SUM(
+    OFFSET(
+      $F177,
+      MATCH( $E177, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C177 | =if(AND(B177>0,B177<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A177, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B178 | =IF(A178="","",
+SUM(
+    OFFSET(
+      $F178,
+      MATCH( $E178, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C178 | =if(AND(B178>0,B178<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A178, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B179 | =IF(A179="","",
+SUM(
+    OFFSET(
+      $F179,
+      MATCH( $E179, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C179 | =if(AND(B179>0,B179<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A179, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B180 | =IF(A180="","",
+SUM(
+    OFFSET(
+      $F180,
+      MATCH( $E180, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C180 | =if(AND(B180>0,B180<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A180, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B181 | =IF(A181="","",
+SUM(
+    OFFSET(
+      $F181,
+      MATCH( $E181, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C181 | =if(AND(B181>0,B181<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A181, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B182 | =IF(A182="","",
+SUM(
+    OFFSET(
+      $F182,
+      MATCH( $E182, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C182 | =if(AND(B182>0,B182<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A182, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B183 | =IF(A183="","",
+SUM(
+    OFFSET(
+      $F183,
+      MATCH( $E183, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C183 | =if(AND(B183>0,B183<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A183, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B184 | =IF(A184="","",
+SUM(
+    OFFSET(
+      $F184,
+      MATCH( $E184, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C184 | =if(AND(B184>0,B184<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A184, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B185 | =IF(A185="","",
+SUM(
+    OFFSET(
+      $F185,
+      MATCH( $E185, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C185 | =if(AND(B185>0,B185<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A185, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B186 | =IF(A186="","",
+SUM(
+    OFFSET(
+      $F186,
+      MATCH( $E186, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C186 | =if(AND(B186>0,B186<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A186, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B187 | =IF(A187="","",
+SUM(
+    OFFSET(
+      $F187,
+      MATCH( $E187, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C187 | =if(AND(B187>0,B187<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A187, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B188 | =IF(A188="","",
+SUM(
+    OFFSET(
+      $F188,
+      MATCH( $E188, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C188 | =if(AND(B188>0,B188<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A188, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B189 | =IF(A189="","",
+SUM(
+    OFFSET(
+      $F189,
+      MATCH( $E189, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C189 | =if(AND(B189>0,B189<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A189, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B190 | =IF(A190="","",
+SUM(
+    OFFSET(
+      $F190,
+      MATCH( $E190, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C190 | =if(AND(B190>0,B190<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A190, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B191 | =IF(A191="","",
+SUM(
+    OFFSET(
+      $F191,
+      MATCH( $E191, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C191 | =if(AND(B191>0,B191<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A191, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B192 | =IF(A192="","",
+SUM(
+    OFFSET(
+      $F192,
+      MATCH( $E192, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C192 | =if(AND(B192>0,B192<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A192, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B193 | =IF(A193="","",
+SUM(
+    OFFSET(
+      $F193,
+      MATCH( $E193, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C193 | =if(AND(B193>0,B193<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A193, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B194 | =IF(A194="","",
+SUM(
+    OFFSET(
+      $F194,
+      MATCH( $E194, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C194 | =if(AND(B194>0,B194<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A194, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B195 | =IF(A195="","",
+SUM(
+    OFFSET(
+      $F195,
+      MATCH( $E195, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C195 | =if(AND(B195>0,B195<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A195, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B196 | =IF(A196="","",
+SUM(
+    OFFSET(
+      $F196,
+      MATCH( $E196, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C196 | =if(AND(B196>0,B196<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A196, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B197 | =IF(A197="","",
+SUM(
+    OFFSET(
+      $F197,
+      MATCH( $E197, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C197 | =if(AND(B197>0,B197<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A197, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B198 | =IF(A198="","",
+SUM(
+    OFFSET(
+      $F198,
+      MATCH( $E198, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C198 | =if(AND(B198>0,B198<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A198, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B199 | =IF(A199="","",
+SUM(
+    OFFSET(
+      $F199,
+      MATCH( $E199, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C199 | =if(AND(B199>0,B199<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A199, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B200 | =IF(A200="","",
+SUM(
+    OFFSET(
+      $F200,
+      MATCH( $E200, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C200 | =if(AND(B200>0,B200<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A200, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B201 | =IF(A201="","",
+SUM(
+    OFFSET(
+      $F201,
+      MATCH( $E201, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C201 | =if(AND(B201>0,B201<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A201, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B202 | =IF(A202="","",
+SUM(
+    OFFSET(
+      $F202,
+      MATCH( $E202, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C202 | =if(AND(B202>0,B202<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A202, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B203 | =IF(A203="","",
+SUM(
+    OFFSET(
+      $F203,
+      MATCH( $E203, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C203 | =if(AND(B203>0,B203<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A203, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B204 | =IF(A204="","",
+SUM(
+    OFFSET(
+      $F204,
+      MATCH( $E204, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C204 | =if(AND(B204>0,B204<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A204, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B205 | =IF(A205="","",
+SUM(
+    OFFSET(
+      $F205,
+      MATCH( $E205, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C205 | =if(AND(B205>0,B205<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A205, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B206 | =IF(A206="","",
+SUM(
+    OFFSET(
+      $F206,
+      MATCH( $E206, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C206 | =if(AND(B206>0,B206<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A206, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B207 | =IF(A207="","",
+SUM(
+    OFFSET(
+      $F207,
+      MATCH( $E207, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C207 | =if(AND(B207>0,B207<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A207, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B208 | =IF(A208="","",
+SUM(
+    OFFSET(
+      $F208,
+      MATCH( $E208, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C208 | =if(AND(B208>0,B208<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A208, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B209 | =IF(A209="","",
+SUM(
+    OFFSET(
+      $F209,
+      MATCH( $E209, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C209 | =if(AND(B209>0,B209<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A209, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B210 | =IF(A210="","",
+SUM(
+    OFFSET(
+      $F210,
+      MATCH( $E210, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C210 | =if(AND(B210>0,B210<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A210, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B211 | =IF(A211="","",
+SUM(
+    OFFSET(
+      $F211,
+      MATCH( $E211, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C211 | =if(AND(B211>0,B211<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A211, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B212 | =IF(A212="","",
+SUM(
+    OFFSET(
+      $F212,
+      MATCH( $E212, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C212 | =if(AND(B212>0,B212<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A212, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B213 | =IF(A213="","",
+SUM(
+    OFFSET(
+      $F213,
+      MATCH( $E213, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C213 | =if(AND(B213>0,B213<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A213, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B214 | =IF(A214="","",
+SUM(
+    OFFSET(
+      $F214,
+      MATCH( $E214, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C214 | =if(AND(B214>0,B214<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A214, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B215 | =IF(A215="","",
+SUM(
+    OFFSET(
+      $F215,
+      MATCH( $E215, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C215 | =if(AND(B215>0,B215<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A215, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B216 | =IF(A216="","",
+SUM(
+    OFFSET(
+      $F216,
+      MATCH( $E216, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C216 | =if(AND(B216>0,B216<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A216, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B217 | =IF(A217="","",
+SUM(
+    OFFSET(
+      $F217,
+      MATCH( $E217, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C217 | =if(AND(B217>0,B217<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A217, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B218 | =IF(A218="","",
+SUM(
+    OFFSET(
+      $F218,
+      MATCH( $E218, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C218 | =if(AND(B218>0,B218<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A218, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B219 | =IF(A219="","",
+SUM(
+    OFFSET(
+      $F219,
+      MATCH( $E219, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C219 | =if(AND(B219>0,B219<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A219, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B220 | =IF(A220="","",
+SUM(
+    OFFSET(
+      $F220,
+      MATCH( $E220, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C220 | =if(AND(B220>0,B220<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A220, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B221 | =IF(A221="","",
+SUM(
+    OFFSET(
+      $F221,
+      MATCH( $E221, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C221 | =if(AND(B221>0,B221<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A221, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B222 | =IF(A222="","",
+SUM(
+    OFFSET(
+      $F222,
+      MATCH( $E222, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C222 | =if(AND(B222>0,B222<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A222, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B223 | =IF(A223="","",
+SUM(
+    OFFSET(
+      $F223,
+      MATCH( $E223, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C223 | =if(AND(B223>0,B223<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A223, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B224 | =IF(A224="","",
+SUM(
+    OFFSET(
+      $F224,
+      MATCH( $E224, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C224 | =if(AND(B224>0,B224<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A224, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B225 | =IF(A225="","",
+SUM(
+    OFFSET(
+      $F225,
+      MATCH( $E225, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C225 | =if(AND(B225>0,B225<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A225, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B226 | =IF(A226="","",
+SUM(
+    OFFSET(
+      $F226,
+      MATCH( $E226, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C226 | =if(AND(B226>0,B226<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A226, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B227 | =IF(A227="","",
+SUM(
+    OFFSET(
+      $F227,
+      MATCH( $E227, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C227 | =if(AND(B227>0,B227<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A227, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B228 | =IF(A228="","",
+SUM(
+    OFFSET(
+      $F228,
+      MATCH( $E228, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C228 | =if(AND(B228>0,B228<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A228, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B229 | =IF(A229="","",
+SUM(
+    OFFSET(
+      $F229,
+      MATCH( $E229, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C229 | =if(AND(B229>0,B229<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A229, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B230 | =IF(A230="","",
+SUM(
+    OFFSET(
+      $F230,
+      MATCH( $E230, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C230 | =if(AND(B230>0,B230<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A230, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B231 | =IF(A231="","",
+SUM(
+    OFFSET(
+      $F231,
+      MATCH( $E231, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C231 | =if(AND(B231>0,B231<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A231, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B232 | =IF(A232="","",
+SUM(
+    OFFSET(
+      $F232,
+      MATCH( $E232, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C232 | =if(AND(B232>0,B232<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A232, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B233 | =IF(A233="","",
+SUM(
+    OFFSET(
+      $F233,
+      MATCH( $E233, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C233 | =if(AND(B233>0,B233<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A233, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B234 | =IF(A234="","",
+SUM(
+    OFFSET(
+      $F234,
+      MATCH( $E234, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C234 | =if(AND(B234>0,B234<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A234, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B235 | =IF(A235="","",
+SUM(
+    OFFSET(
+      $F235,
+      MATCH( $E235, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C235 | =if(AND(B235>0,B235<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A235, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B236 | =IF(A236="","",
+SUM(
+    OFFSET(
+      $F236,
+      MATCH( $E236, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C236 | =if(AND(B236>0,B236<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A236, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B237 | =IF(A237="","",
+SUM(
+    OFFSET(
+      $F237,
+      MATCH( $E237, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C237 | =if(AND(B237>0,B237<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A237, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B238 | =IF(A238="","",
+SUM(
+    OFFSET(
+      $F238,
+      MATCH( $E238, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C238 | =if(AND(B238>0,B238<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A238, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B239 | =IF(A239="","",
+SUM(
+    OFFSET(
+      $F239,
+      MATCH( $E239, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C239 | =if(AND(B239>0,B239<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A239, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B240 | =IF(A240="","",
+SUM(
+    OFFSET(
+      $F240,
+      MATCH( $E240, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C240 | =if(AND(B240>0,B240<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A240, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B241 | =IF(A241="","",
+SUM(
+    OFFSET(
+      $F241,
+      MATCH( $E241, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C241 | =if(AND(B241>0,B241<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A241, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B242 | =IF(A242="","",
+SUM(
+    OFFSET(
+      $F242,
+      MATCH( $E242, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C242 | =if(AND(B242>0,B242<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A242, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B243 | =IF(A243="","",
+SUM(
+    OFFSET(
+      $F243,
+      MATCH( $E243, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C243 | =if(AND(B243>0,B243<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A243, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B244 | =IF(A244="","",
+SUM(
+    OFFSET(
+      $F244,
+      MATCH( $E244, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C244 | =if(AND(B244>0,B244<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A244, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B245 | =IF(A245="","",
+SUM(
+    OFFSET(
+      $F245,
+      MATCH( $E245, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C245 | =if(AND(B245>0,B245<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A245, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B246 | =IF(A246="","",
+SUM(
+    OFFSET(
+      $F246,
+      MATCH( $E246, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C246 | =if(AND(B246>0,B246<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A246, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B247 | =IF(A247="","",
+SUM(
+    OFFSET(
+      $F247,
+      MATCH( $E247, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C247 | =if(AND(B247>0,B247<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A247, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B248 | =IF(A248="","",
+SUM(
+    OFFSET(
+      $F248,
+      MATCH( $E248, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C248 | =if(AND(B248>0,B248<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A248, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B249 | =IF(A249="","",
+SUM(
+    OFFSET(
+      $F249,
+      MATCH( $E249, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C249 | =if(AND(B249>0,B249<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A249, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B250 | =IF(A250="","",
+SUM(
+    OFFSET(
+      $F250,
+      MATCH( $E250, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C250 | =if(AND(B250>0,B250<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A250, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B251 | =IF(A251="","",
+SUM(
+    OFFSET(
+      $F251,
+      MATCH( $E251, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C251 | =if(AND(B251>0,B251<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A251, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B252 | =IF(A252="","",
+SUM(
+    OFFSET(
+      $F252,
+      MATCH( $E252, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C252 | =if(AND(B252>0,B252<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A252, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B253 | =IF(A253="","",
+SUM(
+    OFFSET(
+      $F253,
+      MATCH( $E253, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C253 | =if(AND(B253>0,B253<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A253, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B254 | =IF(A254="","",
+SUM(
+    OFFSET(
+      $F254,
+      MATCH( $E254, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C254 | =if(AND(B254>0,B254<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A254, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B255 | =IF(A255="","",
+SUM(
+    OFFSET(
+      $F255,
+      MATCH( $E255, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C255 | =if(AND(B255>0,B255<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A255, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B256 | =IF(A256="","",
+SUM(
+    OFFSET(
+      $F256,
+      MATCH( $E256, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C256 | =if(AND(B256>0,B256<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A256, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B257 | =IF(A257="","",
+SUM(
+    OFFSET(
+      $F257,
+      MATCH( $E257, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C257 | =if(AND(B257>0,B257<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A257, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B258 | =IF(A258="","",
+SUM(
+    OFFSET(
+      $F258,
+      MATCH( $E258, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C258 | =if(AND(B258>0,B258<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A258, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B259 | =IF(A259="","",
+SUM(
+    OFFSET(
+      $F259,
+      MATCH( $E259, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C259 | =if(AND(B259>0,B259<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A259, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B260 | =IF(A260="","",
+SUM(
+    OFFSET(
+      $F260,
+      MATCH( $E260, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C260 | =if(AND(B260>0,B260<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A260, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B261 | =IF(A261="","",
+SUM(
+    OFFSET(
+      $F261,
+      MATCH( $E261, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C261 | =if(AND(B261>0,B261<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A261, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B262 | =IF(A262="","",
+SUM(
+    OFFSET(
+      $F262,
+      MATCH( $E262, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C262 | =if(AND(B262>0,B262<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A262, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B263 | =IF(A263="","",
+SUM(
+    OFFSET(
+      $F263,
+      MATCH( $E263, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C263 | =if(AND(B263>0,B263<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A263, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B264 | =IF(A264="","",
+SUM(
+    OFFSET(
+      $F264,
+      MATCH( $E264, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C264 | =if(AND(B264>0,B264<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A264, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B265 | =IF(A265="","",
+SUM(
+    OFFSET(
+      $F265,
+      MATCH( $E265, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C265 | =if(AND(B265>0,B265<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A265, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B266 | =IF(A266="","",
+SUM(
+    OFFSET(
+      $F266,
+      MATCH( $E266, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C266 | =if(AND(B266>0,B266<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A266, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B267 | =IF(A267="","",
+SUM(
+    OFFSET(
+      $F267,
+      MATCH( $E267, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C267 | =if(AND(B267>0,B267<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A267, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B268 | =IF(A268="","",
+SUM(
+    OFFSET(
+      $F268,
+      MATCH( $E268, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C268 | =if(AND(B268>0,B268<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A268, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B269 | =IF(A269="","",
+SUM(
+    OFFSET(
+      $F269,
+      MATCH( $E269, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C269 | =if(AND(B269>0,B269<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A269, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B270 | =IF(A270="","",
+SUM(
+    OFFSET(
+      $F270,
+      MATCH( $E270, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C270 | =if(AND(B270>0,B270<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A270, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B271 | =IF(A271="","",
+SUM(
+    OFFSET(
+      $F271,
+      MATCH( $E271, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C271 | =if(AND(B271>0,B271<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A271, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B272 | =IF(A272="","",
+SUM(
+    OFFSET(
+      $F272,
+      MATCH( $E272, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C272 | =if(AND(B272>0,B272<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A272, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B273 | =IF(A273="","",
+SUM(
+    OFFSET(
+      $F273,
+      MATCH( $E273, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C273 | =if(AND(B273>0,B273<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A273, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B274 | =IF(A274="","",
+SUM(
+    OFFSET(
+      $F274,
+      MATCH( $E274, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C274 | =if(AND(B274>0,B274<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A274, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B275 | =IF(A275="","",
+SUM(
+    OFFSET(
+      $F275,
+      MATCH( $E275, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C275 | =if(AND(B275>0,B275<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A275, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B276 | =IF(A276="","",
+SUM(
+    OFFSET(
+      $F276,
+      MATCH( $E276, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C276 | =if(AND(B276>0,B276<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A276, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B277 | =IF(A277="","",
+SUM(
+    OFFSET(
+      $F277,
+      MATCH( $E277, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C277 | =if(AND(B277>0,B277<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A277, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B278 | =IF(A278="","",
+SUM(
+    OFFSET(
+      $F278,
+      MATCH( $E278, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C278 | =if(AND(B278>0,B278<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A278, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B279 | =IF(A279="","",
+SUM(
+    OFFSET(
+      $F279,
+      MATCH( $E279, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C279 | =if(AND(B279>0,B279<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A279, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B280 | =IF(A280="","",
+SUM(
+    OFFSET(
+      $F280,
+      MATCH( $E280, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C280 | =if(AND(B280>0,B280<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A280, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B281 | =IF(A281="","",
+SUM(
+    OFFSET(
+      $F281,
+      MATCH( $E281, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C281 | =if(AND(B281>0,B281<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A281, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B282 | =IF(A282="","",
+SUM(
+    OFFSET(
+      $F282,
+      MATCH( $E282, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C282 | =if(AND(B282>0,B282<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A282, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B283 | =IF(A283="","",
+SUM(
+    OFFSET(
+      $F283,
+      MATCH( $E283, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C283 | =if(AND(B283>0,B283<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A283, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B284 | =IF(A284="","",
+SUM(
+    OFFSET(
+      $F284,
+      MATCH( $E284, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C284 | =if(AND(B284>0,B284<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A284, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B285 | =IF(A285="","",
+SUM(
+    OFFSET(
+      $F285,
+      MATCH( $E285, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C285 | =if(AND(B285>0,B285<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A285, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B286 | =IF(A286="","",
+SUM(
+    OFFSET(
+      $F286,
+      MATCH( $E286, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C286 | =if(AND(B286>0,B286<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A286, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B287 | =IF(A287="","",
+SUM(
+    OFFSET(
+      $F287,
+      MATCH( $E287, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C287 | =if(AND(B287>0,B287<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A287, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B288 | =IF(A288="","",
+SUM(
+    OFFSET(
+      $F288,
+      MATCH( $E288, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C288 | =if(AND(B288>0,B288<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A288, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B289 | =IF(A289="","",
+SUM(
+    OFFSET(
+      $F289,
+      MATCH( $E289, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C289 | =if(AND(B289>0,B289<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A289, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B290 | =IF(A290="","",
+SUM(
+    OFFSET(
+      $F290,
+      MATCH( $E290, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C290 | =if(AND(B290>0,B290<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A290, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B291 | =IF(A291="","",
+SUM(
+    OFFSET(
+      $F291,
+      MATCH( $E291, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C291 | =if(AND(B291>0,B291<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A291, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B292 | =IF(A292="","",
+SUM(
+    OFFSET(
+      $F292,
+      MATCH( $E292, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C292 | =if(AND(B292>0,B292<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A292, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B293 | =IF(A293="","",
+SUM(
+    OFFSET(
+      $F293,
+      MATCH( $E293, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C293 | =if(AND(B293>0,B293<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A293, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B294 | =IF(A294="","",
+SUM(
+    OFFSET(
+      $F294,
+      MATCH( $E294, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C294 | =if(AND(B294>0,B294<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A294, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B295 | =IF(A295="","",
+SUM(
+    OFFSET(
+      $F295,
+      MATCH( $E295, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C295 | =if(AND(B295>0,B295<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A295, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B296 | =IF(A296="","",
+SUM(
+    OFFSET(
+      $F296,
+      MATCH( $E296, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C296 | =if(AND(B296>0,B296<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A296, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B297 | =IF(A297="","",
+SUM(
+    OFFSET(
+      $F297,
+      MATCH( $E297, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C297 | =if(AND(B297>0,B297<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A297, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B298 | =IF(A298="","",
+SUM(
+    OFFSET(
+      $F298,
+      MATCH( $E298, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C298 | =if(AND(B298>0,B298<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A298, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B299 | =IF(A299="","",
+SUM(
+    OFFSET(
+      $F299,
+      MATCH( $E299, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C299 | =if(AND(B299>0,B299<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A299, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B300 | =IF(A300="","",
+SUM(
+    OFFSET(
+      $F300,
+      MATCH( $E300, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C300 | =if(AND(B300>0,B300<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A300, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B301 | =IF(A301="","",
+SUM(
+    OFFSET(
+      $F301,
+      MATCH( $E301, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C301 | =if(AND(B301>0,B301<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A301, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B302 | =IF(A302="","",
+SUM(
+    OFFSET(
+      $F302,
+      MATCH( $E302, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C302 | =if(AND(B302>0,B302<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A302, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B303 | =IF(A303="","",
+SUM(
+    OFFSET(
+      $F303,
+      MATCH( $E303, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C303 | =if(AND(B303>0,B303<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A303, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B304 | =IF(A304="","",
+SUM(
+    OFFSET(
+      $F304,
+      MATCH( $E304, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C304 | =if(AND(B304>0,B304<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A304, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B305 | =IF(A305="","",
+SUM(
+    OFFSET(
+      $F305,
+      MATCH( $E305, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C305 | =if(AND(B305>0,B305<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A305, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B306 | =IF(A306="","",
+SUM(
+    OFFSET(
+      $F306,
+      MATCH( $E306, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C306 | =if(AND(B306>0,B306<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A306, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B307 | =IF(A307="","",
+SUM(
+    OFFSET(
+      $F307,
+      MATCH( $E307, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C307 | =if(AND(B307>0,B307<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A307, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B308 | =IF(A308="","",
+SUM(
+    OFFSET(
+      $F308,
+      MATCH( $E308, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C308 | =if(AND(B308>0,B308<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A308, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B309 | =IF(A309="","",
+SUM(
+    OFFSET(
+      $F309,
+      MATCH( $E309, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C309 | =if(AND(B309>0,B309<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A309, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B310 | =IF(A310="","",
+SUM(
+    OFFSET(
+      $F310,
+      MATCH( $E310, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C310 | =if(AND(B310>0,B310<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A310, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B311 | =IF(A311="","",
+SUM(
+    OFFSET(
+      $F311,
+      MATCH( $E311, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C311 | =if(AND(B311>0,B311<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A311, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B312 | =IF(A312="","",
+SUM(
+    OFFSET(
+      $F312,
+      MATCH( $E312, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C312 | =if(AND(B312>0,B312<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A312, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B313 | =IF(A313="","",
+SUM(
+    OFFSET(
+      $F313,
+      MATCH( $E313, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C313 | =if(AND(B313>0,B313<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A313, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B314 | =IF(A314="","",
+SUM(
+    OFFSET(
+      $F314,
+      MATCH( $E314, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C314 | =if(AND(B314>0,B314<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A314, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B315 | =IF(A315="","",
+SUM(
+    OFFSET(
+      $F315,
+      MATCH( $E315, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C315 | =if(AND(B315>0,B315<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A315, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B316 | =IF(A316="","",
+SUM(
+    OFFSET(
+      $F316,
+      MATCH( $E316, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C316 | =if(AND(B316>0,B316<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A316, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B317 | =IF(A317="","",
+SUM(
+    OFFSET(
+      $F317,
+      MATCH( $E317, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C317 | =if(AND(B317>0,B317<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A317, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B318 | =IF(A318="","",
+SUM(
+    OFFSET(
+      $F318,
+      MATCH( $E318, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C318 | =if(AND(B318>0,B318<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A318, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B319 | =IF(A319="","",
+SUM(
+    OFFSET(
+      $F319,
+      MATCH( $E319, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C319 | =if(AND(B319>0,B319<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A319, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B320 | =IF(A320="","",
+SUM(
+    OFFSET(
+      $F320,
+      MATCH( $E320, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C320 | =if(AND(B320>0,B320<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A320, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B321 | =IF(A321="","",
+SUM(
+    OFFSET(
+      $F321,
+      MATCH( $E321, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C321 | =if(AND(B321>0,B321<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A321, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B322 | =IF(A322="","",
+SUM(
+    OFFSET(
+      $F322,
+      MATCH( $E322, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C322 | =if(AND(B322>0,B322<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A322, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B323 | =IF(A323="","",
+SUM(
+    OFFSET(
+      $F323,
+      MATCH( $E323, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C323 | =if(AND(B323>0,B323<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A323, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B324 | =IF(A324="","",
+SUM(
+    OFFSET(
+      $F324,
+      MATCH( $E324, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C324 | =if(AND(B324>0,B324<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A324, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B325 | =IF(A325="","",
+SUM(
+    OFFSET(
+      $F325,
+      MATCH( $E325, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C325 | =if(AND(B325>0,B325<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A325, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B326 | =IF(A326="","",
+SUM(
+    OFFSET(
+      $F326,
+      MATCH( $E326, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C326 | =if(AND(B326>0,B326<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A326, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B327 | =IF(A327="","",
+SUM(
+    OFFSET(
+      $F327,
+      MATCH( $E327, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C327 | =if(AND(B327>0,B327<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A327, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B328 | =IF(A328="","",
+SUM(
+    OFFSET(
+      $F328,
+      MATCH( $E328, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C328 | =if(AND(B328>0,B328<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A328, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B329 | =IF(A329="","",
+SUM(
+    OFFSET(
+      $F329,
+      MATCH( $E329, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C329 | =if(AND(B329>0,B329<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A329, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B330 | =IF(A330="","",
+SUM(
+    OFFSET(
+      $F330,
+      MATCH( $E330, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C330 | =if(AND(B330>0,B330<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A330, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B331 | =IF(A331="","",
+SUM(
+    OFFSET(
+      $F331,
+      MATCH( $E331, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C331 | =if(AND(B331>0,B331<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A331, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B332 | =IF(A332="","",
+SUM(
+    OFFSET(
+      $F332,
+      MATCH( $E332, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C332 | =if(AND(B332>0,B332<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A332, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B333 | =IF(A333="","",
+SUM(
+    OFFSET(
+      $F333,
+      MATCH( $E333, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C333 | =if(AND(B333>0,B333<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A333, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B334 | =IF(A334="","",
+SUM(
+    OFFSET(
+      $F334,
+      MATCH( $E334, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C334 | =if(AND(B334>0,B334<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A334, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B335 | =IF(A335="","",
+SUM(
+    OFFSET(
+      $F335,
+      MATCH( $E335, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C335 | =if(AND(B335>0,B335<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A335, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B336 | =IF(A336="","",
+SUM(
+    OFFSET(
+      $F336,
+      MATCH( $E336, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C336 | =if(AND(B336>0,B336<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A336, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B337 | =IF(A337="","",
+SUM(
+    OFFSET(
+      $F337,
+      MATCH( $E337, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C337 | =if(AND(B337>0,B337<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A337, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B338 | =IF(A338="","",
+SUM(
+    OFFSET(
+      $F338,
+      MATCH( $E338, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C338 | =if(AND(B338>0,B338<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A338, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B339 | =IF(A339="","",
+SUM(
+    OFFSET(
+      $F339,
+      MATCH( $E339, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C339 | =if(AND(B339>0,B339<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A339, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B340 | =IF(A340="","",
+SUM(
+    OFFSET(
+      $F340,
+      MATCH( $E340, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C340 | =if(AND(B340>0,B340<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A340, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B341 | =IF(A341="","",
+SUM(
+    OFFSET(
+      $F341,
+      MATCH( $E341, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C341 | =if(AND(B341>0,B341<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A341, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B342 | =IF(A342="","",
+SUM(
+    OFFSET(
+      $F342,
+      MATCH( $E342, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C342 | =if(AND(B342>0,B342<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A342, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B343 | =IF(A343="","",
+SUM(
+    OFFSET(
+      $F343,
+      MATCH( $E343, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C343 | =if(AND(B343>0,B343<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A343, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B344 | =IF(A344="","",
+SUM(
+    OFFSET(
+      $F344,
+      MATCH( $E344, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C344 | =if(AND(B344>0,B344<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A344, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B345 | =IF(A345="","",
+SUM(
+    OFFSET(
+      $F345,
+      MATCH( $E345, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C345 | =if(AND(B345>0,B345<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A345, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B346 | =IF(A346="","",
+SUM(
+    OFFSET(
+      $F346,
+      MATCH( $E346, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C346 | =if(AND(B346>0,B346<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A346, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B347 | =IF(A347="","",
+SUM(
+    OFFSET(
+      $F347,
+      MATCH( $E347, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C347 | =if(AND(B347>0,B347<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A347, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B348 | =IF(A348="","",
+SUM(
+    OFFSET(
+      $F348,
+      MATCH( $E348, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C348 | =if(AND(B348>0,B348<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A348, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B349 | =IF(A349="","",
+SUM(
+    OFFSET(
+      $F349,
+      MATCH( $E349, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C349 | =if(AND(B349>0,B349<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A349, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B350 | =IF(A350="","",
+SUM(
+    OFFSET(
+      $F350,
+      MATCH( $E350, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C350 | =if(AND(B350>0,B350<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A350, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B351 | =IF(A351="","",
+SUM(
+    OFFSET(
+      $F351,
+      MATCH( $E351, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C351 | =if(AND(B351>0,B351<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A351, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B352 | =IF(A352="","",
+SUM(
+    OFFSET(
+      $F352,
+      MATCH( $E352, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C352 | =if(AND(B352>0,B352<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A352, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B353 | =IF(A353="","",
+SUM(
+    OFFSET(
+      $F353,
+      MATCH( $E353, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C353 | =if(AND(B353>0,B353<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A353, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B354 | =IF(A354="","",
+SUM(
+    OFFSET(
+      $F354,
+      MATCH( $E354, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C354 | =if(AND(B354>0,B354<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A354, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B355 | =IF(A355="","",
+SUM(
+    OFFSET(
+      $F355,
+      MATCH( $E355, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C355 | =if(AND(B355>0,B355<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A355, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B356 | =IF(A356="","",
+SUM(
+    OFFSET(
+      $F356,
+      MATCH( $E356, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C356 | =if(AND(B356>0,B356<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A356, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B357 | =IF(A357="","",
+SUM(
+    OFFSET(
+      $F357,
+      MATCH( $E357, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C357 | =if(AND(B357>0,B357<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A357, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B358 | =IF(A358="","",
+SUM(
+    OFFSET(
+      $F358,
+      MATCH( $E358, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C358 | =if(AND(B358>0,B358<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A358, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B359 | =IF(A359="","",
+SUM(
+    OFFSET(
+      $F359,
+      MATCH( $E359, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C359 | =if(AND(B359>0,B359<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A359, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B360 | =IF(A360="","",
+SUM(
+    OFFSET(
+      $F360,
+      MATCH( $E360, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C360 | =if(AND(B360>0,B360<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A360, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B361 | =IF(A361="","",
+SUM(
+    OFFSET(
+      $F361,
+      MATCH( $E361, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C361 | =if(AND(B361>0,B361<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A361, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B362 | =IF(A362="","",
+SUM(
+    OFFSET(
+      $F362,
+      MATCH( $E362, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C362 | =if(AND(B362>0,B362<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A362, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B363 | =IF(A363="","",
+SUM(
+    OFFSET(
+      $F363,
+      MATCH( $E363, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C363 | =if(AND(B363>0,B363<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A363, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B364 | =IF(A364="","",
+SUM(
+    OFFSET(
+      $F364,
+      MATCH( $E364, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C364 | =if(AND(B364>0,B364<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A364, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B365 | =IF(A365="","",
+SUM(
+    OFFSET(
+      $F365,
+      MATCH( $E365, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C365 | =if(AND(B365>0,B365<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A365, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B366 | =IF(A366="","",
+SUM(
+    OFFSET(
+      $F366,
+      MATCH( $E366, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C366 | =if(AND(B366>0,B366<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A366, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B367 | =IF(A367="","",
+SUM(
+    OFFSET(
+      $F367,
+      MATCH( $E367, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C367 | =if(AND(B367>0,B367<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A367, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B368 | =IF(A368="","",
+SUM(
+    OFFSET(
+      $F368,
+      MATCH( $E368, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C368 | =if(AND(B368>0,B368<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A368, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B369 | =IF(A369="","",
+SUM(
+    OFFSET(
+      $F369,
+      MATCH( $E369, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C369 | =if(AND(B369>0,B369<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A369, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B370 | =IF(A370="","",
+SUM(
+    OFFSET(
+      $F370,
+      MATCH( $E370, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C370 | =if(AND(B370>0,B370<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A370, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B371 | =IF(A371="","",
+SUM(
+    OFFSET(
+      $F371,
+      MATCH( $E371, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C371 | =if(AND(B371>0,B371<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A371, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B372 | =IF(A372="","",
+SUM(
+    OFFSET(
+      $F372,
+      MATCH( $E372, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C372 | =if(AND(B372>0,B372<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A372, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B373 | =IF(A373="","",
+SUM(
+    OFFSET(
+      $F373,
+      MATCH( $E373, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C373 | =if(AND(B373>0,B373<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A373, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B374 | =IF(A374="","",
+SUM(
+    OFFSET(
+      $F374,
+      MATCH( $E374, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C374 | =if(AND(B374>0,B374<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A374, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B375 | =IF(A375="","",
+SUM(
+    OFFSET(
+      $F375,
+      MATCH( $E375, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C375 | =if(AND(B375>0,B375<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A375, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B376 | =IF(A376="","",
+SUM(
+    OFFSET(
+      $F376,
+      MATCH( $E376, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C376 | =if(AND(B376>0,B376<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A376, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B377 | =IF(A377="","",
+SUM(
+    OFFSET(
+      $F377,
+      MATCH( $E377, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C377 | =if(AND(B377>0,B377<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A377, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B378 | =IF(A378="","",
+SUM(
+    OFFSET(
+      $F378,
+      MATCH( $E378, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C378 | =if(AND(B378>0,B378<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A378, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B379 | =IF(A379="","",
+SUM(
+    OFFSET(
+      $F379,
+      MATCH( $E379, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C379 | =if(AND(B379>0,B379<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A379, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B380 | =IF(A380="","",
+SUM(
+    OFFSET(
+      $F380,
+      MATCH( $E380, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C380 | =if(AND(B380>0,B380<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A380, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B381 | =IF(A381="","",
+SUM(
+    OFFSET(
+      $F381,
+      MATCH( $E381, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C381 | =if(AND(B381>0,B381<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A381, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B382 | =IF(A382="","",
+SUM(
+    OFFSET(
+      $F382,
+      MATCH( $E382, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C382 | =if(AND(B382>0,B382<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A382, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B383 | =IF(A383="","",
+SUM(
+    OFFSET(
+      $F383,
+      MATCH( $E383, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C383 | =if(AND(B383>0,B383<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A383, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B384 | =IF(A384="","",
+SUM(
+    OFFSET(
+      $F384,
+      MATCH( $E384, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C384 | =if(AND(B384>0,B384<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A384, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B385 | =IF(A385="","",
+SUM(
+    OFFSET(
+      $F385,
+      MATCH( $E385, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C385 | =if(AND(B385>0,B385<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A385, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B386 | =IF(A386="","",
+SUM(
+    OFFSET(
+      $F386,
+      MATCH( $E386, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C386 | =if(AND(B386>0,B386<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A386, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B387 | =IF(A387="","",
+SUM(
+    OFFSET(
+      $F387,
+      MATCH( $E387, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C387 | =if(AND(B387>0,B387<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A387, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+B388 | =IF(A388="","",
+SUM(
+    OFFSET(
+      $F388,
+      MATCH( $E388, $E$3:$E, 0 ) - 1, 
+      0,
+      2
+    )
+  )) |  | FMT=CURRENCY:"$"#,##0
+C388 | =if(AND(B388>0,B388<>""),TEXTJOIN("
+", TRUE,
+  OFFSET(
+    $G$3,
+    MATCH($A388, $E$3:$E, 0) - 1,
+    0,
+    2
+  )
+),"") | 
+
+## 951 non-empty cells

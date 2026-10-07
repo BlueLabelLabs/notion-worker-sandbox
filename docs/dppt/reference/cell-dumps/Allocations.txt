@@ -1,0 +1,113 @@
+# TAB: Allocations  (block starts at row 1, col A)
+
+hidden rows: []
+hidden cols: []
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+A1 | =if(checkboxOptionMonthly,
+LET(
+  roles,      Tasks!$B$6:$AE$6,           
+  includes,   Tasks!$B$9:$AE$9,           
+  phases,     FILTER( Tasks!$AM$14:$AM, Tasks!$AM$14:$AM>0),
+  firstPhase, INDEX(phases,0),
+  restPhases, FILTER( Tasks!$AM$14:$AM, Tasks!$AM$14:$AM>1),
+  headerRow,  {"Role","Hours per month"},
+  makeSection,
+    LAMBDA(p,
+      LET(
+        title,   INDEX( Tasks!$A:$A, MATCH(p,Tasks!$AM:$AM,0) ),
+        price,   INDEX( Tasks!$AO:$AO, MATCH(p,Tasks!$AM:$AM,0) ),
+        months,  INDEX( Tasks!$AF:$AF, MATCH(p,Tasks!$AM:$AM,0) ),
+        adjFactor, MIN(1, months),
+        hoursRow, INDEX( Tasks!$B:$AE, MATCH(p,Tasks!$AM:$AM,0) ),
+        hoursRowMonth, ARRAYFORMULA(IF(ISNUMBER(hoursRow), hoursRow * 4 * adjFactor, hoursRow)),
+        rawData,  TRANSPOSE({ roles; hoursRowMonth}),
+        filtered, FILTER( 
+                         rawData,
+                         TRANSPOSE(includes),
+                         INDEX(rawData,,2)>0 
+                        ),      
+        VSTACK(
+          { title, formatToUSD(price * adjFactor) },
+          headerRow,
+          filtered,
+          {"",""}
+        )
+      )
+    ),
+  firstBlock, makeSection(firstPhase),
+  REDUCE(
+    firstBlock,
+    restPhases,
+    LAMBDA(acc,p, VSTACK(acc, makeSection(p)))
+  )
+),
+LET(
+  roles,      Tasks!$B$6:$AE$6,           
+  includes,   Tasks!$B$9:$AE$9,           
+  phases,     FILTER( Tasks!$AM$14:$AM, Tasks!$AM$14:$AM>0),
+  firstPhase, INDEX(phases,0),
+  restPhases, FILTER( Tasks!$AM$14:$AM, Tasks!$AM$14:$AM>1),
+  headerRow,  {"Role","Hours per sprint"},
+  makeSection,
+    LAMBDA(p,
+      LET(
+        title,   INDEX( Tasks!$A:$A, MATCH(p,Tasks!$AM:$AM,0) ),
+        price,   INDEX( Tasks!$AO:$AO, MATCH(p,Tasks!$AM:$AM,0) ),
+        count,   INDEX( Tasks!$AF:$AF, MATCH(p,Tasks!$AM:$AM,0) ),
+        end,     SUMIF( Tasks!$AM:$AM, "<="&p, Tasks!$AF:$AF ),
+        start,   end - count + 1,
+        label,   IF(
+                   count=1,
+                   "Sprint "&start&" | "&title,
+                   "Sprints "&start&"-"&end&" | "&title
+                 ),
+        hoursRow, INDEX( Tasks!$B:$AE, MATCH(p,Tasks!$AM:$AM,0) ),
+        hoursRowSprint, ARRAYFORMULA(IF(ISNUMBER(hoursRow), hoursRow * 2, hoursRow)),
+        rawData,  TRANSPOSE({ roles; hoursRowSprint}),
+        filtered, FILTER( 
+                         rawData,
+                         TRANSPOSE(includes),
+                         INDEX(rawData,,2)>0 
+                        ),      
+        VSTACK(
+          { label, formatToUSD(price) },
+          headerRow,
+          filtered,
+          {"",""}
+        )
+      )
+    ),
+  firstBlock, makeSection(firstPhase),
+  REDUCE(
+    firstBlock,
+    restPhases,
+    LAMBDA(acc,p, VSTACK(acc, makeSection(p)))
+  )
+)
+) | "Sprints 1-2 | Discovery Team" | FMT=TEXT:
+B1 |  | "$28,667"
+A2 |  | "Role"
+B2 |  | "Hours per sprint"
+A3 |  | "Strategist"
+B3 |  | "20"
+A4 |  | "Product Partner"
+B4 |  | "40"
+A5 |  | "Engineering Architect"
+B5 |  | "20"
+A6 |  | "Executive Client Partner"
+B6 |  | "4"
+A8 |  | "Sprint 3 | Validation Team"
+B8 |  | "$45,333"
+A9 |  | "Role"
+B9 |  | "Hours per sprint"
+A10 |  | "Product Partner"
+B10 |  | "40"
+A11 |  | "Engineering Architect"
+B11 |  | "10"
+A12 |  | "AI Engineer"
+B12 |  | "80"
+A13 |  | "Executive Client Partner"
+B13 |  | "4"
+
+## 24 non-empty cells

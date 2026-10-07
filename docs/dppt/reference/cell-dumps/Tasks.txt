@@ -1,0 +1,734 @@
+# TAB: Tasks  (block starts at row 1, col A)
+
+hidden rows: [7, 8, 9, 10, 11, 12, 13, 14, 22]
+hidden cols: ['D', 'E', 'F', 'G', 'I', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'X', 'Y', 'Z', 'AA', 'AB', 'AC', 'AD', 'AE', 'AG', 'AH', 'AI', 'AJ', 'AK', 'AL', 'AM', 'AN', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BK', 'BL', 'BM', 'BN', 'BO', 'BP', 'BQ', 'BR', 'BS', 'BT', 'BU', 'BV', 'BW', 'BX', 'BY']
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+AP1 | =if(AR3=true,totalPrice,"") | "$102,667"
+AQ1 | =MIN(AQ14:AQ) | "1/4/27" | FMT=DATE:m"/"d"/"yy
+AR1 | =MAX(AR14:AR) | "2/14/27" | FMT=DATE:m"/"d"/"yy
+AS1 | =IF(checkboxOptionMonthly, DATEDIF(AQ1, AR1 + 1, "M") & " months", ROUNDDOWN((AR1-AQ1)/7) & " weeks") | "5 weeks"
+A2 | =if(AR4,"Monthly","Sprint-based") & " Engagement" | "Sprint-based Engagement"
+AR3 | TRUE | "TRUE" | DV[BOOLEAN:[]]
+AS3 | "Show Total" | "Show Total"
+AR4 | FALSE | "FALSE" | DV[BOOLEAN:[]]
+AS4 | "Monthly" | "Monthly"
+B5 | "WEEKLY HOURS" | "WEEKLY HOURS"
+A6 | "Phase / Sprint / Team / Milestone / Task" | "Phase / Sprint / Team / Milestone / Task"
+B6 | =VLOOKUP(B7,Team!$A2:$C,3) | "Strategist"
+C6 | =VLOOKUP(C7,Team!$A2:$C,3) | "Product Partner"
+D6 | =VLOOKUP(D7,Team!$A2:$C,3) | "Design Lead"
+E6 | =VLOOKUP(E7,Team!$A2:$C,3) | "Product Designer"
+F6 | =VLOOKUP(F7,Team!$A2:$C,3) | "Brand Designer"
+G6 | =VLOOKUP(G7,Team!$A2:$C,3) | "Illustrator"
+H6 | =VLOOKUP(H7,Team!$A2:$C,3) | "Engineering Architect"
+I6 | =VLOOKUP(I7,Team!$A2:$C,3) | "Engineering Partner"
+J6 | =VLOOKUP(J7,Team!$A2:$C,3) | "AI Engineer"
+K6 | =VLOOKUP(K7,Team!$A2:$C,3) | "Full Stack Engineer"
+L6 | =VLOOKUP(L7,Team!$A2:$C,3) | "Frontend Developer"
+M6 | =VLOOKUP(M7,Team!$A2:$C,3) | "Frontend Developer 2"
+N6 | =VLOOKUP(N7,Team!$A2:$C,3) | "Frontend Developer 3"
+O6 | =VLOOKUP(O7,Team!$A2:$C,3) | "Backend Developer"
+P6 | =VLOOKUP(P7,Team!$A2:$C,3) | "Backend Developer 2"
+Q6 | =VLOOKUP(Q7,Team!$A2:$C,3) | "Backend Developer 3"
+R6 | =VLOOKUP(R7,Team!$A2:$C,3) | "Backend Developer 4"
+S6 | =VLOOKUP(S7,Team!$A2:$C,3) | "QA Engineer"
+T6 | =VLOOKUP(T7,Team!$A2:$C,3) | "QA Engineer"
+U6 | =VLOOKUP(U7,Team!$A2:$C,3) | "Unity Developer"
+V6 | =VLOOKUP(V7,Team!$A2:$C,3) | "Client Partner"
+W6 | =VLOOKUP(W7,Team!$A2:$C,3) | "Executive Client Partner"
+X6 | =VLOOKUP(X7,Team!$A2:$C,3) | 
+Y6 | =VLOOKUP(Y7,Team!$A2:$C,3) | 
+Z6 | =VLOOKUP(Z7,Team!$A2:$C,3) | 
+AA6 | =VLOOKUP(AA7,Team!$A2:$C,3) | 
+AB6 | =VLOOKUP(AB7,Team!$A2:$C,3) | 
+AC6 | =VLOOKUP(AC7,Team!$A2:$C,3) | 
+AD6 | =VLOOKUP(AD7,Team!$A2:$C,3) | 
+AE6 | =VLOOKUP(AE7,Team!$A2:$C,3) | 
+AF6 | ="# of " & if(checkboxOptionMonthly,"Months","Sprints") | "# of Sprints" | FMT=CURRENCY:"$"#,##0
+AG6 | "Weeks" | "Weeks"
+AH6 | "Phase\nRunSum" | "Phase\nRunSum"
+AK6 | "Weekly \nRate" | "Weekly \nRate" | FMT=CURRENCY:"$"#,##0
+AL6 | "Weekly \nHours" | "Weekly \nHours" | FMT=CURRENCY:"$"#,##0
+AM6 | "Phase #" | "Phase #"
+AN6 | "Phase Title" | "Phase Title"
+AO6 | =if(checkboxOptionMonthly,"Month","Sprint") & " Fee" | "Sprint Fee" | FMT=CURRENCY:"$"#,##0
+AP6 | "Subtotal" | "Subtotal" | FMT=CURRENCY:"$"#,##0
+AQ6 | "Start" | "Start"
+AR6 | "End" | "End"
+AS6 | "Delivery Notes" | "Delivery Notes" | FMT=CURRENCY:"$"#,##0
+AT6 | =B6 | "Strategist"
+AU6 | =C6 | "Product Partner"
+AV6 | =D6 | "Design Lead"
+AW6 | =E6 | "Product Designer"
+AX6 | =F6 | "Brand Designer"
+AY6 | =G6 | "Illustrator"
+AZ6 | =H6 | "Engineering Architect"
+BA6 | =I6 | "Engineering Partner"
+BB6 | =J6 | "AI Engineer"
+BC6 | =K6 | "Full Stack Engineer"
+BD6 | =L6 | "Frontend Developer"
+BE6 | =M6 | "Frontend Developer 2"
+BF6 | =N6 | "Frontend Developer 3"
+BG6 | =O6 | "Backend Developer"
+BH6 | =P6 | "Backend Developer 2"
+BI6 | =Q6 | "Backend Developer 3"
+BJ6 | =R6 | "Backend Developer 4"
+BK6 | =S6 | "QA Engineer"
+BL6 | =T6 | "QA Engineer"
+BM6 | =U6 | "Unity Developer"
+BN6 | =V6 | "Client Partner"
+BO6 | =W6 | "Executive Client Partner"
+BP6 | =X6 | 
+BQ6 | =Y6 | 
+BR6 | =Z6 | 
+BS6 | =AA6 | 
+BT6 | =AB6 | 
+BU6 | =AC6 | 
+BV6 | =AD6 | 
+BW6 | =AE6 | 
+BX6 | "Sprint Text" | "Sprint Text"
+BY6 | "Team" | "Team"
+A7 | "ID" | "ID"
+B7 | 1 | "1"
+C7 | 2 | "2"
+D7 | 3 | "3"
+E7 | 4 | "4"
+F7 | 5 | "5"
+G7 | 6 | "6"
+H7 | 7 | "7"
+I7 | 8 | "8"
+J7 | 9 | "9"
+K7 | 10 | "10"
+L7 | 11 | "11"
+M7 | 12 | "12"
+N7 | 13 | "13"
+O7 | 14 | "14"
+P7 | 15 | "15"
+Q7 | 16 | "16"
+R7 | 17 | "17"
+S7 | 18 | "18"
+T7 | 19 | "19"
+U7 | 20 | "20"
+V7 | 21 | "21"
+W7 | 22 | "22"
+X7 | 23 | "23"
+Y7 | 24 | "24"
+Z7 | 25 | "25"
+AA7 | 26 | "26"
+AB7 | 27 | "27"
+AC7 | 28 | "28"
+AD7 | 29 | "29"
+AE7 | 30 | "30"
+AT7 | 1 | "1"
+AU7 | 2 | "2"
+AV7 | 3 | "3"
+AW7 | 4 | "4"
+AX7 | 5 | "5"
+AY7 | 6 | "6"
+AZ7 | 7 | "7"
+BA7 | 8 | "8"
+BB7 | 9 | "9"
+BC7 | 10 | "10"
+BD7 | 11 | "11"
+BE7 | 12 | "12"
+BF7 | 13 | "13"
+BG7 | 14 | "14"
+BH7 | 15 | "15"
+BI7 | 16 | "16"
+BJ7 | 17 | "17"
+BK7 | 18 | "18"
+BL7 | 19 | "19"
+BM7 | 20 | "20"
+BN7 | 21 | "21"
+BO7 | 22 | "22"
+BP7 | 23 | "23"
+BQ7 | 24 | "24"
+BR7 | 25 | "25"
+BS7 | 26 | "26"
+BT7 | 27 | "27"
+BU7 | 28 | "28"
+BV7 | 29 | "29"
+BW7 | 30 | "30"
+A8 | "Role Capability" | "Role Capability"
+B8 | =IF(ISBLANK(B6),"",VLOOKUP(B6,Team!$C:$L,6,FALSE)) | "Product"
+C8 | =IF(ISBLANK(C6),"",VLOOKUP(C6,Team!$C:$L,6,FALSE)) | "Product"
+D8 | =IF(ISBLANK(D6),"",VLOOKUP(D6,Team!$C:$L,6,FALSE)) | "Product"
+E8 | =IF(ISBLANK(E6),"",VLOOKUP(E6,Team!$C:$L,6,FALSE)) | "Product"
+F8 | =IF(ISBLANK(F6),"",VLOOKUP(F6,Team!$C:$L,6,FALSE)) | "Product"
+G8 | =IF(ISBLANK(G6),"",VLOOKUP(G6,Team!$C:$L,6,FALSE)) | "Product"
+H8 | =IF(ISBLANK(H6),"",VLOOKUP(H6,Team!$C:$L,6,FALSE)) | "Engineering"
+I8 | =IF(ISBLANK(I6),"",VLOOKUP(I6,Team!$C:$L,6,FALSE)) | "Engineering"
+J8 | =IF(ISBLANK(J6),"",VLOOKUP(J6,Team!$C:$L,6,FALSE)) | "Engineering"
+K8 | =IF(ISBLANK(K6),"",VLOOKUP(K6,Team!$C:$L,6,FALSE)) | "Engineering"
+L8 | =IF(ISBLANK(L6),"",VLOOKUP(L6,Team!$C:$L,6,FALSE)) | "Engineering"
+M8 | =IF(ISBLANK(M6),"",VLOOKUP(M6,Team!$C:$L,6,FALSE)) | "Engineering"
+N8 | =IF(ISBLANK(N6),"",VLOOKUP(N6,Team!$C:$L,6,FALSE)) | "Engineering"
+O8 | =IF(ISBLANK(O6),"",VLOOKUP(O6,Team!$C:$L,6,FALSE)) | "Engineering"
+P8 | =IF(ISBLANK(P6),"",VLOOKUP(P6,Team!$C:$L,6,FALSE)) | "Engineering"
+Q8 | =IF(ISBLANK(Q6),"",VLOOKUP(Q6,Team!$C:$L,6,FALSE)) | "Engineering"
+R8 | =IF(ISBLANK(R6),"",VLOOKUP(R6,Team!$C:$L,6,FALSE)) | "Engineering"
+S8 | =IF(ISBLANK(S6),"",VLOOKUP(S6,Team!$C:$L,6,FALSE)) | "Engineering"
+T8 | =IF(ISBLANK(T6),"",VLOOKUP(T6,Team!$C:$L,6,FALSE)) | "Engineering"
+U8 | =IF(ISBLANK(U6),"",VLOOKUP(U6,Team!$C:$L,6,FALSE)) | "Engineering"
+V8 | =IF(ISBLANK(V6),"",VLOOKUP(V6,Team!$C:$L,6,FALSE)) | 
+W8 | =IF(ISBLANK(W6),"",VLOOKUP(W6,Team!$C:$L,6,FALSE)) | 
+X8 | =IF(ISBLANK(X6),"",VLOOKUP(X6,Team!$C:$L,6,FALSE)) | 
+Y8 | =IF(ISBLANK(Y6),"",VLOOKUP(Y6,Team!$C:$L,6,FALSE)) | 
+Z8 | =IF(ISBLANK(Z6),"",VLOOKUP(Z6,Team!$C:$L,6,FALSE)) | 
+AA8 | =IF(ISBLANK(AA6),"",VLOOKUP(AA6,Team!$C:$L,6,FALSE)) | 
+AB8 | =IF(ISBLANK(AB6),"",VLOOKUP(AB6,Team!$C:$L,6,FALSE)) | 
+AC8 | =IF(ISBLANK(AC6),"",VLOOKUP(AC6,Team!$C:$L,6,FALSE)) | 
+AD8 | =IF(ISBLANK(AD6),"",VLOOKUP(AD6,Team!$C:$L,6,FALSE)) | 
+AE8 | =IF(ISBLANK(AE6),"",VLOOKUP(AE6,Team!$C:$L,6,FALSE)) | 
+A9 | "Visible / Included" | "Visible / Included"
+B9 | =VLOOKUP(B7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+C9 | =VLOOKUP(C7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+D9 | =VLOOKUP(D7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+E9 | =VLOOKUP(E7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+F9 | =VLOOKUP(F7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+G9 | =VLOOKUP(G7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+H9 | =VLOOKUP(H7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+I9 | =VLOOKUP(I7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+J9 | =VLOOKUP(J7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+K9 | =VLOOKUP(K7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+L9 | =VLOOKUP(L7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+M9 | =VLOOKUP(M7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+N9 | =VLOOKUP(N7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+O9 | =VLOOKUP(O7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+P9 | =VLOOKUP(P7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+Q9 | =VLOOKUP(Q7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+R9 | =VLOOKUP(R7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+S9 | =VLOOKUP(S7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+T9 | =VLOOKUP(T7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+U9 | =VLOOKUP(U7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+V9 | =VLOOKUP(V7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+W9 | =VLOOKUP(W7,Team!$A:$B,2,FALSE) | "TRUE" | DV[BOOLEAN:[]]
+X9 | =VLOOKUP(X7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+Y9 | =VLOOKUP(Y7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+Z9 | =VLOOKUP(Z7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+AA9 | =VLOOKUP(AA7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+AB9 | =VLOOKUP(AB7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+AC9 | =VLOOKUP(AC7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+AD9 | =VLOOKUP(AD7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+AE9 | =VLOOKUP(AE7,Team!$A:$B,2,FALSE) | "FALSE" | DV[BOOLEAN:[]]
+AF9 | TRUE | "TRUE" | FMT=CURRENCY:"$"#,##0
+AG9 | FALSE | "FALSE"
+AH9 | FALSE | "FALSE"
+AI9 | FALSE | "FALSE"
+AJ9 | FALSE | "FALSE"
+AK9 | FALSE | "FALSE" | FMT=CURRENCY:"$"#,##0
+AL9 | FALSE | "FALSE" | FMT=CURRENCY:"$"#,##0
+AM9 | FALSE | "FALSE"
+AO9 | =checkboxOptionShowFees | "TRUE" | FMT=CURRENCY:"$"#,##0
+AP9 | =checkboxOptionShowFees | "TRUE" | FMT=CURRENCY:"$"#,##0
+AQ9 | TRUE | "TRUE"
+AR9 | TRUE | "TRUE"
+AS9 | TRUE | "TRUE" | FMT=CURRENCY:"$"#,##0
+A10 | "Role Cost Rate" | "Role Cost Rate"
+B10 | =IF(B$9,IF(ISBLANK(B$6),0,VLOOKUP(B$6,Team!$C:$L,2,FALSE)),0) | "$95"
+C10 | =IF(C$9,IF(ISBLANK(C$6),0,VLOOKUP(C$6,Team!$C:$L,2,FALSE)),0) | "$80"
+D10 | =IF(D$9,IF(ISBLANK(D$6),0,VLOOKUP(D$6,Team!$C:$L,2,FALSE)),0) | "0"
+E10 | =IF(E$9,IF(ISBLANK(E$6),0,VLOOKUP(E$6,Team!$C:$L,2,FALSE)),0) | "0"
+F10 | =IF(F$9,IF(ISBLANK(F$6),0,VLOOKUP(F$6,Team!$C:$L,2,FALSE)),0) | "0"
+G10 | =IF(G$9,IF(ISBLANK(G$6),0,VLOOKUP(G$6,Team!$C:$L,2,FALSE)),0) | "0"
+H10 | =IF(H$9,IF(ISBLANK(H$6),0,VLOOKUP(H$6,Team!$C:$L,2,FALSE)),0) | "$110"
+I10 | =IF(I$9,IF(ISBLANK(I$6),0,VLOOKUP(I$6,Team!$C:$L,2,FALSE)),0) | "0"
+J10 | =IF(J$9,IF(ISBLANK(J$6),0,VLOOKUP(J$6,Team!$C:$L,2,FALSE)),0) | "$100"
+K10 | =IF(K$9,IF(ISBLANK(K$6),0,VLOOKUP(K$6,Team!$C:$L,2,FALSE)),0) | "$70"
+L10 | =IF(L$9,IF(ISBLANK(L$6),0,VLOOKUP(L$6,Team!$C:$L,2,FALSE)),0) | "0"
+M10 | =IF(M$9,IF(ISBLANK(M$6),0,VLOOKUP(M$6,Team!$C:$L,2,FALSE)),0) | "0"
+N10 | =IF(N$9,IF(ISBLANK(N$6),0,VLOOKUP(N$6,Team!$C:$L,2,FALSE)),0) | "0"
+O10 | =IF(O$9,IF(ISBLANK(O$6),0,VLOOKUP(O$6,Team!$C:$L,2,FALSE)),0) | "0"
+P10 | =IF(P$9,IF(ISBLANK(P$6),0,VLOOKUP(P$6,Team!$C:$L,2,FALSE)),0) | "0"
+Q10 | =IF(Q$9,IF(ISBLANK(Q$6),0,VLOOKUP(Q$6,Team!$C:$L,2,FALSE)),0) | "0"
+R10 | =IF(R$9,IF(ISBLANK(R$6),0,VLOOKUP(R$6,Team!$C:$L,2,FALSE)),0) | "0"
+S10 | =IF(S$9,IF(ISBLANK(S$6),0,VLOOKUP(S$6,Team!$C:$L,2,FALSE)),0) | "0"
+T10 | =IF(T$9,IF(ISBLANK(T$6),0,VLOOKUP(T$6,Team!$C:$L,2,FALSE)),0) | "0"
+U10 | =IF(U$9,IF(ISBLANK(U$6),0,VLOOKUP(U$6,Team!$C:$L,2,FALSE)),0) | "0"
+V10 | =IF(V$9,IF(ISBLANK(V$6),0,VLOOKUP(V$6,Team!$C:$L,2,FALSE)),0) | "$120"
+W10 | =IF(W$9,IF(ISBLANK(W$6),0,VLOOKUP(W$6,Team!$C:$L,2,FALSE)),0) | "$325"
+X10 | =IF(X$9,IF(ISBLANK(X$6),0,VLOOKUP(X$6,Team!$C:$L,2,FALSE)),0) | "0"
+Y10 | =IF(Y$9,IF(ISBLANK(Y$6),0,VLOOKUP(Y$6,Team!$C:$L,2,FALSE)),0) | "0"
+Z10 | =IF(Z$9,IF(ISBLANK(Z$6),0,VLOOKUP(Z$6,Team!$C:$L,2,FALSE)),0) | "0"
+AA10 | =IF(AA$9,IF(ISBLANK(AA$6),0,VLOOKUP(AA$6,Team!$C:$L,2,FALSE)),0) | "0"
+AB10 | =IF(AB$9,IF(ISBLANK(AB$6),0,VLOOKUP(AB$6,Team!$C:$L,2,FALSE)),0) | "0"
+AC10 | =IF(AC$9,IF(ISBLANK(AC$6),0,VLOOKUP(AC$6,Team!$C:$L,2,FALSE)),0) | "0"
+AD10 | =IF(AD$9,IF(ISBLANK(AD$6),0,VLOOKUP(AD$6,Team!$C:$L,2,FALSE)),0) | "0"
+AE10 | =IF(AE$9,IF(ISBLANK(AE$6),0,VLOOKUP(AE$6,Team!$C:$L,2,FALSE)),0) | "0"
+A11 | "Role Bill Rate\u21a7" | "Role Bill Rate\u21a7"
+B11 | =IF(B$9,IF(ISBLANK(B$6),0,VLOOKUP(B$6,Team!$C:$L,5,FALSE)),0) | "$317"
+C11 | =IF(C$9,IF(ISBLANK(C$6),0,VLOOKUP(C$6,Team!$C:$L,5,FALSE)),0) | "$267"
+D11 | =IF(D$9,IF(ISBLANK(D$6),0,VLOOKUP(D$6,Team!$C:$L,5,FALSE)),0) | "0"
+E11 | =IF(E$9,IF(ISBLANK(E$6),0,VLOOKUP(E$6,Team!$C:$L,5,FALSE)),0) | "0"
+F11 | =IF(F$9,IF(ISBLANK(F$6),0,VLOOKUP(F$6,Team!$C:$L,5,FALSE)),0) | "0"
+G11 | =IF(G$9,IF(ISBLANK(G$6),0,VLOOKUP(G$6,Team!$C:$L,5,FALSE)),0) | "0"
+H11 | =IF(H$9,IF(ISBLANK(H$6),0,VLOOKUP(H$6,Team!$C:$L,5,FALSE)),0) | "$367"
+I11 | =IF(I$9,IF(ISBLANK(I$6),0,VLOOKUP(I$6,Team!$C:$L,5,FALSE)),0) | "0"
+J11 | =IF(J$9,IF(ISBLANK(J$6),0,VLOOKUP(J$6,Team!$C:$L,5,FALSE)),0) | "$333"
+K11 | =IF(K$9,IF(ISBLANK(K$6),0,VLOOKUP(K$6,Team!$C:$L,5,FALSE)),0) | "$233"
+L11 | =IF(L$9,IF(ISBLANK(L$6),0,VLOOKUP(L$6,Team!$C:$L,5,FALSE)),0) | "0"
+M11 | =IF(M$9,IF(ISBLANK(M$6),0,VLOOKUP(M$6,Team!$C:$L,5,FALSE)),0) | "0"
+N11 | =IF(N$9,IF(ISBLANK(N$6),0,VLOOKUP(N$6,Team!$C:$L,5,FALSE)),0) | "0"
+O11 | =IF(O$9,IF(ISBLANK(O$6),0,VLOOKUP(O$6,Team!$C:$L,5,FALSE)),0) | "0"
+P11 | =IF(P$9,IF(ISBLANK(P$6),0,VLOOKUP(P$6,Team!$C:$L,5,FALSE)),0) | "0"
+Q11 | =IF(Q$9,IF(ISBLANK(Q$6),0,VLOOKUP(Q$6,Team!$C:$L,5,FALSE)),0) | "0"
+R11 | =IF(R$9,IF(ISBLANK(R$6),0,VLOOKUP(R$6,Team!$C:$L,5,FALSE)),0) | "0"
+S11 | =IF(S$9,IF(ISBLANK(S$6),0,VLOOKUP(S$6,Team!$C:$L,5,FALSE)),0) | "0"
+T11 | =IF(T$9,IF(ISBLANK(T$6),0,VLOOKUP(T$6,Team!$C:$L,5,FALSE)),0) | "0"
+U11 | =IF(U$9,IF(ISBLANK(U$6),0,VLOOKUP(U$6,Team!$C:$L,5,FALSE)),0) | "0"
+V11 | =IF(V$9,IF(ISBLANK(V$6),0,VLOOKUP(V$6,Team!$C:$L,5,FALSE)),0) | "$400"
+W11 | =IF(W$9,IF(ISBLANK(W$6),0,VLOOKUP(W$6,Team!$C:$L,5,FALSE)),0) | "$1,083"
+X11 | =IF(X$9,IF(ISBLANK(X$6),0,VLOOKUP(X$6,Team!$C:$L,5,FALSE)),0) | "0"
+Y11 | =IF(Y$9,IF(ISBLANK(Y$6),0,VLOOKUP(Y$6,Team!$C:$L,5,FALSE)),0) | "0"
+Z11 | =IF(Z$9,IF(ISBLANK(Z$6),0,VLOOKUP(Z$6,Team!$C:$L,5,FALSE)),0) | "0"
+AA11 | =IF(AA$9,IF(ISBLANK(AA$6),0,VLOOKUP(AA$6,Team!$C:$L,5,FALSE)),0) | "0"
+AB11 | =IF(AB$9,IF(ISBLANK(AB$6),0,VLOOKUP(AB$6,Team!$C:$L,5,FALSE)),0) | "0"
+AC11 | =IF(AC$9,IF(ISBLANK(AC$6),0,VLOOKUP(AC$6,Team!$C:$L,5,FALSE)),0) | "0"
+AD11 | =IF(AD$9,IF(ISBLANK(AD$6),0,VLOOKUP(AD$6,Team!$C:$L,5,FALSE)),0) | "0"
+AE11 | =IF(AE$9,IF(ISBLANK(AE$6),0,VLOOKUP(AE$6,Team!$C:$L,5,FALSE)),0) | "0"
+A12 | "Role Hours" | "Role Hours"
+B12 | =SUMPRODUCT($AG14:$AG,B14:B) | "40"
+C12 | =SUMPRODUCT($AG14:$AG,C14:C) | "120"
+D12 | =SUMPRODUCT($AG14:$AG,D14:D) | "0"
+E12 | =SUMPRODUCT($AG14:$AG,E14:E) | "0"
+F12 | =SUMPRODUCT($AG14:$AG,F14:F) | "0"
+G12 | =SUMPRODUCT($AG14:$AG,G14:G) | "0"
+H12 | =SUMPRODUCT($AG14:$AG,H14:H) | "50"
+I12 | =SUMPRODUCT($AG14:$AG,I14:I) | "0"
+J12 | =SUMPRODUCT($AG14:$AG,J14:J) | "80"
+K12 | =SUMPRODUCT($AG14:$AG,K14:K) | "0"
+L12 | =SUMPRODUCT($AG14:$AG,L14:L) | "0"
+M12 | =SUMPRODUCT($AG14:$AG,M14:M) | "0"
+N12 | =SUMPRODUCT($AG14:$AG,N14:N) | "0"
+O12 | =SUMPRODUCT($AG14:$AG,O14:O) | "0"
+P12 | =SUMPRODUCT($AG14:$AG,P14:P) | "0"
+Q12 | =SUMPRODUCT($AG14:$AG,Q14:Q) | "0"
+R12 | =SUMPRODUCT($AG14:$AG,R14:R) | "0"
+S12 | =SUMPRODUCT($AG14:$AG,S14:S) | "0"
+T12 | =SUMPRODUCT($AG14:$AG,T14:T) | "0"
+U12 | =SUMPRODUCT($AG14:$AG,U14:U) | "0"
+V12 | =SUMPRODUCT($AG14:$AG,V14:V) | "0"
+W12 | =SUMPRODUCT($AG14:$AG,W14:W) | "12"
+X12 | =SUMPRODUCT($AG14:$AG,X14:X) | "0"
+Y12 | =SUMPRODUCT($AG14:$AG,Y14:Y) | "0"
+Z12 | =SUMPRODUCT($AG14:$AG,Z14:Z) | "0"
+AA12 | =SUMPRODUCT($AG14:$AG,AA14:AA) | "0"
+AB12 | =SUMPRODUCT($AG14:$AG,AB14:AB) | "0"
+AC12 | =SUMPRODUCT($AG14:$AG,AC14:AC) | "0"
+AD12 | =SUMPRODUCT($AG14:$AG,AD14:AD) | "0"
+AE12 | =SUMPRODUCT($AG14:$AG,AE14:AE) | "0"
+A13 | "Role Price" | "Role Price"
+B13 | =B12*B11 | "$12,667"
+C13 | =C12*C11 | "$32,000"
+D13 | =D12*D11 | "0"
+E13 | =E12*E11 | "0"
+F13 | =F12*F11 | "0"
+G13 | =G12*G11 | "0"
+H13 | =H12*H11 | "$18,333"
+I13 | =I12*I11 | "0"
+J13 | =J12*J11 | "$26,667"
+K13 | =K12*K11 | "$0"
+L13 | =L12*L11 | "0"
+M13 | =M12*M11 | "0"
+N13 | =N12*N11 | "0"
+O13 | =O12*O11 | "0"
+P13 | =P12*P11 | "0"
+Q13 | =Q12*Q11 | "0"
+R13 | =R12*R11 | "0"
+S13 | =S12*S11 | "0"
+T13 | =T12*T11 | "0"
+U13 | =U12*U11 | "0"
+V13 | =V12*V11 | "$0"
+W13 | =W12*W11 | "$13,000"
+X13 | =X12*X11 | "0"
+Y13 | =Y12*Y11 | "0"
+Z13 | =Z12*Z11 | "0"
+AA13 | =AA12*AA11 | "0"
+AB13 | =AB12*AB11 | "0"
+AC13 | =AC12*AC11 | "0"
+AD13 | =AD12*AD11 | "0"
+AE13 | =AE12*AE11 | "0"
+AG14 | =AF14*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH14 | =sum(AF$14:AF14) | "0" | FMT=TEXT:
+AK14 | =IF($AG14>0,$AP14/$AG14,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL14 | =sum(ARRAYFORMULA(B$9:AE$9*B14:AE14)) | "0.0" | FMT=NUMBER:#,##0.0
+AM14 | =if(AF14>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN14 | =A14 |  | FMT=TEXT:
+AO14 | =if(AG14>0,AK14*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP14 | =sum(AT14:BW14) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ14 | =IF(AG14=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR13, MATCH(143^143, $AQ$13:AQ13)) + 1,WORKDAY(INDEX($AR$13:AR13, MATCH(143^143, $AQ$13:AQ13)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR14 | =IF(ISBLANK(AQ14),,IF(checkboxOptionMonthly,EDATE(AQ14, AF14) - 1, AQ14 + (7 * AG14) - 1)) |  | FMT=DATE:m"/"d"/"yy
+AT14 | =IF(B$9, IFERROR(GET_PRICE(B14,$AG14,B$11),0),0) | "0"
+AU14 | =IF(C$9, IFERROR(GET_PRICE(C14,$AG14,C$11),0),0) | "0"
+AV14 | =IF(D$9, IFERROR(GET_PRICE(D14,$AG14,D$11),0),0) | "0"
+AW14 | =IF(E$9, IFERROR(GET_PRICE(E14,$AG14,E$11),0),0) | "0"
+AX14 | =IF(F$9, IFERROR(GET_PRICE(F14,$AG14,F$11),0),0) | "0"
+AY14 | =IF(G$9, IFERROR(GET_PRICE(G14,$AG14,G$11),0),0) | "0"
+AZ14 | =IF(H$9, IFERROR(GET_PRICE(H14,$AG14,H$11),0),0) | "0"
+BA14 | =IF(I$9, IFERROR(GET_PRICE(I14,$AG14,I$11),0),0) | "0"
+BB14 | =IF(J$9, IFERROR(GET_PRICE(J14,$AG14,J$11),0),0) | "0"
+BC14 | =IF(K$9, IFERROR(GET_PRICE(K14,$AG14,K$11),0),0) | "0"
+BD14 | =IF(L$9, IFERROR(GET_PRICE(L14,$AG14,L$11),0),0) | "0"
+BE14 | =IF(M$9, IFERROR(GET_PRICE(M14,$AG14,M$11),0),0) | "0"
+BF14 | =IF(N$9, IFERROR(GET_PRICE(N14,$AG14,N$11),0),0) | "0"
+BG14 | =IF(O$9, IFERROR(GET_PRICE(O14,$AG14,O$11),0),0) | "0"
+BH14 | =IF(P$9, IFERROR(GET_PRICE(P14,$AG14,P$11),0),0) | "0"
+BI14 | =IF(Q$9, IFERROR(GET_PRICE(Q14,$AG14,Q$11),0),0) | "0"
+BJ14 | =IF(R$9, IFERROR(GET_PRICE(R14,$AG14,R$11),0),0) | "0"
+BK14 | =IF(S$9, IFERROR(GET_PRICE(S14,$AG14,S$11),0),0) | "0"
+BL14 | =IF(T$9, IFERROR(GET_PRICE(T14,$AG14,T$11),0),0) | "0"
+BM14 | =IF(U$9, IFERROR(GET_PRICE(U14,$AG14,U$11),0),0) | "0"
+BN14 | =IF(V$9, IFERROR(GET_PRICE(V14,$AG14,V$11),0),0) | "0"
+BO14 | =IF(W$9, IFERROR(GET_PRICE(W14,$AG14,W$11),0),0) | "0"
+BP14 | =IF(X$9, IFERROR(GET_PRICE(X14,$AG14,X$11),0),0) | "0"
+BQ14 | =IF(Y$9, IFERROR(GET_PRICE(Y14,$AG14,Y$11),0),0) | "0"
+BR14 | =IF(Z$9, IFERROR(GET_PRICE(Z14,$AG14,Z$11),0),0) | "0"
+BS14 | =IF(AA$9, IFERROR(GET_PRICE(AA14,$AG14,AA$11),0),0) | "0"
+BT14 | =IF(AB$9, IFERROR(GET_PRICE(AB14,$AG14,AB$11),0),0) | "0"
+BU14 | =IF(AC$9, IFERROR(GET_PRICE(AC14,$AG14,AC$11),0),0) | "0"
+BV14 | =IF(AD$9, IFERROR(GET_PRICE(AD14,$AG14,AD$11),0),0) | "0"
+BW14 | =IF(AE$9, IFERROR(GET_PRICE(AE14,$AG14,AE$11),0),0) | "0"
+BX14 | =IF(AG14/2,CONCATENATE(AG14/2," sprint",if(AG14/2>1,"s","")),"") | 
+A15 | "Discovery Team" | "Discovery Team"
+B15 | 10 | "10"
+C15 | 20 | "20"
+H15 | 10 | "10"
+W15 | 2 | "2"
+AF15 | 2 | "2"
+AG15 | =AF15*if(checkboxOptionMonthly,4,2) | "4" | FMT=TEXT:
+AH15 | =sum(AF$14:AF15) | "2" | FMT=TEXT:
+AK15 | =IF($AG15>0,$AP15/$AG15,0) | "$14,333" | FMT=CURRENCY:"$"#,##0
+AL15 | =sum(ARRAYFORMULA(B$9:AE$9*B15:AE15)) | "42.0" | FMT=NUMBER:#,##0.0
+AM15 | =if(AF15>0,row()-Row(tasksLastHiddenRow),) | "1" | FMT=TEXT:
+AN15 | =A15 | "Discovery Team" | FMT=TEXT:
+AO15 | =if(AG15>0,AK15*if(checkboxOptionMonthly,4,2),0) | "$28,667" | FMT=CURRENCY:"$"#,##0
+AP15 | =sum(AT15:BW15) | "$57,333" | FMT=CURRENCY:"$"#,##0
+AQ15 | 46391 | "1/4/27" | FMT=DATE:m"/"d"/"yy
+AR15 | =IF(ISBLANK(AQ15),,IF(checkboxOptionMonthly,EDATE(AQ15, AF15) - 1, AQ15 + (7 * AG15) - 1)) | "1/31/2027" | FMT=DATE:m/d/yyyy
+AT15 | =IF(B$9, IFERROR(GET_PRICE(B15,$AG15,B$11),0),0) | "12666.66667"
+AU15 | =IF(C$9, IFERROR(GET_PRICE(C15,$AG15,C$11),0),0) | "21333.33333"
+AV15 | =IF(D$9, IFERROR(GET_PRICE(D15,$AG15,D$11),0),0) | "0"
+AW15 | =IF(E$9, IFERROR(GET_PRICE(E15,$AG15,E$11),0),0) | "0"
+AX15 | =IF(F$9, IFERROR(GET_PRICE(F15,$AG15,F$11),0),0) | "0"
+AY15 | =IF(G$9, IFERROR(GET_PRICE(G15,$AG15,G$11),0),0) | "0"
+AZ15 | =IF(H$9, IFERROR(GET_PRICE(H15,$AG15,H$11),0),0) | "14666.66667"
+BA15 | =IF(I$9, IFERROR(GET_PRICE(I15,$AG15,I$11),0),0) | "0"
+BB15 | =IF(J$9, IFERROR(GET_PRICE(J15,$AG15,J$11),0),0) | "0"
+BC15 | =IF(K$9, IFERROR(GET_PRICE(K15,$AG15,K$11),0),0) | "0"
+BD15 | =IF(L$9, IFERROR(GET_PRICE(L15,$AG15,L$11),0),0) | "0"
+BE15 | =IF(M$9, IFERROR(GET_PRICE(M15,$AG15,M$11),0),0) | "0"
+BF15 | =IF(N$9, IFERROR(GET_PRICE(N15,$AG15,N$11),0),0) | "0"
+BG15 | =IF(O$9, IFERROR(GET_PRICE(O15,$AG15,O$11),0),0) | "0"
+BH15 | =IF(P$9, IFERROR(GET_PRICE(P15,$AG15,P$11),0),0) | "0"
+BI15 | =IF(Q$9, IFERROR(GET_PRICE(Q15,$AG15,Q$11),0),0) | "0"
+BJ15 | =IF(R$9, IFERROR(GET_PRICE(R15,$AG15,R$11),0),0) | "0"
+BK15 | =IF(S$9, IFERROR(GET_PRICE(S15,$AG15,S$11),0),0) | "0"
+BL15 | =IF(T$9, IFERROR(GET_PRICE(T15,$AG15,T$11),0),0) | "0"
+BM15 | =IF(U$9, IFERROR(GET_PRICE(U15,$AG15,U$11),0),0) | "0"
+BN15 | =IF(V$9, IFERROR(GET_PRICE(V15,$AG15,V$11),0),0) | "0"
+BO15 | =IF(W$9, IFERROR(GET_PRICE(W15,$AG15,W$11),0),0) | "8666.666667"
+BP15 | =IF(X$9, IFERROR(GET_PRICE(X15,$AG15,X$11),0),0) | "0"
+BQ15 | =IF(Y$9, IFERROR(GET_PRICE(Y15,$AG15,Y$11),0),0) | "0"
+BR15 | =IF(Z$9, IFERROR(GET_PRICE(Z15,$AG15,Z$11),0),0) | "0"
+BS15 | =IF(AA$9, IFERROR(GET_PRICE(AA15,$AG15,AA$11),0),0) | "0"
+BT15 | =IF(AB$9, IFERROR(GET_PRICE(AB15,$AG15,AB$11),0),0) | "0"
+BU15 | =IF(AC$9, IFERROR(GET_PRICE(AC15,$AG15,AC$11),0),0) | "0"
+BV15 | =IF(AD$9, IFERROR(GET_PRICE(AD15,$AG15,AD$11),0),0) | "0"
+BW15 | =IF(AE$9, IFERROR(GET_PRICE(AE15,$AG15,AE$11),0),0) | "0"
+BX15 | =IF(AG15/2,CONCATENATE(AG15/2," sprint",if(AG15/2>1,"s","")),"") | "2 sprints"
+A16 | "Validation Team" | "Validation Team"
+C16 | 20 | "20"
+H16 | 5 | "5"
+J16 | 40 | "40"
+W16 | 2 | "2"
+AF16 | 1 | "1"
+AG16 | =AF16*if(checkboxOptionMonthly,4,2) | "2" | FMT=TEXT:
+AH16 | =sum(AF$14:AF16) | "3"
+AK16 | =IF($AG16>0,$AP16/$AG16,0) | "$22,667" | FMT=CURRENCY:"$"#,##0
+AL16 | =sum(ARRAYFORMULA(B$9:AE$9*B16:AE16)) | "67.0" | FMT=NUMBER:#,##0.0
+AM16 | =if(AF16>0,row()-Row(tasksLastHiddenRow),) | "2" | FMT=TEXT:
+AN16 | =A16 | "Validation Team" | FMT=TEXT:
+AO16 | =if(AG16>0,AK16*if(checkboxOptionMonthly,4,2),0) | "$45,333" | FMT=CURRENCY:"$"#,##0
+AP16 | =sum(AT16:BW16) | "$45,333" | FMT=CURRENCY:"$"#,##0
+AQ16 | =IF(AG16=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR15, MATCH(143^143, $AQ$13:AQ15)) + 1,WORKDAY(INDEX($AR$13:AR15, MATCH(143^143, $AQ$13:AQ15)), 1))) | "2/1/27" | FMT=DATE:m"/"d"/"yy
+AR16 | =IF(ISBLANK(AQ16),,IF(checkboxOptionMonthly,EDATE(AQ16, AF16) - 1, AQ16 + (7 * AG16) - 1)) | "2/14/2027" | FMT=DATE:m/d/yyyy
+AT16 | =IF(B$9, IFERROR(GET_PRICE(B16,$AG16,B$11),0),0) | "0"
+AU16 | =IF(C$9, IFERROR(GET_PRICE(C16,$AG16,C$11),0),0) | "10666.66667"
+AV16 | =IF(D$9, IFERROR(GET_PRICE(D16,$AG16,D$11),0),0) | "0"
+AW16 | =IF(E$9, IFERROR(GET_PRICE(E16,$AG16,E$11),0),0) | "0"
+AX16 | =IF(F$9, IFERROR(GET_PRICE(F16,$AG16,F$11),0),0) | "0"
+AY16 | =IF(G$9, IFERROR(GET_PRICE(G16,$AG16,G$11),0),0) | "0"
+AZ16 | =IF(H$9, IFERROR(GET_PRICE(H16,$AG16,H$11),0),0) | "3666.666667"
+BA16 | =IF(I$9, IFERROR(GET_PRICE(I16,$AG16,I$11),0),0) | "0"
+BB16 | =IF(J$9, IFERROR(GET_PRICE(J16,$AG16,J$11),0),0) | "26666.66667"
+BC16 | =IF(K$9, IFERROR(GET_PRICE(K16,$AG16,K$11),0),0) | "0"
+BD16 | =IF(L$9, IFERROR(GET_PRICE(L16,$AG16,L$11),0),0) | "0"
+BE16 | =IF(M$9, IFERROR(GET_PRICE(M16,$AG16,M$11),0),0) | "0"
+BF16 | =IF(N$9, IFERROR(GET_PRICE(N16,$AG16,N$11),0),0) | "0"
+BG16 | =IF(O$9, IFERROR(GET_PRICE(O16,$AG16,O$11),0),0) | "0"
+BH16 | =IF(P$9, IFERROR(GET_PRICE(P16,$AG16,P$11),0),0) | "0"
+BI16 | =IF(Q$9, IFERROR(GET_PRICE(Q16,$AG16,Q$11),0),0) | "0"
+BJ16 | =IF(R$9, IFERROR(GET_PRICE(R16,$AG16,R$11),0),0) | "0"
+BK16 | =IF(S$9, IFERROR(GET_PRICE(S16,$AG16,S$11),0),0) | "0"
+BL16 | =IF(T$9, IFERROR(GET_PRICE(T16,$AG16,T$11),0),0) | "0"
+BM16 | =IF(U$9, IFERROR(GET_PRICE(U16,$AG16,U$11),0),0) | "0"
+BN16 | =IF(V$9, IFERROR(GET_PRICE(V16,$AG16,V$11),0),0) | "0"
+BO16 | =IF(W$9, IFERROR(GET_PRICE(W16,$AG16,W$11),0),0) | "4333.333333"
+BP16 | =IF(X$9, IFERROR(GET_PRICE(X16,$AG16,X$11),0),0) | "0"
+BQ16 | =IF(Y$9, IFERROR(GET_PRICE(Y16,$AG16,Y$11),0),0) | "0"
+BR16 | =IF(Z$9, IFERROR(GET_PRICE(Z16,$AG16,Z$11),0),0) | "0"
+BS16 | =IF(AA$9, IFERROR(GET_PRICE(AA16,$AG16,AA$11),0),0) | "0"
+BT16 | =IF(AB$9, IFERROR(GET_PRICE(AB16,$AG16,AB$11),0),0) | "0"
+BU16 | =IF(AC$9, IFERROR(GET_PRICE(AC16,$AG16,AC$11),0),0) | "0"
+BV16 | =IF(AD$9, IFERROR(GET_PRICE(AD16,$AG16,AD$11),0),0) | "0"
+BW16 | =IF(AE$9, IFERROR(GET_PRICE(AE16,$AG16,AE$11),0),0) | "0"
+BX16 | =IF(AG16/2,CONCATENATE(AG16/2," sprint",if(AG16/2>1,"s","")),"") | "1 sprint"
+AG17 | =AF17*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH17 | =sum(AF$14:AF17) | "3"
+AK17 | =IF($AG17>0,$AP17/$AG17,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL17 | =sum(ARRAYFORMULA(B$9:AE$9*B17:AE17)) | "0.0" | FMT=NUMBER:#,##0.0
+AM17 | =if(AF17>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN17 | =A17 |  | FMT=TEXT:
+AO17 | =if(AG17>0,AK17*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP17 | =sum(AT17:BW17) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ17 | =IF(AG17=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR16, MATCH(143^143, $AQ$13:AQ16)) + 1,WORKDAY(INDEX($AR$13:AR16, MATCH(143^143, $AQ$13:AQ16)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR17 | =IF(ISBLANK(AQ17),,IF(checkboxOptionMonthly,EDATE(AQ17, AF17) - 1, AQ17 + (7 * AG17) - 1)) |  | FMT=DATE:m/d/yyyy
+AT17 | =IF(B$9, IFERROR(GET_PRICE(B17,$AG17,B$11),0),0) | "0"
+AU17 | =IF(C$9, IFERROR(GET_PRICE(C17,$AG17,C$11),0),0) | "0"
+AV17 | =IF(D$9, IFERROR(GET_PRICE(D17,$AG17,D$11),0),0) | "0"
+AW17 | =IF(E$9, IFERROR(GET_PRICE(E17,$AG17,E$11),0),0) | "0"
+AX17 | =IF(F$9, IFERROR(GET_PRICE(F17,$AG17,F$11),0),0) | "0"
+AY17 | =IF(G$9, IFERROR(GET_PRICE(G17,$AG17,G$11),0),0) | "0"
+AZ17 | =IF(H$9, IFERROR(GET_PRICE(H17,$AG17,H$11),0),0) | "0"
+BA17 | =IF(I$9, IFERROR(GET_PRICE(I17,$AG17,I$11),0),0) | "0"
+BB17 | =IF(J$9, IFERROR(GET_PRICE(J17,$AG17,J$11),0),0) | "0"
+BC17 | =IF(K$9, IFERROR(GET_PRICE(K17,$AG17,K$11),0),0) | "0"
+BD17 | =IF(L$9, IFERROR(GET_PRICE(L17,$AG17,L$11),0),0) | "0"
+BE17 | =IF(M$9, IFERROR(GET_PRICE(M17,$AG17,M$11),0),0) | "0"
+BF17 | =IF(N$9, IFERROR(GET_PRICE(N17,$AG17,N$11),0),0) | "0"
+BG17 | =IF(O$9, IFERROR(GET_PRICE(O17,$AG17,O$11),0),0) | "0"
+BH17 | =IF(P$9, IFERROR(GET_PRICE(P17,$AG17,P$11),0),0) | "0"
+BI17 | =IF(Q$9, IFERROR(GET_PRICE(Q17,$AG17,Q$11),0),0) | "0"
+BJ17 | =IF(R$9, IFERROR(GET_PRICE(R17,$AG17,R$11),0),0) | "0"
+BK17 | =IF(S$9, IFERROR(GET_PRICE(S17,$AG17,S$11),0),0) | "0"
+BL17 | =IF(T$9, IFERROR(GET_PRICE(T17,$AG17,T$11),0),0) | "0"
+BM17 | =IF(U$9, IFERROR(GET_PRICE(U17,$AG17,U$11),0),0) | "0"
+BN17 | =IF(V$9, IFERROR(GET_PRICE(V17,$AG17,V$11),0),0) | "0"
+BO17 | =IF(W$9, IFERROR(GET_PRICE(W17,$AG17,W$11),0),0) | "0"
+BP17 | =IF(X$9, IFERROR(GET_PRICE(X17,$AG17,X$11),0),0) | "0"
+BQ17 | =IF(Y$9, IFERROR(GET_PRICE(Y17,$AG17,Y$11),0),0) | "0"
+BR17 | =IF(Z$9, IFERROR(GET_PRICE(Z17,$AG17,Z$11),0),0) | "0"
+BS17 | =IF(AA$9, IFERROR(GET_PRICE(AA17,$AG17,AA$11),0),0) | "0"
+BT17 | =IF(AB$9, IFERROR(GET_PRICE(AB17,$AG17,AB$11),0),0) | "0"
+BU17 | =IF(AC$9, IFERROR(GET_PRICE(AC17,$AG17,AC$11),0),0) | "0"
+BV17 | =IF(AD$9, IFERROR(GET_PRICE(AD17,$AG17,AD$11),0),0) | "0"
+BW17 | =IF(AE$9, IFERROR(GET_PRICE(AE17,$AG17,AE$11),0),0) | "0"
+BX17 | =IF(AG17/2,CONCATENATE(AG17/2," sprint",if(AG17/2>1,"s","")),"") | 
+AG18 | =AF18*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH18 | =sum(AF$14:AF18) | "3"
+AK18 | =IF($AG18>0,$AP18/$AG18,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL18 | =sum(ARRAYFORMULA(B$9:AE$9*B18:AE18)) | "0.0" | FMT=NUMBER:#,##0.0
+AM18 | =if(AF18>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN18 | =A18 |  | FMT=TEXT:
+AO18 | =if(AG18>0,AK18*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP18 | =sum(AT18:BW18) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ18 | =IF(AG18=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR17, MATCH(143^143, $AQ$13:AQ17)) + 1,WORKDAY(INDEX($AR$13:AR17, MATCH(143^143, $AQ$13:AQ17)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR18 | =IF(ISBLANK(AQ18),,IF(checkboxOptionMonthly,EDATE(AQ18, AF18) - 1, AQ18 + (7 * AG18) - 1)) |  | FMT=DATE:m/d/yyyy
+AT18 | =IF(B$9, IFERROR(GET_PRICE(B18,$AG18,B$11),0),0) | "0"
+AU18 | =IF(C$9, IFERROR(GET_PRICE(C18,$AG18,C$11),0),0) | "0"
+AV18 | =IF(D$9, IFERROR(GET_PRICE(D18,$AG18,D$11),0),0) | "0"
+AW18 | =IF(E$9, IFERROR(GET_PRICE(E18,$AG18,E$11),0),0) | "0"
+AX18 | =IF(F$9, IFERROR(GET_PRICE(F18,$AG18,F$11),0),0) | "0"
+AY18 | =IF(G$9, IFERROR(GET_PRICE(G18,$AG18,G$11),0),0) | "0"
+AZ18 | =IF(H$9, IFERROR(GET_PRICE(H18,$AG18,H$11),0),0) | "0"
+BA18 | =IF(I$9, IFERROR(GET_PRICE(I18,$AG18,I$11),0),0) | "0"
+BB18 | =IF(J$9, IFERROR(GET_PRICE(J18,$AG18,J$11),0),0) | "0"
+BC18 | =IF(K$9, IFERROR(GET_PRICE(K18,$AG18,K$11),0),0) | "0"
+BD18 | =IF(L$9, IFERROR(GET_PRICE(L18,$AG18,L$11),0),0) | "0"
+BE18 | =IF(M$9, IFERROR(GET_PRICE(M18,$AG18,M$11),0),0) | "0"
+BF18 | =IF(N$9, IFERROR(GET_PRICE(N18,$AG18,N$11),0),0) | "0"
+BG18 | =IF(O$9, IFERROR(GET_PRICE(O18,$AG18,O$11),0),0) | "0"
+BH18 | =IF(P$9, IFERROR(GET_PRICE(P18,$AG18,P$11),0),0) | "0"
+BI18 | =IF(Q$9, IFERROR(GET_PRICE(Q18,$AG18,Q$11),0),0) | "0"
+BJ18 | =IF(R$9, IFERROR(GET_PRICE(R18,$AG18,R$11),0),0) | "0"
+BK18 | =IF(S$9, IFERROR(GET_PRICE(S18,$AG18,S$11),0),0) | "0"
+BL18 | =IF(T$9, IFERROR(GET_PRICE(T18,$AG18,T$11),0),0) | "0"
+BM18 | =IF(U$9, IFERROR(GET_PRICE(U18,$AG18,U$11),0),0) | "0"
+BN18 | =IF(V$9, IFERROR(GET_PRICE(V18,$AG18,V$11),0),0) | "0"
+BO18 | =IF(W$9, IFERROR(GET_PRICE(W18,$AG18,W$11),0),0) | "0"
+BP18 | =IF(X$9, IFERROR(GET_PRICE(X18,$AG18,X$11),0),0) | "0"
+BQ18 | =IF(Y$9, IFERROR(GET_PRICE(Y18,$AG18,Y$11),0),0) | "0"
+BR18 | =IF(Z$9, IFERROR(GET_PRICE(Z18,$AG18,Z$11),0),0) | "0"
+BS18 | =IF(AA$9, IFERROR(GET_PRICE(AA18,$AG18,AA$11),0),0) | "0"
+BT18 | =IF(AB$9, IFERROR(GET_PRICE(AB18,$AG18,AB$11),0),0) | "0"
+BU18 | =IF(AC$9, IFERROR(GET_PRICE(AC18,$AG18,AC$11),0),0) | "0"
+BV18 | =IF(AD$9, IFERROR(GET_PRICE(AD18,$AG18,AD$11),0),0) | "0"
+BW18 | =IF(AE$9, IFERROR(GET_PRICE(AE18,$AG18,AE$11),0),0) | "0"
+BX18 | =IF(AG18/2,CONCATENATE(AG18/2," sprint",if(AG18/2>1,"s","")),"") | 
+AG19 | =AF19*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH19 | =sum(AF$14:AF19) | "3"
+AK19 | =IF($AG19>0,$AP19/$AG19,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL19 | =sum(ARRAYFORMULA(B$9:AE$9*B19:AE19)) | "0.0" | FMT=NUMBER:#,##0.0
+AM19 | =if(AF19>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN19 | =A19 |  | FMT=TEXT:
+AO19 | =if(AG19>0,AK19*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP19 | =sum(AT19:BW19) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ19 | =IF(AG19=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR18, MATCH(143^143, $AQ$13:AQ18)) + 1,WORKDAY(INDEX($AR$13:AR18, MATCH(143^143, $AQ$13:AQ18)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR19 | =IF(ISBLANK(AQ19),,IF(checkboxOptionMonthly,EDATE(AQ19, AF19) - 1, AQ19 + (7 * AG19) - 1)) |  | FMT=DATE:m/d/yyyy
+AT19 | =IF(B$9, IFERROR(GET_PRICE(B19,$AG19,B$11),0),0) | "0"
+AU19 | =IF(C$9, IFERROR(GET_PRICE(C19,$AG19,C$11),0),0) | "0"
+AV19 | =IF(D$9, IFERROR(GET_PRICE(D19,$AG19,D$11),0),0) | "0"
+AW19 | =IF(E$9, IFERROR(GET_PRICE(E19,$AG19,E$11),0),0) | "0"
+AX19 | =IF(F$9, IFERROR(GET_PRICE(F19,$AG19,F$11),0),0) | "0"
+AY19 | =IF(G$9, IFERROR(GET_PRICE(G19,$AG19,G$11),0),0) | "0"
+AZ19 | =IF(H$9, IFERROR(GET_PRICE(H19,$AG19,H$11),0),0) | "0"
+BA19 | =IF(I$9, IFERROR(GET_PRICE(I19,$AG19,I$11),0),0) | "0"
+BB19 | =IF(J$9, IFERROR(GET_PRICE(J19,$AG19,J$11),0),0) | "0"
+BC19 | =IF(K$9, IFERROR(GET_PRICE(K19,$AG19,K$11),0),0) | "0"
+BD19 | =IF(L$9, IFERROR(GET_PRICE(L19,$AG19,L$11),0),0) | "0"
+BE19 | =IF(M$9, IFERROR(GET_PRICE(M19,$AG19,M$11),0),0) | "0"
+BF19 | =IF(N$9, IFERROR(GET_PRICE(N19,$AG19,N$11),0),0) | "0"
+BG19 | =IF(O$9, IFERROR(GET_PRICE(O19,$AG19,O$11),0),0) | "0"
+BH19 | =IF(P$9, IFERROR(GET_PRICE(P19,$AG19,P$11),0),0) | "0"
+BI19 | =IF(Q$9, IFERROR(GET_PRICE(Q19,$AG19,Q$11),0),0) | "0"
+BJ19 | =IF(R$9, IFERROR(GET_PRICE(R19,$AG19,R$11),0),0) | "0"
+BK19 | =IF(S$9, IFERROR(GET_PRICE(S19,$AG19,S$11),0),0) | "0"
+BL19 | =IF(T$9, IFERROR(GET_PRICE(T19,$AG19,T$11),0),0) | "0"
+BM19 | =IF(U$9, IFERROR(GET_PRICE(U19,$AG19,U$11),0),0) | "0"
+BN19 | =IF(V$9, IFERROR(GET_PRICE(V19,$AG19,V$11),0),0) | "0"
+BO19 | =IF(W$9, IFERROR(GET_PRICE(W19,$AG19,W$11),0),0) | "0"
+BP19 | =IF(X$9, IFERROR(GET_PRICE(X19,$AG19,X$11),0),0) | "0"
+BQ19 | =IF(Y$9, IFERROR(GET_PRICE(Y19,$AG19,Y$11),0),0) | "0"
+BR19 | =IF(Z$9, IFERROR(GET_PRICE(Z19,$AG19,Z$11),0),0) | "0"
+BS19 | =IF(AA$9, IFERROR(GET_PRICE(AA19,$AG19,AA$11),0),0) | "0"
+BT19 | =IF(AB$9, IFERROR(GET_PRICE(AB19,$AG19,AB$11),0),0) | "0"
+BU19 | =IF(AC$9, IFERROR(GET_PRICE(AC19,$AG19,AC$11),0),0) | "0"
+BV19 | =IF(AD$9, IFERROR(GET_PRICE(AD19,$AG19,AD$11),0),0) | "0"
+BW19 | =IF(AE$9, IFERROR(GET_PRICE(AE19,$AG19,AE$11),0),0) | "0"
+BX19 | =IF(AG19/2,CONCATENATE(AG19/2," sprint",if(AG19/2>1,"s","")),"") | 
+AG20 | =AF20*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH20 | =sum(AF$14:AF20) | "3"
+AK20 | =IF($AG20>0,$AP20/$AG20,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL20 | =sum(ARRAYFORMULA(B$9:AE$9*B20:AE20)) | "0.0" | FMT=NUMBER:#,##0.0
+AM20 | =if(AF20>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN20 | =A20 |  | FMT=TEXT:
+AO20 | =if(AG20>0,AK20*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP20 | =sum(AT20:BW20) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ20 | =IF(AG20=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR19, MATCH(143^143, $AQ$13:AQ19)) + 1,WORKDAY(INDEX($AR$13:AR19, MATCH(143^143, $AQ$13:AQ19)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR20 | =IF(ISBLANK(AQ20),,IF(checkboxOptionMonthly,EDATE(AQ20, AF20) - 1, AQ20 + (7 * AG20) - 1)) |  | FMT=DATE:m/d/yyyy
+AT20 | =IF(B$9, IFERROR(GET_PRICE(B20,$AG20,B$11),0),0) | "0"
+AU20 | =IF(C$9, IFERROR(GET_PRICE(C20,$AG20,C$11),0),0) | "0"
+AV20 | =IF(D$9, IFERROR(GET_PRICE(D20,$AG20,D$11),0),0) | "0"
+AW20 | =IF(E$9, IFERROR(GET_PRICE(E20,$AG20,E$11),0),0) | "0"
+AX20 | =IF(F$9, IFERROR(GET_PRICE(F20,$AG20,F$11),0),0) | "0"
+AY20 | =IF(G$9, IFERROR(GET_PRICE(G20,$AG20,G$11),0),0) | "0"
+AZ20 | =IF(H$9, IFERROR(GET_PRICE(H20,$AG20,H$11),0),0) | "0"
+BA20 | =IF(I$9, IFERROR(GET_PRICE(I20,$AG20,I$11),0),0) | "0"
+BB20 | =IF(J$9, IFERROR(GET_PRICE(J20,$AG20,J$11),0),0) | "0"
+BC20 | =IF(K$9, IFERROR(GET_PRICE(K20,$AG20,K$11),0),0) | "0"
+BD20 | =IF(L$9, IFERROR(GET_PRICE(L20,$AG20,L$11),0),0) | "0"
+BE20 | =IF(M$9, IFERROR(GET_PRICE(M20,$AG20,M$11),0),0) | "0"
+BF20 | =IF(N$9, IFERROR(GET_PRICE(N20,$AG20,N$11),0),0) | "0"
+BG20 | =IF(O$9, IFERROR(GET_PRICE(O20,$AG20,O$11),0),0) | "0"
+BH20 | =IF(P$9, IFERROR(GET_PRICE(P20,$AG20,P$11),0),0) | "0"
+BI20 | =IF(Q$9, IFERROR(GET_PRICE(Q20,$AG20,Q$11),0),0) | "0"
+BJ20 | =IF(R$9, IFERROR(GET_PRICE(R20,$AG20,R$11),0),0) | "0"
+BK20 | =IF(S$9, IFERROR(GET_PRICE(S20,$AG20,S$11),0),0) | "0"
+BL20 | =IF(T$9, IFERROR(GET_PRICE(T20,$AG20,T$11),0),0) | "0"
+BM20 | =IF(U$9, IFERROR(GET_PRICE(U20,$AG20,U$11),0),0) | "0"
+BN20 | =IF(V$9, IFERROR(GET_PRICE(V20,$AG20,V$11),0),0) | "0"
+BO20 | =IF(W$9, IFERROR(GET_PRICE(W20,$AG20,W$11),0),0) | "0"
+BP20 | =IF(X$9, IFERROR(GET_PRICE(X20,$AG20,X$11),0),0) | "0"
+BQ20 | =IF(Y$9, IFERROR(GET_PRICE(Y20,$AG20,Y$11),0),0) | "0"
+BR20 | =IF(Z$9, IFERROR(GET_PRICE(Z20,$AG20,Z$11),0),0) | "0"
+BS20 | =IF(AA$9, IFERROR(GET_PRICE(AA20,$AG20,AA$11),0),0) | "0"
+BT20 | =IF(AB$9, IFERROR(GET_PRICE(AB20,$AG20,AB$11),0),0) | "0"
+BU20 | =IF(AC$9, IFERROR(GET_PRICE(AC20,$AG20,AC$11),0),0) | "0"
+BV20 | =IF(AD$9, IFERROR(GET_PRICE(AD20,$AG20,AD$11),0),0) | "0"
+BW20 | =IF(AE$9, IFERROR(GET_PRICE(AE20,$AG20,AE$11),0),0) | "0"
+BX20 | =IF(AG20/2,CONCATENATE(AG20/2," sprint",if(AG20/2>1,"s","")),"") | 
+AG21 | =AF21*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH21 | =sum(AF$14:AF21) | "3"
+AK21 | =IF($AG21>0,$AP21/$AG21,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL21 | =sum(ARRAYFORMULA(B$9:AE$9*B21:AE21)) | "0.0" | FMT=NUMBER:#,##0.0
+AM21 | =if(AF21>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN21 | =A21 |  | FMT=TEXT:
+AO21 | =if(AG21>0,AK21*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP21 | =sum(AT21:BW21) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ21 | =IF(AG21=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR20, MATCH(143^143, $AQ$13:AQ20)) + 1,WORKDAY(INDEX($AR$13:AR20, MATCH(143^143, $AQ$13:AQ20)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR21 | =IF(ISBLANK(AQ21),,IF(checkboxOptionMonthly,EDATE(AQ21, AF21) - 1, AQ21 + (7 * AG21) - 1)) |  | FMT=DATE:m/d/yyyy
+AT21 | =IF(B$9, IFERROR(GET_PRICE(B21,$AG21,B$11),0),0) | "0"
+AU21 | =IF(C$9, IFERROR(GET_PRICE(C21,$AG21,C$11),0),0) | "0"
+AV21 | =IF(D$9, IFERROR(GET_PRICE(D21,$AG21,D$11),0),0) | "0"
+AW21 | =IF(E$9, IFERROR(GET_PRICE(E21,$AG21,E$11),0),0) | "0"
+AX21 | =IF(F$9, IFERROR(GET_PRICE(F21,$AG21,F$11),0),0) | "0"
+AY21 | =IF(G$9, IFERROR(GET_PRICE(G21,$AG21,G$11),0),0) | "0"
+AZ21 | =IF(H$9, IFERROR(GET_PRICE(H21,$AG21,H$11),0),0) | "0"
+BA21 | =IF(I$9, IFERROR(GET_PRICE(I21,$AG21,I$11),0),0) | "0"
+BB21 | =IF(J$9, IFERROR(GET_PRICE(J21,$AG21,J$11),0),0) | "0"
+BC21 | =IF(K$9, IFERROR(GET_PRICE(K21,$AG21,K$11),0),0) | "0"
+BD21 | =IF(L$9, IFERROR(GET_PRICE(L21,$AG21,L$11),0),0) | "0"
+BE21 | =IF(M$9, IFERROR(GET_PRICE(M21,$AG21,M$11),0),0) | "0"
+BF21 | =IF(N$9, IFERROR(GET_PRICE(N21,$AG21,N$11),0),0) | "0"
+BG21 | =IF(O$9, IFERROR(GET_PRICE(O21,$AG21,O$11),0),0) | "0"
+BH21 | =IF(P$9, IFERROR(GET_PRICE(P21,$AG21,P$11),0),0) | "0"
+BI21 | =IF(Q$9, IFERROR(GET_PRICE(Q21,$AG21,Q$11),0),0) | "0"
+BJ21 | =IF(R$9, IFERROR(GET_PRICE(R21,$AG21,R$11),0),0) | "0"
+BK21 | =IF(S$9, IFERROR(GET_PRICE(S21,$AG21,S$11),0),0) | "0"
+BL21 | =IF(T$9, IFERROR(GET_PRICE(T21,$AG21,T$11),0),0) | "0"
+BM21 | =IF(U$9, IFERROR(GET_PRICE(U21,$AG21,U$11),0),0) | "0"
+BN21 | =IF(V$9, IFERROR(GET_PRICE(V21,$AG21,V$11),0),0) | "0"
+BO21 | =IF(W$9, IFERROR(GET_PRICE(W21,$AG21,W$11),0),0) | "0"
+BP21 | =IF(X$9, IFERROR(GET_PRICE(X21,$AG21,X$11),0),0) | "0"
+BQ21 | =IF(Y$9, IFERROR(GET_PRICE(Y21,$AG21,Y$11),0),0) | "0"
+BR21 | =IF(Z$9, IFERROR(GET_PRICE(Z21,$AG21,Z$11),0),0) | "0"
+BS21 | =IF(AA$9, IFERROR(GET_PRICE(AA21,$AG21,AA$11),0),0) | "0"
+BT21 | =IF(AB$9, IFERROR(GET_PRICE(AB21,$AG21,AB$11),0),0) | "0"
+BU21 | =IF(AC$9, IFERROR(GET_PRICE(AC21,$AG21,AC$11),0),0) | "0"
+BV21 | =IF(AD$9, IFERROR(GET_PRICE(AD21,$AG21,AD$11),0),0) | "0"
+BW21 | =IF(AE$9, IFERROR(GET_PRICE(AE21,$AG21,AE$11),0),0) | "0"
+BX21 | =IF(AG21/2,CONCATENATE(AG21/2," sprint",if(AG21/2>1,"s","")),"") | 
+AG22 | =AF22*if(checkboxOptionMonthly,4,2) | "0" | FMT=TEXT:
+AH22 | =sum(AF$14:AF22) | "3"
+AK22 | =IF($AG22>0,$AP22/$AG22,0) | "$0" | FMT=CURRENCY:"$"#,##0
+AL22 | =sum(ARRAYFORMULA(B$9:AE$9*B22:AE22)) | "0.0" | FMT=NUMBER:#,##0.0
+AM22 | =if(AF22>0,row()-Row(tasksLastHiddenRow),) |  | FMT=TEXT:
+AN22 | =A22 |  | FMT=TEXT:
+AO22 | =if(AG22>0,AK22*if(checkboxOptionMonthly,4,2),0) | "$0" | FMT=CURRENCY:"$"#,##0
+AP22 | =sum(AT22:BW22) | "$0" | FMT=CURRENCY:"$"#,##0
+AQ22 | =IF(AG22=0,,IF(checkboxOptionMonthly,INDEX($AR$13:AR21, MATCH(143^143, $AQ$13:AQ21)) + 1,WORKDAY(INDEX($AR$13:AR21, MATCH(143^143, $AQ$13:AQ21)), 1))) |  | FMT=DATE:m"/"d"/"yy
+AR22 | =IF(ISBLANK(AQ22),,IF(checkboxOptionMonthly,EDATE(AQ22, AF22) - 1, AQ22 + (7 * AG22) - 1)) |  | FMT=DATE:m/d/yyyy
+AT22 | =IF(B$9, IFERROR(GET_PRICE(B22,$AG22,B$11),0),0) | "0"
+AU22 | =IF(C$9, IFERROR(GET_PRICE(C22,$AG22,C$11),0),0) | "0"
+AV22 | =IF(D$9, IFERROR(GET_PRICE(D22,$AG22,D$11),0),0) | "0"
+AW22 | =IF(E$9, IFERROR(GET_PRICE(E22,$AG22,E$11),0),0) | "0"
+AX22 | =IF(F$9, IFERROR(GET_PRICE(F22,$AG22,F$11),0),0) | "0"
+AY22 | =IF(G$9, IFERROR(GET_PRICE(G22,$AG22,G$11),0),0) | "0"
+AZ22 | =IF(H$9, IFERROR(GET_PRICE(H22,$AG22,H$11),0),0) | "0"
+BA22 | =IF(I$9, IFERROR(GET_PRICE(I22,$AG22,I$11),0),0) | "0"
+BB22 | =IF(J$9, IFERROR(GET_PRICE(J22,$AG22,J$11),0),0) | "0"
+BC22 | =IF(K$9, IFERROR(GET_PRICE(K22,$AG22,K$11),0),0) | "0"
+BD22 | =IF(L$9, IFERROR(GET_PRICE(L22,$AG22,L$11),0),0) | "0"
+BE22 | =IF(M$9, IFERROR(GET_PRICE(M22,$AG22,M$11),0),0) | "0"
+BF22 | =IF(N$9, IFERROR(GET_PRICE(N22,$AG22,N$11),0),0) | "0"
+BG22 | =IF(O$9, IFERROR(GET_PRICE(O22,$AG22,O$11),0),0) | "0"
+BH22 | =IF(P$9, IFERROR(GET_PRICE(P22,$AG22,P$11),0),0) | "0"
+BI22 | =IF(Q$9, IFERROR(GET_PRICE(Q22,$AG22,Q$11),0),0) | "0"
+BJ22 | =IF(R$9, IFERROR(GET_PRICE(R22,$AG22,R$11),0),0) | "0"
+BK22 | =IF(S$9, IFERROR(GET_PRICE(S22,$AG22,S$11),0),0) | "0"
+BL22 | =IF(T$9, IFERROR(GET_PRICE(T22,$AG22,T$11),0),0) | "0"
+BM22 | =IF(U$9, IFERROR(GET_PRICE(U22,$AG22,U$11),0),0) | "0"
+BN22 | =IF(V$9, IFERROR(GET_PRICE(V22,$AG22,V$11),0),0) | "0"
+BO22 | =IF(W$9, IFERROR(GET_PRICE(W22,$AG22,W$11),0),0) | "0"
+BP22 | =IF(X$9, IFERROR(GET_PRICE(X22,$AG22,X$11),0),0) | "0"
+BQ22 | =IF(Y$9, IFERROR(GET_PRICE(Y22,$AG22,Y$11),0),0) | "0"
+BR22 | =IF(Z$9, IFERROR(GET_PRICE(Z22,$AG22,Z$11),0),0) | "0"
+BS22 | =IF(AA$9, IFERROR(GET_PRICE(AA22,$AG22,AA$11),0),0) | "0"
+BT22 | =IF(AB$9, IFERROR(GET_PRICE(AB22,$AG22,AB$11),0),0) | "0"
+BU22 | =IF(AC$9, IFERROR(GET_PRICE(AC22,$AG22,AC$11),0),0) | "0"
+BV22 | =IF(AD$9, IFERROR(GET_PRICE(AD22,$AG22,AD$11),0),0) | "0"
+BW22 | =IF(AE$9, IFERROR(GET_PRICE(AE22,$AG22,AE$11),0),0) | "0"
+BX22 | =IF(AG22/2,CONCATENATE(AG22/2," sprint",if(AG22/2>1,"s","")),"") | 
+
+## 726 non-empty cells

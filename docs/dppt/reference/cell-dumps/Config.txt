@@ -1,0 +1,30 @@
+# TAB: Config  (block starts at row 1, col A)
+
+hidden rows: []
+hidden cols: []
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+I1 | "DPPT Version" | "DPPT Version"
+J1 | 6.2 | "6.2"
+B2 | "Finance" | "Finance" | FMT=NUMBER:0.0
+B3 | "Universal Margin" | "Universal Margin"
+D3 | 0.7 | "70%" | FMT=PERCENT:0%
+F3 | "Price" | "Price"
+G3 | =sum(Tasks!AP14:AP) | "$102,667"
+B4 | "Effective Margin (before commission)" | "Effective Margin (before commission)"
+D4 | =(G3-G6)/G3 | "70%" | FMT=PERCENT:0%
+F4 | "Commission" | "Commission"
+G4 | =G3*D5 | "$0"
+H4 | "Goes to:" | "Goes to:"
+B5 | "Commission" | "Commission"
+D5 | 0 | "0%" | FMT=PERCENT:0%
+F5 | "Revenue" | "Revenue"
+G5 | =G3-G4 | "$102,667"
+B6 | "Effective Margin % (after commission)" | "Effective Margin % (after commission)"
+D6 | =(G5-G6)/G5 | "70%" | FMT=PERCENT:0%
+F6 | "Team Expenses" | "Team Expenses"
+G6 | =sum(Team!I:I) | "$30,800" | FMT=CURRENCY:"$"#,##0
+F7 | "Margin Amount" | "Margin Amount"
+G7 | =G5-G6 | "$71,867"
+
+## 22 non-empty cells

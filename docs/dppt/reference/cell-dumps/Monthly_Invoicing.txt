@@ -1,0 +1,4823 @@
+# TAB: Monthly Invoicing  (block starts at row 1, col A)
+
+hidden rows: []
+hidden cols: []
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+A1 | "Invoice Month" | "Invoice Month"
+B1 | "Due" | "Due"
+C1 | "Amount " | "Amount "
+D1 | "Notes" | "Notes"
+A2 | =SORT(
+  UNIQUE(
+    FILTER(
+      TEXT(Output!$B$2:$B, "YYYY.MM"),
+      Output!$B$2:$B <> ""
+    )
+  ),
+  1,
+  TRUE
+) | "2027.01"
+B2 | =IF(A2="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A2
+  )
+) - 14) | "12/21/26" | FMT=DATE:m"/"d"/"yy
+C2 | =IF(B2="","",SUMIF(
+  #REF!,
+  $A2,
+  Output!$D$2:$D
+)) | "$0.00" | FMT=CURRENCY:"$"#,##0.00
+D2 | =IF(A2="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A2
+  )
+)
+) | "Sprint 1 | Discovery Team\nSprint 2 | Discovery Team"
+A3 |  | "2027.02"
+B3 | =IF(A3="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A3
+  )
+) - 14) | "1/18/27" | FMT=DATE:m"/"d"/"yy
+C3 | =IF(B3="","",SUMIF(
+  #REF!,
+  $A3,
+  Output!$D$2:$D
+)) | "$0.00" | FMT=CURRENCY:"$"#,##0.00
+D3 | =IF(A3="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A3
+  )
+)
+) | "Sprint 3 | Validation Team"
+B4 | =IF(A4="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A4
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C4 | =IF(B4="","",SUMIF(
+  #REF!,
+  $A4,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D4 | =IF(A4="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A4
+  )
+)
+) | 
+B5 | =IF(A5="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A5
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C5 | =IF(B5="","",SUMIF(
+  #REF!,
+  $A5,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D5 | =IF(A5="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A5
+  )
+)
+) | 
+B6 | =IF(A6="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A6
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C6 | =IF(B6="","",SUMIF(
+  #REF!,
+  $A6,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D6 | =IF(A6="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A6
+  )
+)
+) | 
+B7 | =IF(A7="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A7
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C7 | =IF(B7="","",SUMIF(
+  #REF!,
+  $A7,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D7 | =IF(A7="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A7
+  )
+)
+) | 
+B8 | =IF(A8="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A8
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C8 | =IF(B8="","",SUMIF(
+  #REF!,
+  $A8,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D8 | =IF(A8="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A8
+  )
+)
+) | 
+B9 | =IF(A9="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A9
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C9 | =IF(B9="","",SUMIF(
+  #REF!,
+  $A9,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D9 | =IF(A9="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A9
+  )
+)
+) | 
+B10 | =IF(A10="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A10
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C10 | =IF(B10="","",SUMIF(
+  #REF!,
+  $A10,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D10 | =IF(A10="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A10
+  )
+)
+) | 
+B11 | =IF(A11="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A11
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C11 | =IF(B11="","",SUMIF(
+  #REF!,
+  $A11,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D11 | =IF(A11="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A11
+  )
+)
+) | 
+B12 | =IF(A12="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A12
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C12 | =IF(B12="","",SUMIF(
+  #REF!,
+  $A12,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D12 | =IF(A12="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A12
+  )
+)
+) | 
+B13 | =IF(A13="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A13
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C13 | =IF(B13="","",SUMIF(
+  #REF!,
+  $A13,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D13 | =IF(A13="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A13
+  )
+)
+) | 
+B14 | =IF(A14="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A14
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C14 | =IF(B14="","",SUMIF(
+  #REF!,
+  $A14,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D14 | =IF(A14="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A14
+  )
+)
+) | 
+B15 | =IF(A15="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A15
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C15 | =IF(B15="","",SUMIF(
+  #REF!,
+  $A15,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D15 | =IF(A15="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A15
+  )
+)
+) | 
+B16 | =IF(A16="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A16
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C16 | =IF(B16="","",SUMIF(
+  #REF!,
+  $A16,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D16 | =IF(A16="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A16
+  )
+)
+) | 
+B17 | =IF(A17="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A17
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C17 | =IF(B17="","",SUMIF(
+  #REF!,
+  $A17,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D17 | =IF(A17="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A17
+  )
+)
+) | 
+B18 | =IF(A18="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A18
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C18 | =IF(B18="","",SUMIF(
+  #REF!,
+  $A18,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D18 | =IF(A18="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A18
+  )
+)
+) | 
+B19 | =IF(A19="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A19
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C19 | =IF(B19="","",SUMIF(
+  #REF!,
+  $A19,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D19 | =IF(A19="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A19
+  )
+)
+) | 
+B20 | =IF(A20="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A20
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C20 | =IF(B20="","",SUMIF(
+  #REF!,
+  $A20,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D20 | =IF(A20="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A20
+  )
+)
+) | 
+B21 | =IF(A21="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A21
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C21 | =IF(B21="","",SUMIF(
+  #REF!,
+  $A21,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D21 | =IF(A21="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A21
+  )
+)
+) | 
+B22 | =IF(A22="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A22
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C22 | =IF(B22="","",SUMIF(
+  #REF!,
+  $A22,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D22 | =IF(A22="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A22
+  )
+)
+) | 
+B23 | =IF(A23="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A23
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C23 | =IF(B23="","",SUMIF(
+  #REF!,
+  $A23,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D23 | =IF(A23="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A23
+  )
+)
+) | 
+B24 | =IF(A24="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A24
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C24 | =IF(B24="","",SUMIF(
+  #REF!,
+  $A24,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D24 | =IF(A24="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A24
+  )
+)
+) | 
+B25 | =IF(A25="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A25
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C25 | =IF(B25="","",SUMIF(
+  #REF!,
+  $A25,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D25 | =IF(A25="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A25
+  )
+)
+) | 
+B26 | =IF(A26="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A26
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C26 | =IF(B26="","",SUMIF(
+  #REF!,
+  $A26,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D26 | =IF(A26="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A26
+  )
+)
+) | 
+B27 | =IF(A27="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A27
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C27 | =IF(B27="","",SUMIF(
+  #REF!,
+  $A27,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D27 | =IF(A27="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A27
+  )
+)
+) | 
+B28 | =IF(A28="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A28
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C28 | =IF(B28="","",SUMIF(
+  #REF!,
+  $A28,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D28 | =IF(A28="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A28
+  )
+)
+) | 
+B29 | =IF(A29="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A29
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C29 | =IF(B29="","",SUMIF(
+  #REF!,
+  $A29,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D29 | =IF(A29="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A29
+  )
+)
+) | 
+B30 | =IF(A30="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A30
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C30 | =IF(B30="","",SUMIF(
+  #REF!,
+  $A30,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D30 | =IF(A30="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A30
+  )
+)
+) | 
+B31 | =IF(A31="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A31
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C31 | =IF(B31="","",SUMIF(
+  #REF!,
+  $A31,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D31 | =IF(A31="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A31
+  )
+)
+) | 
+B32 | =IF(A32="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A32
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C32 | =IF(B32="","",SUMIF(
+  #REF!,
+  $A32,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D32 | =IF(A32="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A32
+  )
+)
+) | 
+B33 | =IF(A33="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A33
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C33 | =IF(B33="","",SUMIF(
+  #REF!,
+  $A33,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D33 | =IF(A33="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A33
+  )
+)
+) | 
+B34 | =IF(A34="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A34
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C34 | =IF(B34="","",SUMIF(
+  #REF!,
+  $A34,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D34 | =IF(A34="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A34
+  )
+)
+) | 
+B35 | =IF(A35="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A35
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C35 | =IF(B35="","",SUMIF(
+  #REF!,
+  $A35,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D35 | =IF(A35="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A35
+  )
+)
+) | 
+B36 | =IF(A36="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A36
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C36 | =IF(B36="","",SUMIF(
+  #REF!,
+  $A36,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D36 | =IF(A36="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A36
+  )
+)
+) | 
+B37 | =IF(A37="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A37
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C37 | =IF(B37="","",SUMIF(
+  #REF!,
+  $A37,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D37 | =IF(A37="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A37
+  )
+)
+) | 
+B38 | =IF(A38="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A38
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C38 | =IF(B38="","",SUMIF(
+  #REF!,
+  $A38,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D38 | =IF(A38="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A38
+  )
+)
+) | 
+B39 | =IF(A39="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A39
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C39 | =IF(B39="","",SUMIF(
+  #REF!,
+  $A39,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D39 | =IF(A39="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A39
+  )
+)
+) | 
+B40 | =IF(A40="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A40
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C40 | =IF(B40="","",SUMIF(
+  #REF!,
+  $A40,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D40 | =IF(A40="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A40
+  )
+)
+) | 
+B41 | =IF(A41="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A41
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C41 | =IF(B41="","",SUMIF(
+  #REF!,
+  $A41,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D41 | =IF(A41="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A41
+  )
+)
+) | 
+B42 | =IF(A42="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A42
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C42 | =IF(B42="","",SUMIF(
+  #REF!,
+  $A42,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D42 | =IF(A42="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A42
+  )
+)
+) | 
+B43 | =IF(A43="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A43
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C43 | =IF(B43="","",SUMIF(
+  #REF!,
+  $A43,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D43 | =IF(A43="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A43
+  )
+)
+) | 
+B44 | =IF(A44="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A44
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C44 | =IF(B44="","",SUMIF(
+  #REF!,
+  $A44,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D44 | =IF(A44="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A44
+  )
+)
+) | 
+B45 | =IF(A45="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A45
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C45 | =IF(B45="","",SUMIF(
+  #REF!,
+  $A45,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D45 | =IF(A45="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A45
+  )
+)
+) | 
+B46 | =IF(A46="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A46
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C46 | =IF(B46="","",SUMIF(
+  #REF!,
+  $A46,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D46 | =IF(A46="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A46
+  )
+)
+) | 
+B47 | =IF(A47="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A47
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C47 | =IF(B47="","",SUMIF(
+  #REF!,
+  $A47,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D47 | =IF(A47="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A47
+  )
+)
+) | 
+B48 | =IF(A48="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A48
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C48 | =IF(B48="","",SUMIF(
+  #REF!,
+  $A48,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D48 | =IF(A48="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A48
+  )
+)
+) | 
+B49 | =IF(A49="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A49
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C49 | =IF(B49="","",SUMIF(
+  #REF!,
+  $A49,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D49 | =IF(A49="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A49
+  )
+)
+) | 
+B50 | =IF(A50="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A50
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C50 | =IF(B50="","",SUMIF(
+  #REF!,
+  $A50,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D50 | =IF(A50="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A50
+  )
+)
+) | 
+B51 | =IF(A51="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A51
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C51 | =IF(B51="","",SUMIF(
+  #REF!,
+  $A51,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D51 | =IF(A51="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A51
+  )
+)
+) | 
+B52 | =IF(A52="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A52
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C52 | =IF(B52="","",SUMIF(
+  #REF!,
+  $A52,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D52 | =IF(A52="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A52
+  )
+)
+) | 
+B53 | =IF(A53="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A53
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C53 | =IF(B53="","",SUMIF(
+  #REF!,
+  $A53,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D53 | =IF(A53="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A53
+  )
+)
+) | 
+B54 | =IF(A54="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A54
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C54 | =IF(B54="","",SUMIF(
+  #REF!,
+  $A54,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D54 | =IF(A54="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A54
+  )
+)
+) | 
+B55 | =IF(A55="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A55
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C55 | =IF(B55="","",SUMIF(
+  #REF!,
+  $A55,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D55 | =IF(A55="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A55
+  )
+)
+) | 
+B56 | =IF(A56="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A56
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C56 | =IF(B56="","",SUMIF(
+  #REF!,
+  $A56,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D56 | =IF(A56="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A56
+  )
+)
+) | 
+B57 | =IF(A57="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A57
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C57 | =IF(B57="","",SUMIF(
+  #REF!,
+  $A57,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D57 | =IF(A57="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A57
+  )
+)
+) | 
+B58 | =IF(A58="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A58
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C58 | =IF(B58="","",SUMIF(
+  #REF!,
+  $A58,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D58 | =IF(A58="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A58
+  )
+)
+) | 
+B59 | =IF(A59="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A59
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C59 | =IF(B59="","",SUMIF(
+  #REF!,
+  $A59,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D59 | =IF(A59="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A59
+  )
+)
+) | 
+B60 | =IF(A60="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A60
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C60 | =IF(B60="","",SUMIF(
+  #REF!,
+  $A60,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D60 | =IF(A60="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A60
+  )
+)
+) | 
+B61 | =IF(A61="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A61
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C61 | =IF(B61="","",SUMIF(
+  #REF!,
+  $A61,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D61 | =IF(A61="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A61
+  )
+)
+) | 
+B62 | =IF(A62="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A62
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C62 | =IF(B62="","",SUMIF(
+  #REF!,
+  $A62,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D62 | =IF(A62="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A62
+  )
+)
+) | 
+B63 | =IF(A63="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A63
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C63 | =IF(B63="","",SUMIF(
+  #REF!,
+  $A63,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D63 | =IF(A63="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A63
+  )
+)
+) | 
+B64 | =IF(A64="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A64
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C64 | =IF(B64="","",SUMIF(
+  #REF!,
+  $A64,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D64 | =IF(A64="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A64
+  )
+)
+) | 
+B65 | =IF(A65="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A65
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C65 | =IF(B65="","",SUMIF(
+  #REF!,
+  $A65,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D65 | =IF(A65="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A65
+  )
+)
+) | 
+B66 | =IF(A66="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A66
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C66 | =IF(B66="","",SUMIF(
+  #REF!,
+  $A66,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D66 | =IF(A66="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A66
+  )
+)
+) | 
+B67 | =IF(A67="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A67
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C67 | =IF(B67="","",SUMIF(
+  #REF!,
+  $A67,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D67 | =IF(A67="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A67
+  )
+)
+) | 
+B68 | =IF(A68="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A68
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C68 | =IF(B68="","",SUMIF(
+  #REF!,
+  $A68,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D68 | =IF(A68="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A68
+  )
+)
+) | 
+B69 | =IF(A69="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A69
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C69 | =IF(B69="","",SUMIF(
+  #REF!,
+  $A69,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D69 | =IF(A69="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A69
+  )
+)
+) | 
+B70 | =IF(A70="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A70
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C70 | =IF(B70="","",SUMIF(
+  #REF!,
+  $A70,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D70 | =IF(A70="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A70
+  )
+)
+) | 
+B71 | =IF(A71="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A71
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C71 | =IF(B71="","",SUMIF(
+  #REF!,
+  $A71,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D71 | =IF(A71="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A71
+  )
+)
+) | 
+B72 | =IF(A72="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A72
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C72 | =IF(B72="","",SUMIF(
+  #REF!,
+  $A72,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D72 | =IF(A72="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A72
+  )
+)
+) | 
+B73 | =IF(A73="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A73
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C73 | =IF(B73="","",SUMIF(
+  #REF!,
+  $A73,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D73 | =IF(A73="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A73
+  )
+)
+) | 
+B74 | =IF(A74="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A74
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C74 | =IF(B74="","",SUMIF(
+  #REF!,
+  $A74,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D74 | =IF(A74="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A74
+  )
+)
+) | 
+B75 | =IF(A75="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A75
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C75 | =IF(B75="","",SUMIF(
+  #REF!,
+  $A75,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D75 | =IF(A75="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A75
+  )
+)
+) | 
+B76 | =IF(A76="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A76
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C76 | =IF(B76="","",SUMIF(
+  #REF!,
+  $A76,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D76 | =IF(A76="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A76
+  )
+)
+) | 
+B77 | =IF(A77="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A77
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C77 | =IF(B77="","",SUMIF(
+  #REF!,
+  $A77,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D77 | =IF(A77="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A77
+  )
+)
+) | 
+B78 | =IF(A78="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A78
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C78 | =IF(B78="","",SUMIF(
+  #REF!,
+  $A78,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D78 | =IF(A78="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A78
+  )
+)
+) | 
+B79 | =IF(A79="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A79
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C79 | =IF(B79="","",SUMIF(
+  #REF!,
+  $A79,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D79 | =IF(A79="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A79
+  )
+)
+) | 
+B80 | =IF(A80="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A80
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C80 | =IF(B80="","",SUMIF(
+  #REF!,
+  $A80,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D80 | =IF(A80="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A80
+  )
+)
+) | 
+B81 | =IF(A81="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A81
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C81 | =IF(B81="","",SUMIF(
+  #REF!,
+  $A81,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D81 | =IF(A81="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A81
+  )
+)
+) | 
+B82 | =IF(A82="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A82
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C82 | =IF(B82="","",SUMIF(
+  #REF!,
+  $A82,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D82 | =IF(A82="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A82
+  )
+)
+) | 
+B83 | =IF(A83="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A83
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C83 | =IF(B83="","",SUMIF(
+  #REF!,
+  $A83,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D83 | =IF(A83="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A83
+  )
+)
+) | 
+B84 | =IF(A84="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A84
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C84 | =IF(B84="","",SUMIF(
+  #REF!,
+  $A84,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D84 | =IF(A84="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A84
+  )
+)
+) | 
+B85 | =IF(A85="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A85
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C85 | =IF(B85="","",SUMIF(
+  #REF!,
+  $A85,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D85 | =IF(A85="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A85
+  )
+)
+) | 
+B86 | =IF(A86="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A86
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C86 | =IF(B86="","",SUMIF(
+  #REF!,
+  $A86,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D86 | =IF(A86="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A86
+  )
+)
+) | 
+B87 | =IF(A87="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A87
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C87 | =IF(B87="","",SUMIF(
+  #REF!,
+  $A87,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D87 | =IF(A87="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A87
+  )
+)
+) | 
+B88 | =IF(A88="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A88
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C88 | =IF(B88="","",SUMIF(
+  #REF!,
+  $A88,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D88 | =IF(A88="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A88
+  )
+)
+) | 
+B89 | =IF(A89="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A89
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C89 | =IF(B89="","",SUMIF(
+  #REF!,
+  $A89,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D89 | =IF(A89="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A89
+  )
+)
+) | 
+B90 | =IF(A90="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A90
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C90 | =IF(B90="","",SUMIF(
+  #REF!,
+  $A90,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D90 | =IF(A90="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A90
+  )
+)
+) | 
+B91 | =IF(A91="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A91
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C91 | =IF(B91="","",SUMIF(
+  #REF!,
+  $A91,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D91 | =IF(A91="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A91
+  )
+)
+) | 
+B92 | =IF(A92="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A92
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C92 | =IF(B92="","",SUMIF(
+  #REF!,
+  $A92,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D92 | =IF(A92="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A92
+  )
+)
+) | 
+B93 | =IF(A93="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A93
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C93 | =IF(B93="","",SUMIF(
+  #REF!,
+  $A93,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D93 | =IF(A93="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A93
+  )
+)
+) | 
+B94 | =IF(A94="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A94
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C94 | =IF(B94="","",SUMIF(
+  #REF!,
+  $A94,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D94 | =IF(A94="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A94
+  )
+)
+) | 
+B95 | =IF(A95="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A95
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C95 | =IF(B95="","",SUMIF(
+  #REF!,
+  $A95,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D95 | =IF(A95="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A95
+  )
+)
+) | 
+B96 | =IF(A96="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A96
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C96 | =IF(B96="","",SUMIF(
+  #REF!,
+  $A96,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D96 | =IF(A96="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A96
+  )
+)
+) | 
+B97 | =IF(A97="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A97
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C97 | =IF(B97="","",SUMIF(
+  #REF!,
+  $A97,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D97 | =IF(A97="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A97
+  )
+)
+) | 
+B98 | =IF(A98="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A98
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C98 | =IF(B98="","",SUMIF(
+  #REF!,
+  $A98,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D98 | =IF(A98="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A98
+  )
+)
+) | 
+B99 | =IF(A99="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A99
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C99 | =IF(B99="","",SUMIF(
+  #REF!,
+  $A99,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D99 | =IF(A99="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A99
+  )
+)
+) | 
+B100 | =IF(A100="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A100
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C100 | =IF(B100="","",SUMIF(
+  #REF!,
+  $A100,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D100 | =IF(A100="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A100
+  )
+)
+) | 
+B101 | =IF(A101="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A101
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C101 | =IF(B101="","",SUMIF(
+  #REF!,
+  $A101,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D101 | =IF(A101="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A101
+  )
+)
+) | 
+B102 | =IF(A102="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A102
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C102 | =IF(B102="","",SUMIF(
+  #REF!,
+  $A102,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D102 | =IF(A102="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A102
+  )
+)
+) | 
+B103 | =IF(A103="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A103
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C103 | =IF(B103="","",SUMIF(
+  #REF!,
+  $A103,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D103 | =IF(A103="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A103
+  )
+)
+) | 
+B104 | =IF(A104="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A104
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C104 | =IF(B104="","",SUMIF(
+  #REF!,
+  $A104,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D104 | =IF(A104="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A104
+  )
+)
+) | 
+B105 | =IF(A105="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A105
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C105 | =IF(B105="","",SUMIF(
+  #REF!,
+  $A105,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D105 | =IF(A105="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A105
+  )
+)
+) | 
+B106 | =IF(A106="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A106
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C106 | =IF(B106="","",SUMIF(
+  #REF!,
+  $A106,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D106 | =IF(A106="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A106
+  )
+)
+) | 
+B107 | =IF(A107="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A107
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C107 | =IF(B107="","",SUMIF(
+  #REF!,
+  $A107,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D107 | =IF(A107="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A107
+  )
+)
+) | 
+B108 | =IF(A108="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A108
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C108 | =IF(B108="","",SUMIF(
+  #REF!,
+  $A108,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D108 | =IF(A108="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A108
+  )
+)
+) | 
+B109 | =IF(A109="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A109
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C109 | =IF(B109="","",SUMIF(
+  #REF!,
+  $A109,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D109 | =IF(A109="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A109
+  )
+)
+) | 
+B110 | =IF(A110="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A110
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C110 | =IF(B110="","",SUMIF(
+  #REF!,
+  $A110,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D110 | =IF(A110="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A110
+  )
+)
+) | 
+B111 | =IF(A111="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A111
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C111 | =IF(B111="","",SUMIF(
+  #REF!,
+  $A111,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D111 | =IF(A111="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A111
+  )
+)
+) | 
+B112 | =IF(A112="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A112
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C112 | =IF(B112="","",SUMIF(
+  #REF!,
+  $A112,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D112 | =IF(A112="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A112
+  )
+)
+) | 
+B113 | =IF(A113="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A113
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C113 | =IF(B113="","",SUMIF(
+  #REF!,
+  $A113,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D113 | =IF(A113="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A113
+  )
+)
+) | 
+B114 | =IF(A114="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A114
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C114 | =IF(B114="","",SUMIF(
+  #REF!,
+  $A114,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D114 | =IF(A114="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A114
+  )
+)
+) | 
+B115 | =IF(A115="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A115
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C115 | =IF(B115="","",SUMIF(
+  #REF!,
+  $A115,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D115 | =IF(A115="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A115
+  )
+)
+) | 
+B116 | =IF(A116="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A116
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C116 | =IF(B116="","",SUMIF(
+  #REF!,
+  $A116,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D116 | =IF(A116="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A116
+  )
+)
+) | 
+B117 | =IF(A117="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A117
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C117 | =IF(B117="","",SUMIF(
+  #REF!,
+  $A117,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D117 | =IF(A117="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A117
+  )
+)
+) | 
+B118 | =IF(A118="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A118
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C118 | =IF(B118="","",SUMIF(
+  #REF!,
+  $A118,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D118 | =IF(A118="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A118
+  )
+)
+) | 
+B119 | =IF(A119="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A119
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C119 | =IF(B119="","",SUMIF(
+  #REF!,
+  $A119,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D119 | =IF(A119="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A119
+  )
+)
+) | 
+B120 | =IF(A120="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A120
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C120 | =IF(B120="","",SUMIF(
+  #REF!,
+  $A120,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D120 | =IF(A120="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A120
+  )
+)
+) | 
+B121 | =IF(A121="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A121
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C121 | =IF(B121="","",SUMIF(
+  #REF!,
+  $A121,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D121 | =IF(A121="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A121
+  )
+)
+) | 
+B122 | =IF(A122="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A122
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C122 | =IF(B122="","",SUMIF(
+  #REF!,
+  $A122,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D122 | =IF(A122="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A122
+  )
+)
+) | 
+B123 | =IF(A123="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A123
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C123 | =IF(B123="","",SUMIF(
+  #REF!,
+  $A123,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D123 | =IF(A123="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A123
+  )
+)
+) | 
+B124 | =IF(A124="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A124
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C124 | =IF(B124="","",SUMIF(
+  #REF!,
+  $A124,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D124 | =IF(A124="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A124
+  )
+)
+) | 
+B125 | =IF(A125="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A125
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C125 | =IF(B125="","",SUMIF(
+  #REF!,
+  $A125,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D125 | =IF(A125="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A125
+  )
+)
+) | 
+B126 | =IF(A126="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A126
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C126 | =IF(B126="","",SUMIF(
+  #REF!,
+  $A126,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D126 | =IF(A126="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A126
+  )
+)
+) | 
+B127 | =IF(A127="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A127
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C127 | =IF(B127="","",SUMIF(
+  #REF!,
+  $A127,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D127 | =IF(A127="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A127
+  )
+)
+) | 
+B128 | =IF(A128="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A128
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C128 | =IF(B128="","",SUMIF(
+  #REF!,
+  $A128,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D128 | =IF(A128="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A128
+  )
+)
+) | 
+B129 | =IF(A129="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A129
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C129 | =IF(B129="","",SUMIF(
+  #REF!,
+  $A129,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D129 | =IF(A129="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A129
+  )
+)
+) | 
+B130 | =IF(A130="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A130
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C130 | =IF(B130="","",SUMIF(
+  #REF!,
+  $A130,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D130 | =IF(A130="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A130
+  )
+)
+) | 
+B131 | =IF(A131="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A131
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C131 | =IF(B131="","",SUMIF(
+  #REF!,
+  $A131,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D131 | =IF(A131="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A131
+  )
+)
+) | 
+B132 | =IF(A132="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A132
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C132 | =IF(B132="","",SUMIF(
+  #REF!,
+  $A132,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D132 | =IF(A132="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A132
+  )
+)
+) | 
+B133 | =IF(A133="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A133
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C133 | =IF(B133="","",SUMIF(
+  #REF!,
+  $A133,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D133 | =IF(A133="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A133
+  )
+)
+) | 
+B134 | =IF(A134="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A134
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C134 | =IF(B134="","",SUMIF(
+  #REF!,
+  $A134,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D134 | =IF(A134="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A134
+  )
+)
+) | 
+B135 | =IF(A135="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A135
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C135 | =IF(B135="","",SUMIF(
+  #REF!,
+  $A135,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D135 | =IF(A135="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A135
+  )
+)
+) | 
+B136 | =IF(A136="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A136
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C136 | =IF(B136="","",SUMIF(
+  #REF!,
+  $A136,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D136 | =IF(A136="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A136
+  )
+)
+) | 
+B137 | =IF(A137="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A137
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C137 | =IF(B137="","",SUMIF(
+  #REF!,
+  $A137,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D137 | =IF(A137="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A137
+  )
+)
+) | 
+B138 | =IF(A138="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A138
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C138 | =IF(B138="","",SUMIF(
+  #REF!,
+  $A138,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D138 | =IF(A138="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A138
+  )
+)
+) | 
+B139 | =IF(A139="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A139
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C139 | =IF(B139="","",SUMIF(
+  #REF!,
+  $A139,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D139 | =IF(A139="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A139
+  )
+)
+) | 
+B140 | =IF(A140="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A140
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C140 | =IF(B140="","",SUMIF(
+  #REF!,
+  $A140,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D140 | =IF(A140="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A140
+  )
+)
+) | 
+B141 | =IF(A141="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A141
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C141 | =IF(B141="","",SUMIF(
+  #REF!,
+  $A141,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D141 | =IF(A141="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A141
+  )
+)
+) | 
+B142 | =IF(A142="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A142
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C142 | =IF(B142="","",SUMIF(
+  #REF!,
+  $A142,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D142 | =IF(A142="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A142
+  )
+)
+) | 
+B143 | =IF(A143="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A143
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C143 | =IF(B143="","",SUMIF(
+  #REF!,
+  $A143,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D143 | =IF(A143="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A143
+  )
+)
+) | 
+B144 | =IF(A144="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A144
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C144 | =IF(B144="","",SUMIF(
+  #REF!,
+  $A144,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D144 | =IF(A144="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A144
+  )
+)
+) | 
+B145 | =IF(A145="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A145
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C145 | =IF(B145="","",SUMIF(
+  #REF!,
+  $A145,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D145 | =IF(A145="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A145
+  )
+)
+) | 
+B146 | =IF(A146="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A146
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C146 | =IF(B146="","",SUMIF(
+  #REF!,
+  $A146,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D146 | =IF(A146="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A146
+  )
+)
+) | 
+B147 | =IF(A147="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A147
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C147 | =IF(B147="","",SUMIF(
+  #REF!,
+  $A147,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D147 | =IF(A147="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A147
+  )
+)
+) | 
+B148 | =IF(A148="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A148
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C148 | =IF(B148="","",SUMIF(
+  #REF!,
+  $A148,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D148 | =IF(A148="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A148
+  )
+)
+) | 
+B149 | =IF(A149="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A149
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C149 | =IF(B149="","",SUMIF(
+  #REF!,
+  $A149,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D149 | =IF(A149="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A149
+  )
+)
+) | 
+B150 | =IF(A150="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A150
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C150 | =IF(B150="","",SUMIF(
+  #REF!,
+  $A150,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D150 | =IF(A150="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A150
+  )
+)
+) | 
+B151 | =IF(A151="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A151
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C151 | =IF(B151="","",SUMIF(
+  #REF!,
+  $A151,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D151 | =IF(A151="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A151
+  )
+)
+) | 
+B152 | =IF(A152="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A152
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C152 | =IF(B152="","",SUMIF(
+  #REF!,
+  $A152,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D152 | =IF(A152="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A152
+  )
+)
+) | 
+B153 | =IF(A153="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A153
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C153 | =IF(B153="","",SUMIF(
+  #REF!,
+  $A153,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D153 | =IF(A153="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A153
+  )
+)
+) | 
+B154 | =IF(A154="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A154
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C154 | =IF(B154="","",SUMIF(
+  #REF!,
+  $A154,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D154 | =IF(A154="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A154
+  )
+)
+) | 
+B155 | =IF(A155="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A155
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C155 | =IF(B155="","",SUMIF(
+  #REF!,
+  $A155,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D155 | =IF(A155="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A155
+  )
+)
+) | 
+B156 | =IF(A156="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A156
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C156 | =IF(B156="","",SUMIF(
+  #REF!,
+  $A156,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D156 | =IF(A156="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A156
+  )
+)
+) | 
+B157 | =IF(A157="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A157
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C157 | =IF(B157="","",SUMIF(
+  #REF!,
+  $A157,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D157 | =IF(A157="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A157
+  )
+)
+) | 
+B158 | =IF(A158="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A158
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C158 | =IF(B158="","",SUMIF(
+  #REF!,
+  $A158,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D158 | =IF(A158="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A158
+  )
+)
+) | 
+B159 | =IF(A159="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A159
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C159 | =IF(B159="","",SUMIF(
+  #REF!,
+  $A159,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D159 | =IF(A159="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A159
+  )
+)
+) | 
+B160 | =IF(A160="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A160
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C160 | =IF(B160="","",SUMIF(
+  #REF!,
+  $A160,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D160 | =IF(A160="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A160
+  )
+)
+) | 
+B161 | =IF(A161="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A161
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C161 | =IF(B161="","",SUMIF(
+  #REF!,
+  $A161,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D161 | =IF(A161="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A161
+  )
+)
+) | 
+B162 | =IF(A162="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A162
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C162 | =IF(B162="","",SUMIF(
+  #REF!,
+  $A162,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D162 | =IF(A162="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A162
+  )
+)
+) | 
+B163 | =IF(A163="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A163
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C163 | =IF(B163="","",SUMIF(
+  #REF!,
+  $A163,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D163 | =IF(A163="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A163
+  )
+)
+) | 
+B164 | =IF(A164="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A164
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C164 | =IF(B164="","",SUMIF(
+  #REF!,
+  $A164,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D164 | =IF(A164="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A164
+  )
+)
+) | 
+B165 | =IF(A165="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A165
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C165 | =IF(B165="","",SUMIF(
+  #REF!,
+  $A165,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D165 | =IF(A165="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A165
+  )
+)
+) | 
+B166 | =IF(A166="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A166
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C166 | =IF(B166="","",SUMIF(
+  #REF!,
+  $A166,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D166 | =IF(A166="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A166
+  )
+)
+) | 
+B167 | =IF(A167="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A167
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C167 | =IF(B167="","",SUMIF(
+  #REF!,
+  $A167,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D167 | =IF(A167="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A167
+  )
+)
+) | 
+B168 | =IF(A168="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A168
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C168 | =IF(B168="","",SUMIF(
+  #REF!,
+  $A168,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D168 | =IF(A168="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A168
+  )
+)
+) | 
+B169 | =IF(A169="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A169
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C169 | =IF(B169="","",SUMIF(
+  #REF!,
+  $A169,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D169 | =IF(A169="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A169
+  )
+)
+) | 
+B170 | =IF(A170="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A170
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C170 | =IF(B170="","",SUMIF(
+  #REF!,
+  $A170,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D170 | =IF(A170="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A170
+  )
+)
+) | 
+B171 | =IF(A171="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A171
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C171 | =IF(B171="","",SUMIF(
+  #REF!,
+  $A171,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D171 | =IF(A171="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A171
+  )
+)
+) | 
+B172 | =IF(A172="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A172
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C172 | =IF(B172="","",SUMIF(
+  #REF!,
+  $A172,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D172 | =IF(A172="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A172
+  )
+)
+) | 
+B173 | =IF(A173="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A173
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C173 | =IF(B173="","",SUMIF(
+  #REF!,
+  $A173,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D173 | =IF(A173="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A173
+  )
+)
+) | 
+B174 | =IF(A174="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A174
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C174 | =IF(B174="","",SUMIF(
+  #REF!,
+  $A174,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D174 | =IF(A174="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A174
+  )
+)
+) | 
+B175 | =IF(A175="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A175
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C175 | =IF(B175="","",SUMIF(
+  #REF!,
+  $A175,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D175 | =IF(A175="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A175
+  )
+)
+) | 
+B176 | =IF(A176="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A176
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C176 | =IF(B176="","",SUMIF(
+  #REF!,
+  $A176,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D176 | =IF(A176="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A176
+  )
+)
+) | 
+B177 | =IF(A177="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A177
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C177 | =IF(B177="","",SUMIF(
+  #REF!,
+  $A177,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D177 | =IF(A177="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A177
+  )
+)
+) | 
+B178 | =IF(A178="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A178
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C178 | =IF(B178="","",SUMIF(
+  #REF!,
+  $A178,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D178 | =IF(A178="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A178
+  )
+)
+) | 
+B179 | =IF(A179="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A179
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C179 | =IF(B179="","",SUMIF(
+  #REF!,
+  $A179,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D179 | =IF(A179="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A179
+  )
+)
+) | 
+B180 | =IF(A180="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A180
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C180 | =IF(B180="","",SUMIF(
+  #REF!,
+  $A180,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D180 | =IF(A180="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A180
+  )
+)
+) | 
+B181 | =IF(A181="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A181
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C181 | =IF(B181="","",SUMIF(
+  #REF!,
+  $A181,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D181 | =IF(A181="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A181
+  )
+)
+) | 
+B182 | =IF(A182="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A182
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C182 | =IF(B182="","",SUMIF(
+  #REF!,
+  $A182,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D182 | =IF(A182="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A182
+  )
+)
+) | 
+B183 | =IF(A183="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A183
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C183 | =IF(B183="","",SUMIF(
+  #REF!,
+  $A183,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D183 | =IF(A183="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A183
+  )
+)
+) | 
+B184 | =IF(A184="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A184
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C184 | =IF(B184="","",SUMIF(
+  #REF!,
+  $A184,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D184 | =IF(A184="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A184
+  )
+)
+) | 
+B185 | =IF(A185="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A185
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C185 | =IF(B185="","",SUMIF(
+  #REF!,
+  $A185,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D185 | =IF(A185="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A185
+  )
+)
+) | 
+B186 | =IF(A186="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A186
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C186 | =IF(B186="","",SUMIF(
+  #REF!,
+  $A186,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D186 | =IF(A186="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A186
+  )
+)
+) | 
+B187 | =IF(A187="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A187
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C187 | =IF(B187="","",SUMIF(
+  #REF!,
+  $A187,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D187 | =IF(A187="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A187
+  )
+)
+) | 
+B188 | =IF(A188="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A188
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C188 | =IF(B188="","",SUMIF(
+  #REF!,
+  $A188,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D188 | =IF(A188="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A188
+  )
+)
+) | 
+B189 | =IF(A189="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A189
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C189 | =IF(B189="","",SUMIF(
+  #REF!,
+  $A189,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D189 | =IF(A189="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A189
+  )
+)
+) | 
+B190 | =IF(A190="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A190
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C190 | =IF(B190="","",SUMIF(
+  #REF!,
+  $A190,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D190 | =IF(A190="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A190
+  )
+)
+) | 
+B191 | =IF(A191="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A191
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C191 | =IF(B191="","",SUMIF(
+  #REF!,
+  $A191,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D191 | =IF(A191="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A191
+  )
+)
+) | 
+B192 | =IF(A192="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A192
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C192 | =IF(B192="","",SUMIF(
+  #REF!,
+  $A192,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D192 | =IF(A192="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A192
+  )
+)
+) | 
+B193 | =IF(A193="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A193
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C193 | =IF(B193="","",SUMIF(
+  #REF!,
+  $A193,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D193 | =IF(A193="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A193
+  )
+)
+) | 
+B194 | =IF(A194="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A194
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C194 | =IF(B194="","",SUMIF(
+  #REF!,
+  $A194,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D194 | =IF(A194="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A194
+  )
+)
+) | 
+B195 | =IF(A195="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A195
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C195 | =IF(B195="","",SUMIF(
+  #REF!,
+  $A195,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D195 | =IF(A195="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A195
+  )
+)
+) | 
+B196 | =IF(A196="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A196
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C196 | =IF(B196="","",SUMIF(
+  #REF!,
+  $A196,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D196 | =IF(A196="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A196
+  )
+)
+) | 
+B197 | =IF(A197="","",MIN(
+  FILTER(
+    Output!B$2:B,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A197
+  )
+) - 14) |  | FMT=DATE:m"/"d"/"yy
+C197 | =IF(B197="","",SUMIF(
+  #REF!,
+  $A197,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D197 | =IF(A197="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A197
+  )
+)
+) | 
+C198 | =IF(B198="","",SUMIF(
+  #REF!,
+  $A198,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D198 | =IF(A198="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A198
+  )
+)
+) | 
+C199 | =IF(B199="","",SUMIF(
+  #REF!,
+  $A199,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D199 | =IF(A199="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A199
+  )
+)
+) | 
+C200 | =IF(B200="","",SUMIF(
+  #REF!,
+  $A200,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D200 | =IF(A200="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A200
+  )
+)
+) | 
+C201 | =IF(B201="","",SUMIF(
+  #REF!,
+  $A201,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D201 | =IF(A201="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A201
+  )
+)
+) | 
+C202 | =IF(B202="","",SUMIF(
+  #REF!,
+  $A202,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D202 | =IF(A202="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A202
+  )
+)
+) | 
+C203 | =IF(B203="","",SUMIF(
+  #REF!,
+  $A203,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D203 | =IF(A203="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A203
+  )
+)
+) | 
+C204 | =IF(B204="","",SUMIF(
+  #REF!,
+  $A204,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D204 | =IF(A204="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A204
+  )
+)
+) | 
+C205 | =IF(B205="","",SUMIF(
+  #REF!,
+  $A205,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D205 | =IF(A205="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A205
+  )
+)
+) | 
+C206 | =IF(B206="","",SUMIF(
+  #REF!,
+  $A206,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D206 | =IF(A206="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A206
+  )
+)
+) | 
+C207 | =IF(B207="","",SUMIF(
+  #REF!,
+  $A207,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D207 | =IF(A207="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A207
+  )
+)
+) | 
+C208 | =IF(B208="","",SUMIF(
+  #REF!,
+  $A208,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D208 | =IF(A208="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A208
+  )
+)
+) | 
+C209 | =IF(B209="","",SUMIF(
+  #REF!,
+  $A209,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D209 | =IF(A209="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A209
+  )
+)
+) | 
+C210 | =IF(B210="","",SUMIF(
+  #REF!,
+  $A210,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D210 | =IF(A210="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A210
+  )
+)
+) | 
+C211 | =IF(B211="","",SUMIF(
+  #REF!,
+  $A211,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D211 | =IF(A211="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A211
+  )
+)
+) | 
+C212 | =IF(B212="","",SUMIF(
+  #REF!,
+  $A212,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D212 | =IF(A212="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A212
+  )
+)
+) | 
+C213 | =IF(B213="","",SUMIF(
+  #REF!,
+  $A213,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D213 | =IF(A213="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A213
+  )
+)
+) | 
+C214 | =IF(B214="","",SUMIF(
+  #REF!,
+  $A214,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D214 | =IF(A214="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A214
+  )
+)
+) | 
+C215 | =IF(B215="","",SUMIF(
+  #REF!,
+  $A215,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D215 | =IF(A215="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A215
+  )
+)
+) | 
+C216 | =IF(B216="","",SUMIF(
+  #REF!,
+  $A216,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D216 | =IF(A216="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A216
+  )
+)
+) | 
+C217 | =IF(B217="","",SUMIF(
+  #REF!,
+  $A217,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D217 | =IF(A217="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A217
+  )
+)
+) | 
+C218 | =IF(B218="","",SUMIF(
+  #REF!,
+  $A218,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D218 | =IF(A218="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A218
+  )
+)
+) | 
+C219 | =IF(B219="","",SUMIF(
+  #REF!,
+  $A219,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D219 | =IF(A219="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A219
+  )
+)
+) | 
+C220 | =IF(B220="","",SUMIF(
+  #REF!,
+  $A220,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D220 | =IF(A220="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A220
+  )
+)
+) | 
+C221 | =IF(B221="","",SUMIF(
+  #REF!,
+  $A221,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D221 | =IF(A221="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A221
+  )
+)
+) | 
+C222 | =IF(B222="","",SUMIF(
+  #REF!,
+  $A222,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D222 | =IF(A222="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A222
+  )
+)
+) | 
+C223 | =IF(B223="","",SUMIF(
+  #REF!,
+  $A223,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D223 | =IF(A223="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A223
+  )
+)
+) | 
+C224 | =IF(B224="","",SUMIF(
+  #REF!,
+  $A224,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D224 | =IF(A224="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A224
+  )
+)
+) | 
+C225 | =IF(B225="","",SUMIF(
+  #REF!,
+  $A225,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D225 | =IF(A225="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A225
+  )
+)
+) | 
+C226 | =IF(B226="","",SUMIF(
+  #REF!,
+  $A226,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D226 | =IF(A226="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A226
+  )
+)
+) | 
+C227 | =IF(B227="","",SUMIF(
+  #REF!,
+  $A227,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D227 | =IF(A227="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A227
+  )
+)
+) | 
+C228 | =IF(B228="","",SUMIF(
+  #REF!,
+  $A228,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D228 | =IF(A228="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A228
+  )
+)
+) | 
+C229 | =IF(B229="","",SUMIF(
+  #REF!,
+  $A229,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D229 | =IF(A229="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A229
+  )
+)
+) | 
+C230 | =IF(B230="","",SUMIF(
+  #REF!,
+  $A230,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D230 | =IF(A230="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A230
+  )
+)
+) | 
+C231 | =IF(B231="","",SUMIF(
+  #REF!,
+  $A231,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D231 | =IF(A231="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A231
+  )
+)
+) | 
+C232 | =IF(B232="","",SUMIF(
+  #REF!,
+  $A232,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D232 | =IF(A232="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A232
+  )
+)
+) | 
+C233 | =IF(B233="","",SUMIF(
+  #REF!,
+  $A233,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D233 | =IF(A233="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A233
+  )
+)
+) | 
+C234 | =IF(B234="","",SUMIF(
+  #REF!,
+  $A234,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D234 | =IF(A234="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A234
+  )
+)
+) | 
+C235 | =IF(B235="","",SUMIF(
+  #REF!,
+  $A235,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D235 | =IF(A235="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A235
+  )
+)
+) | 
+C236 | =IF(B236="","",SUMIF(
+  #REF!,
+  $A236,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D236 | =IF(A236="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A236
+  )
+)
+) | 
+C237 | =IF(B237="","",SUMIF(
+  #REF!,
+  $A237,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D237 | =IF(A237="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A237
+  )
+)
+) | 
+C238 | =IF(B238="","",SUMIF(
+  #REF!,
+  $A238,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D238 | =IF(A238="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A238
+  )
+)
+) | 
+C239 | =IF(B239="","",SUMIF(
+  #REF!,
+  $A239,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D239 | =IF(A239="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A239
+  )
+)
+) | 
+C240 | =IF(B240="","",SUMIF(
+  #REF!,
+  $A240,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D240 | =IF(A240="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A240
+  )
+)
+) | 
+C241 | =IF(B241="","",SUMIF(
+  #REF!,
+  $A241,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D241 | =IF(A241="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A241
+  )
+)
+) | 
+C242 | =IF(B242="","",SUMIF(
+  #REF!,
+  $A242,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D242 | =IF(A242="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A242
+  )
+)
+) | 
+C243 | =IF(B243="","",SUMIF(
+  #REF!,
+  $A243,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D243 | =IF(A243="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A243
+  )
+)
+) | 
+C244 | =IF(B244="","",SUMIF(
+  #REF!,
+  $A244,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D244 | =IF(A244="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A244
+  )
+)
+) | 
+C245 | =IF(B245="","",SUMIF(
+  #REF!,
+  $A245,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D245 | =IF(A245="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A245
+  )
+)
+) | 
+C246 | =IF(B246="","",SUMIF(
+  #REF!,
+  $A246,
+  Output!$D$2:$D
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D246 | =IF(A246="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A246
+  )
+)
+) | 
+C247 | =IF(B247="","",SUMIF(
+  #REF!,
+  $A247,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D247 | =IF(A247="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A247
+  )
+)
+) | 
+C248 | =IF(B248="","",SUMIF(
+  #REF!,
+  $A248,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D248 | =IF(A248="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A248
+  )
+)
+) | 
+C249 | =IF(B249="","",SUMIF(
+  #REF!,
+  $A249,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D249 | =IF(A249="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A249
+  )
+)
+) | 
+C250 | =IF(B250="","",SUMIF(
+  #REF!,
+  $A250,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D250 | =IF(A250="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A250
+  )
+)
+) | 
+C251 | =IF(B251="","",SUMIF(
+  #REF!,
+  $A251,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D251 | =IF(A251="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A251
+  )
+)
+) | 
+C252 | =IF(B252="","",SUMIF(
+  #REF!,
+  $A252,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D252 | =IF(A252="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A252
+  )
+)
+) | 
+C253 | =IF(B253="","",SUMIF(
+  #REF!,
+  $A253,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D253 | =IF(A253="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A253
+  )
+)
+) | 
+C254 | =IF(B254="","",SUMIF(
+  #REF!,
+  $A254,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D254 | =IF(A254="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A254
+  )
+)
+) | 
+C255 | =IF(B255="","",SUMIF(
+  #REF!,
+  $A255,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D255 | =IF(A255="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A255
+  )
+)
+) | 
+C256 | =IF(B256="","",SUMIF(
+  #REF!,
+  $A256,
+  'Sprint Invoicing'!$F$3:$F
+)) |  | FMT=CURRENCY:"$"#,##0.00
+D256 | =IF(A256="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A256
+  )
+)
+) | 
+D257 | =IF(A257="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A257
+  )
+)
+) | 
+D258 | =IF(A258="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A258
+  )
+)
+) | 
+D259 | =IF(A259="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A259
+  )
+)
+) | 
+D260 | =IF(A260="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A260
+  )
+)
+) | 
+D261 | =IF(A261="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A261
+  )
+)
+) | 
+D262 | =IF(A262="","", 
+TEXTJOIN("
+", TRUE,
+  FILTER(
+    Output!$A$2:$A,
+    TEXT(Output!$B$2:$B,"YYYY.MM") = $A262
+  )
+)
+) | 
+
+## 718 non-empty cells

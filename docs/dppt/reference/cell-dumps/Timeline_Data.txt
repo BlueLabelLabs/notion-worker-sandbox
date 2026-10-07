@@ -1,0 +1,12 @@
+# TAB: Timeline Data  (block starts at row 1, col A)
+
+hidden rows: []
+hidden cols: []
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+A1 | =filter(Tasks!A6:A21,Tasks!AG6:AG21>0) | "Phase / Sprint / Team / Milestone / Task"
+A2 |  | "Visible / Included"
+A3 |  | "Discovery Team"
+A4 |  | "Validation Team"
+
+## 4 non-empty cells

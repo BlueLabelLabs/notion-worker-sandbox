@@ -1,0 +1,27 @@
+# TAB: Output  (block starts at row 1, col A)
+
+hidden rows: []
+hidden cols: []
+
+## Cells (A1 | entered formula/value | formatted | note | validation | numfmt)
+A1 | =if(checkboxOptionMonthly,"Month","Sprint") | "Sprint"
+B1 | "Start" | "Start"
+C1 | "End" | "End"
+D1 | "Amount" | "Amount" | FMT=CURRENCY:"$"#,##0
+A2 | =if(checkboxOptionMonthly,
+IFERROR(LET(names, FILTER(Tasks!AN15:AN, Tasks!AN15:AN<>""), fees, FILTER(Tasks!AO15:AO, Tasks!AN15:AN<>""), starts, FILTER(Tasks!AQ15:AQ, Tasks!AN15:AN<>""), months, FILTER(Tasks!AF15:AF, Tasks!AN15:AN<>""), expanded, REDUCE("", SEQUENCE(ROWS(names)), LAMBDA(acc, r, LET(m_count, N(INDEX(months, r)), m_count_int, ROUNDUP(m_count), IF(m_count_int<=0, acc, VSTACK(acc, MAKEARRAY(m_count_int, 4, LAMBDA(m, c, LET(fraction, IF(m_count - (m - 1) < 1, m_count - (m - 1), 1), CHOOSE(c, "Month " & (ROWS(acc) + m - 1) & " | " & INDEX(names, r), EDATE(INDEX(starts, r), m-1), EDATE(INDEX(starts, r), m-1) + fraction * (EDATE(INDEX(starts, r), m) - EDATE(INDEX(starts, r), m-1)) - 1, INDEX(fees, r) * fraction))))))))), CHOOSEROWS(expanded, SEQUENCE(ROWS(expanded)-1, 1, 2))))
+,
+IFERROR(ARRAYFORMULA(LET(valid, Tasks!AF14:AF > 0, counts, FILTER(Tasks!AF14:AF, valid), counts_int, ROUNDUP(counts), phases, FILTER(Tasks!AN14:AR, valid), total, SUM(counts_int), seq, SEQUENCE(total), scan_arr, SCAN(0, counts_int, LAMBDA(a, v, a + v)) - counts_int + 1, phase_idx, XMATCH(seq, scan_arr, -1), sc, CHOOSEROWS(scan_arr, phase_idx), c, CHOOSEROWS(counts, phase_idx), fraction, IF(c - (seq - sc) < 1, c - (seq - sc), 1), sprint_names, "Sprint " & seq & " | " & CHOOSEROWS(INDEX(phases, , 1), phase_idx), sprint_starts, CHOOSEROWS(INDEX(phases, , 4), phase_idx) + (seq - sc) * 14, sprint_ends, sprint_starts + fraction * 14 - 3, sprint_fees, CHOOSEROWS(INDEX(phases, , 2), phase_idx) * fraction, HSTACK(sprint_names, sprint_starts, sprint_ends, sprint_fees))))) | "Sprint 1 | Discovery Team" | FMT=DATE:M/d/yyyy
+B2 |  | "1/4/2027"
+C2 |  | "1/15/2027"
+D2 |  | "$28,667"
+A3 |  | "Sprint 2 | Discovery Team"
+B3 |  | "1/18/2027"
+C3 |  | "1/29/2027"
+D3 |  | "$28,667"
+A4 |  | "Sprint 3 | Validation Team"
+B4 |  | "2/1/2027"
+C4 |  | "2/12/2027"
+D4 |  | "$45,333"
+
+## 16 non-empty cells
